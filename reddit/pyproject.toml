@@ -1,0 +1,13 @@
+[project]
+name = "throughline-reddit"
+version = "0.1.0"
+description = "Throughline plugin: your Reddit account's saved, voted, submitted and commented items"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk"]
+[project.scripts]
+throughline-reddit = "throughline_reddit:main"
+throughline-reddit-fetch = "throughline_reddit.fetch:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

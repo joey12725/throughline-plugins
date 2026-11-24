@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!--File created by Invented test data-->
+<calls count="6" backup_set="invented-set" backup_date="1790859600000" type="full">
+  <call number="+15555550101" duration="65" date="1790856060000" type="1" presentation="1" subscription_id="1" post_dial_digits="" subscription_component_name="com.android.phone/invented" readable_date="Oct 1, 2026" contact_name="Invented Alex" />
+  <call number="+15555550101" duration="120" date="1790856180000" type="2" presentation="1" subscription_id="1" post_dial_digits="" subscription_component_name="com.android.phone/invented" readable_date="Oct 1, 2026" contact_name="Invented Alex" />
+  <call number="+15555550102" duration="0" date="1790856300000" type="3" presentation="1" subscription_id="1" post_dial_digits="" subscription_component_name="com.android.phone/invented" readable_date="Oct 1, 2026" contact_name="Invented Sam" />
+  <call number="+15555550199" duration="0" date="1790856420000" type="5" presentation="1" subscription_id="1" post_dial_digits="" subscription_component_name="com.android.phone/invented" readable_date="Oct 1, 2026" contact_name="(Unknown)" />
+  <call number="+15555550102" duration="30" date="1790856540000" type="4" presentation="1" subscription_id="1" post_dial_digits="" subscription_component_name="com.android.phone/invented" readable_date="Oct 1, 2026" contact_name="Invented Sam" />
+  <call number="+15555550101" duration="5" date="1790856660000" type="2" presentation="1" subscription_id="1" post_dial_digits="" subscription_component_name="com.android.phone/invented" readable_date="Oct 1, 2026" contact_name="Invented Alex" />
+</calls>

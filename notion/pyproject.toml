@@ -1,0 +1,15 @@
+[project]
+name = "throughline-notion"
+version = "0.1.0"
+description = "Throughline Notion source through Composio (stdlib fetcher plus SDK mapping)"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk"]
+
+[project.scripts]
+throughline-notion = "throughline_notion:main"
+throughline-notion-fetch = "throughline_notion.fetch:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,0 +1,22 @@
+
+# 2024-05-01 10:00:20
++/add invented_app.py
+
+# 2024-05-01 10:01:05
++Add an invented greeting function
++that prints hello orchard
+
+# 2024-05-01 10:03:40
++Now call it from main
+
+# 2024-05-02 09:31:00
++Explain the invented orchard module
+
+# 2024-05-02 09:33:00
++/model invented-model-other
+
+# 2024-05-02 09:34:10
++Rename trees to saplings
+
+# 2024-05-03 14:00:30
++Add invented tests

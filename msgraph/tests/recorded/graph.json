@@ -1,0 +1,764 @@
+{
+ "routes": [
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "mail": "invented.owner@example.com",
+    "userPrincipalName": "invented.owner@example.com",
+    "displayName": "Invented Owner"
+   }
+  },
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me/mailFolders/inbox",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "id": "inbox-id",
+    "displayName": "Inbox"
+   }
+  },
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me/mailFolders/sentitems",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "id": "sent-id",
+    "displayName": "Sent Items"
+   }
+  },
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me/mailFolders/inbox-id/messages/delta",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "value": [
+     {
+      "id": "m1",
+      "conversationId": "conv-book",
+      "internetMessageId": "<book-1@example.com>",
+      "subject": "Invented book club",
+      "from": {
+       "emailAddress": {
+        "address": "friend@example.com",
+        "name": "Invented Friend"
+       }
+      },
+      "sender": {
+       "emailAddress": {
+        "address": "friend@example.com",
+        "name": "Invented Friend"
+       }
+      },
+      "toRecipients": [
+       {
+        "emailAddress": {
+         "address": "invented.owner@example.com",
+         "name": "Invented Owner"
+        }
+       }
+      ],
+      "ccRecipients": [],
+      "bccRecipients": [],
+      "replyTo": [],
+      "receivedDateTime": "2025-01-06T09:00:00Z",
+      "sentDateTime": "2025-01-06T09:00:00Z",
+      "isRead": false,
+      "isDraft": false,
+      "flag": {
+       "flagStatus": "notFlagged"
+      },
+      "importance": "normal",
+      "hasAttachments": false,
+      "body": {
+       "contentType": "text",
+       "content": "Shall we read the invented novel next?"
+      },
+      "bodyPreview": "Shall we read the invented novel next?",
+      "parentFolderId": "inbox-id",
+      "categories": []
+     },
+     {
+      "id": "m2",
+      "conversationId": "conv-invoice",
+      "internetMessageId": "<invoice-9@example.com>",
+      "subject": "Invented invoice",
+      "from": {
+       "emailAddress": {
+        "address": "billing@example.com",
+        "name": "Invented Billing"
+       }
+      },
+      "sender": {
+       "emailAddress": {
+        "address": "billing@example.com",
+        "name": "Invented Billing"
+       }
+      },
+      "toRecipients": [
+       {
+        "emailAddress": {
+         "address": "invented.owner@example.com",
+         "name": "invented.owner@example.com"
+        }
+       }
+      ],
+      "ccRecipients": [],
+      "bccRecipients": [],
+      "replyTo": [],
+      "receivedDateTime": "2025-01-07T10:00:00Z",
+      "sentDateTime": "2025-01-07T10:00:00Z",
+      "isRead": true,
+      "isDraft": false,
+      "flag": {
+       "flagStatus": "flagged"
+      },
+      "importance": "high",
+      "hasAttachments": true,
+      "body": {
+       "contentType": "html",
+       "content": "<html><body><p>Your invented invoice is attached.</p></body></html>"
+      },
+      "bodyPreview": "",
+      "parentFolderId": "inbox-id",
+      "categories": [
+       "Invented finance"
+      ]
+     }
+    ],
+    "@odata.nextLink": "https://graph.microsoft.com/v1.0/me/mailFolders/inbox-id/messages/delta?$skiptoken=in-2"
+   },
+   "absent_query": [
+    "$skiptoken",
+    "$deltatoken"
+   ]
+  },
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me/mailFolders/inbox-id/messages/delta",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "value": [
+     {
+      "id": "m3",
+      "conversationId": "conv-book",
+      "internetMessageId": "<book-3@example.com>",
+      "subject": "RE: Invented book club",
+      "from": {
+       "emailAddress": {
+        "address": "friend@example.com",
+        "name": "Invented Friend"
+       }
+      },
+      "sender": {
+       "emailAddress": {
+        "address": "friend@example.com",
+        "name": "Invented Friend"
+       }
+      },
+      "toRecipients": [
+       {
+        "emailAddress": {
+         "address": "invented.owner@example.com",
+         "name": "invented.owner@example.com"
+        }
+       }
+      ],
+      "ccRecipients": [],
+      "bccRecipients": [],
+      "replyTo": [],
+      "receivedDateTime": "2025-01-06T12:00:00Z",
+      "sentDateTime": "2025-01-06T12:00:00Z",
+      "isRead": true,
+      "isDraft": false,
+      "flag": {
+       "flagStatus": "notFlagged"
+      },
+      "importance": "normal",
+      "hasAttachments": false,
+      "body": {
+       "contentType": "text",
+       "content": "Great, see you then."
+      },
+      "bodyPreview": "",
+      "parentFolderId": "inbox-id",
+      "categories": []
+     },
+     {
+      "id": "m4",
+      "conversationId": "conv-self",
+      "internetMessageId": "<self-7@example.com>",
+      "subject": "Invented reminder to self",
+      "from": {
+       "emailAddress": {
+        "address": "invented.owner@example.com",
+        "name": "Invented Owner"
+       }
+      },
+      "sender": {
+       "emailAddress": {
+        "address": "invented.owner@example.com",
+        "name": "Invented Owner"
+       }
+      },
+      "toRecipients": [
+       {
+        "emailAddress": {
+         "address": "invented.owner@example.com",
+         "name": "invented.owner@example.com"
+        }
+       }
+      ],
+      "ccRecipients": [],
+      "bccRecipients": [],
+      "replyTo": [],
+      "receivedDateTime": "2025-01-08T08:00:00Z",
+      "sentDateTime": "2025-01-08T08:00:00Z",
+      "isRead": true,
+      "isDraft": false,
+      "flag": {
+       "flagStatus": "notFlagged"
+      },
+      "importance": "normal",
+      "hasAttachments": false,
+      "body": {
+       "contentType": "text",
+       "content": "Water the invented plants."
+      },
+      "bodyPreview": "",
+      "parentFolderId": "inbox-id",
+      "categories": []
+     },
+     {
+      "id": "m-gone",
+      "@removed": {
+       "reason": "deleted"
+      }
+     }
+    ],
+    "@odata.deltaLink": "https://graph.microsoft.com/v1.0/me/mailFolders/inbox-id/messages/delta?$deltatoken=in-1"
+   },
+   "query": {
+    "$skiptoken": "in-2"
+   }
+  },
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me/mailFolders/inbox-id/messages/delta",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "value": [],
+    "@odata.deltaLink": "https://graph.microsoft.com/v1.0/me/mailFolders/inbox-id/messages/delta?$deltatoken=in-1"
+   },
+   "query": {
+    "$deltatoken": "in-1"
+   }
+  },
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me/mailFolders/sent-id/messages/delta",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "value": [
+     {
+      "id": "s1",
+      "conversationId": "conv-book",
+      "internetMessageId": "<book-2@example.com>",
+      "subject": "RE: Invented book club",
+      "from": {
+       "emailAddress": {
+        "address": "invented.owner@example.com",
+        "name": "Invented Owner"
+       }
+      },
+      "sender": {
+       "emailAddress": {
+        "address": "invented.owner@example.com",
+        "name": "Invented Owner"
+       }
+      },
+      "toRecipients": [
+       {
+        "emailAddress": {
+         "address": "friend@example.com",
+         "name": "Invented Friend"
+        }
+       }
+      ],
+      "ccRecipients": [],
+      "bccRecipients": [],
+      "replyTo": [],
+      "receivedDateTime": "2025-01-06T10:00:00Z",
+      "sentDateTime": "2025-01-06T10:00:00Z",
+      "isRead": true,
+      "isDraft": false,
+      "flag": {
+       "flagStatus": "notFlagged"
+      },
+      "importance": "normal",
+      "hasAttachments": false,
+      "body": {
+       "contentType": "text",
+       "content": "Yes please!"
+      },
+      "bodyPreview": "",
+      "parentFolderId": "sent-id",
+      "categories": []
+     },
+     {
+      "id": "s2",
+      "conversationId": "conv-self",
+      "internetMessageId": "<self-7@example.com>",
+      "subject": "Invented reminder to self",
+      "from": {
+       "emailAddress": {
+        "address": "invented.owner@example.com",
+        "name": "Invented Owner"
+       }
+      },
+      "sender": {
+       "emailAddress": {
+        "address": "invented.owner@example.com",
+        "name": "Invented Owner"
+       }
+      },
+      "toRecipients": [
+       {
+        "emailAddress": {
+         "address": "invented.owner@example.com",
+         "name": "invented.owner@example.com"
+        }
+       }
+      ],
+      "ccRecipients": [],
+      "bccRecipients": [],
+      "replyTo": [],
+      "receivedDateTime": "2025-01-08T08:00:00Z",
+      "sentDateTime": "2025-01-08T08:00:00Z",
+      "isRead": true,
+      "isDraft": false,
+      "flag": {
+       "flagStatus": "notFlagged"
+      },
+      "importance": "normal",
+      "hasAttachments": false,
+      "body": {
+       "contentType": "text",
+       "content": "Water the invented plants."
+      },
+      "bodyPreview": "",
+      "parentFolderId": "sent-id",
+      "categories": []
+     }
+    ],
+    "@odata.deltaLink": "https://graph.microsoft.com/v1.0/me/mailFolders/sent-id/messages/delta?$deltatoken=sent-1"
+   },
+   "absent_query": [
+    "$skiptoken",
+    "$deltatoken"
+   ]
+  },
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me/mailFolders/sent-id/messages/delta",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "value": [],
+    "@odata.deltaLink": "https://graph.microsoft.com/v1.0/me/mailFolders/sent-id/messages/delta?$deltatoken=sent-1"
+   },
+   "query": {
+    "$deltatoken": "sent-1"
+   }
+  },
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me/messages/m2/attachments",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "value": [
+     {
+      "id": "att-1",
+      "name": "invented-invoice.pdf",
+      "contentType": "application/pdf",
+      "size": 2048,
+      "isInline": false
+     }
+    ]
+   }
+  },
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me/calendar",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "id": "cal-primary-id",
+    "name": "Calendar"
+   }
+  },
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me/calendarView/delta",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "value": [
+     {
+      "id": "occ-1",
+      "iCalUId": "ical-occ-1",
+      "type": "occurrence",
+      "seriesMasterId": "series-1",
+      "subject": "Invented team sync",
+      "start": {
+       "dateTime": "2025-01-07T08:00:00.0000000",
+       "timeZone": "UTC"
+      },
+      "end": {
+       "dateTime": "2025-01-07T08:30:00.0000000",
+       "timeZone": "UTC"
+      },
+      "isAllDay": false,
+      "isCancelled": false,
+      "showAs": "busy",
+      "sensitivity": "normal",
+      "location": {
+       "displayName": ""
+      },
+      "body": {
+       "contentType": "html",
+       "content": ""
+      },
+      "bodyPreview": "",
+      "organizer": {
+       "emailAddress": {
+        "address": "invented.owner@example.com",
+        "name": "Invented Owner"
+       }
+      },
+      "attendees": [],
+      "responseStatus": {
+       "response": "organizer"
+      },
+      "webLink": "https://outlook.example.com/calendar/item/occ-1",
+      "originalStartTimeZone": "W. Europe Standard Time",
+      "createdDateTime": "2024-12-01T10:00:00.1234567Z",
+      "lastModifiedDateTime": "2024-12-01T10:00:20.1234567Z",
+      "@odata.etag": "W/\"e-occ-1\""
+     },
+     {
+      "id": "occ-2",
+      "iCalUId": "ical-occ-2",
+      "type": "exception",
+      "seriesMasterId": "series-1",
+      "subject": "Invented team sync",
+      "start": {
+       "dateTime": "2025-01-14T09:00:00.0000000",
+       "timeZone": "UTC"
+      },
+      "end": {
+       "dateTime": "2025-01-14T09:30:00.0000000",
+       "timeZone": "UTC"
+      },
+      "isAllDay": false,
+      "isCancelled": false,
+      "showAs": "busy",
+      "sensitivity": "normal",
+      "location": {
+       "displayName": ""
+      },
+      "body": {
+       "contentType": "html",
+       "content": ""
+      },
+      "bodyPreview": "",
+      "organizer": {
+       "emailAddress": {
+        "address": "invented.owner@example.com",
+        "name": "Invented Owner"
+       }
+      },
+      "attendees": [],
+      "responseStatus": {
+       "response": "organizer"
+      },
+      "webLink": "https://outlook.example.com/calendar/item/occ-2",
+      "originalStartTimeZone": "W. Europe Standard Time",
+      "createdDateTime": "2024-12-01T10:00:00.1234567Z",
+      "lastModifiedDateTime": "2025-01-10T12:00:00Z",
+      "@odata.etag": "W/\"e-occ-2\"",
+      "originalStart": "2025-01-14T08:00:00Z"
+     },
+     {
+      "id": "occ-3",
+      "iCalUId": "ical-occ-3",
+      "type": "exception",
+      "seriesMasterId": "series-1",
+      "subject": "Invented team sync",
+      "start": {
+       "dateTime": "2025-01-21T08:00:00.0000000",
+       "timeZone": "UTC"
+      },
+      "end": {
+       "dateTime": "2025-01-21T08:30:00.0000000",
+       "timeZone": "UTC"
+      },
+      "isAllDay": false,
+      "isCancelled": true,
+      "showAs": "busy",
+      "sensitivity": "normal",
+      "location": {
+       "displayName": ""
+      },
+      "body": {
+       "contentType": "html",
+       "content": ""
+      },
+      "bodyPreview": "",
+      "organizer": {
+       "emailAddress": {
+        "address": "invented.owner@example.com",
+        "name": "Invented Owner"
+       }
+      },
+      "attendees": [],
+      "responseStatus": {
+       "response": "organizer"
+      },
+      "webLink": "https://outlook.example.com/calendar/item/occ-3",
+      "originalStartTimeZone": "W. Europe Standard Time",
+      "createdDateTime": "2024-12-01T10:00:00.1234567Z",
+      "lastModifiedDateTime": "2025-01-15T12:00:00Z",
+      "@odata.etag": "W/\"e-occ-3\""
+     },
+     {
+      "id": "single-1",
+      "iCalUId": "ical-single-1",
+      "type": "singleInstance",
+      "seriesMasterId": null,
+      "subject": "Invented project kickoff",
+      "start": {
+       "dateTime": "2025-01-20T14:00:00.0000000",
+       "timeZone": "UTC"
+      },
+      "end": {
+       "dateTime": "2025-01-20T15:00:00.0000000",
+       "timeZone": "UTC"
+      },
+      "isAllDay": false,
+      "isCancelled": false,
+      "showAs": "busy",
+      "sensitivity": "normal",
+      "location": {
+       "displayName": "Invented Room 4"
+      },
+      "body": {
+       "contentType": "html",
+       "content": "<html><body><p>Agenda:</p><ul><li>Invented goals</li></ul></body></html>"
+      },
+      "bodyPreview": "",
+      "organizer": {
+       "emailAddress": {
+        "address": "lead@example.com",
+        "name": "Invented Lead"
+       }
+      },
+      "attendees": [
+       {
+        "type": "required",
+        "status": {
+         "response": "accepted"
+        },
+        "emailAddress": {
+         "address": "lead@example.com",
+         "name": "Invented Lead"
+        }
+       },
+       {
+        "type": "optional",
+        "status": {
+         "response": "tentativelyAccepted"
+        },
+        "emailAddress": {
+         "address": "invented.owner@example.com",
+         "name": "Invented Owner"
+        }
+       },
+       {
+        "type": "resource",
+        "status": {
+         "response": "none"
+        },
+        "emailAddress": {
+         "address": "room-4@example.com",
+         "name": "Invented Room 4"
+        }
+       }
+      ],
+      "responseStatus": {
+       "response": "tentativelyAccepted"
+      },
+      "webLink": "https://outlook.example.com/calendar/item/single-1",
+      "originalStartTimeZone": "W. Europe Standard Time",
+      "createdDateTime": "2025-01-02T09:00:00Z",
+      "lastModifiedDateTime": "2025-01-05T09:00:00Z",
+      "@odata.etag": "W/\"e-single-1\"",
+      "onlineMeeting": {
+       "joinUrl": "https://teams.example.com/l/invented-kickoff"
+      }
+     }
+    ],
+    "@odata.nextLink": "https://graph.microsoft.com/v1.0/me/calendarView/delta?$skiptoken=cal-2"
+   },
+   "query": {
+    "startDateTime": "2025-01-01T00:00:00+00:00"
+   }
+  },
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me/calendarView/delta",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "value": [
+     {
+      "id": "allday-1",
+      "iCalUId": "ical-allday-1",
+      "type": "singleInstance",
+      "seriesMasterId": null,
+      "subject": "Invented holiday",
+      "start": {
+       "dateTime": "2025-02-10T00:00:00.0000000",
+       "timeZone": "UTC"
+      },
+      "end": {
+       "dateTime": "2025-02-12T00:00:00.0000000",
+       "timeZone": "UTC"
+      },
+      "isAllDay": true,
+      "isCancelled": false,
+      "showAs": "free",
+      "sensitivity": "normal",
+      "location": {
+       "displayName": ""
+      },
+      "body": {
+       "contentType": "html",
+       "content": ""
+      },
+      "bodyPreview": "",
+      "organizer": {
+       "emailAddress": {
+        "address": "invented.owner@example.com",
+        "name": "Invented Owner"
+       }
+      },
+      "attendees": [],
+      "responseStatus": {
+       "response": "organizer"
+      },
+      "webLink": "https://outlook.example.com/calendar/item/allday-1",
+      "originalStartTimeZone": "W. Europe Standard Time",
+      "createdDateTime": "2025-01-03T09:00:00Z",
+      "lastModifiedDateTime": "2025-01-03T09:00:10Z",
+      "@odata.etag": "W/\"e-allday-1\""
+     },
+     {
+      "id": "single-2",
+      "iCalUId": "ical-single-2",
+      "type": "singleInstance",
+      "seriesMasterId": null,
+      "subject": "Invented lunch",
+      "start": {
+       "dateTime": "2025-02-03T12:00:00.0000000",
+       "timeZone": "UTC"
+      },
+      "end": {
+       "dateTime": "2025-02-03T13:00:00.0000000",
+       "timeZone": "UTC"
+      },
+      "isAllDay": false,
+      "isCancelled": true,
+      "showAs": "busy",
+      "sensitivity": "normal",
+      "location": {
+       "displayName": ""
+      },
+      "body": {
+       "contentType": "html",
+       "content": ""
+      },
+      "bodyPreview": "",
+      "organizer": {
+       "emailAddress": {
+        "address": "invented.owner@example.com",
+        "name": "Invented Owner"
+       }
+      },
+      "attendees": [],
+      "responseStatus": {
+       "response": "organizer"
+      },
+      "webLink": "https://outlook.example.com/calendar/item/single-2",
+      "originalStartTimeZone": "W. Europe Standard Time",
+      "createdDateTime": "2025-01-04T09:00:00Z",
+      "lastModifiedDateTime": "2025-01-30T09:00:00Z",
+      "@odata.etag": "W/\"e-single-2\""
+     }
+    ],
+    "@odata.deltaLink": "https://graph.microsoft.com/v1.0/me/calendarView/delta?$deltatoken=cal-1"
+   },
+   "query": {
+    "$skiptoken": "cal-2"
+   }
+  },
+  {
+   "method": "GET",
+   "host": "graph.microsoft.com",
+   "path": "/v1.0/me/calendarView/delta",
+   "headers": {
+    "Authorization": "Bearer invented-canary-graph-token"
+   },
+   "json": {
+    "value": [],
+    "@odata.deltaLink": "https://graph.microsoft.com/v1.0/me/calendarView/delta?$deltatoken=cal-1"
+   },
+   "query": {
+    "$deltatoken": "cal-1"
+   }
+  }
+ ]
+}

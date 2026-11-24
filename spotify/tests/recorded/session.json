@@ -1,0 +1,382 @@
+{
+  "now": 1577977200000,
+  "playback": null,
+  "recent": [
+    {
+      "played_at": "2020-01-02T10:00:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:04:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:08:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:12:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:16:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:20:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:24:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:28:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:32:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:36:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:40:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:44:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:48:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:52:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T10:56:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    },
+    {
+      "played_at": "2020-01-02T11:00:00+00:00",
+      "track": {
+        "type": "track",
+        "uri": "spotify:track:inventedtrack",
+        "name": "Invented Orbit",
+        "duration_ms": 180000,
+        "artists": [
+          {
+            "name": "Invented Artist",
+            "uri": "spotify:artist:inventedartist"
+          }
+        ],
+        "album": {
+          "name": "Invented Album",
+          "uri": "spotify:album:inventedalbum"
+        }
+      },
+      "context": {
+        "type": "playlist",
+        "uri": "spotify:playlist:inventedplaylist"
+      }
+    }
+  ],
+  "playlists": {
+    "inventedplaylist": {
+      "name": "Invented Playlist",
+      "owner": {
+        "display_name": "Invented Curator"
+      }
+    }
+  }
+}

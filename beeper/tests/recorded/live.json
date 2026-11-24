@@ -1,0 +1,833 @@
+{
+  "responses": [
+    {
+      "path": "v1/chats/fake-chat-discord/messages",
+      "params": {},
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-0",
+            "accountID": "fake-account-discord",
+            "chatID": "fake-chat-discord",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-06T12:00:00+02:00",
+            "sortKey": "fake-sort-0",
+            "text": "Invented live orchard 0",
+            "isSender": true,
+            "linkedMessageID": "fake-message-5"
+          },
+          {
+            "id": "fake-message-1",
+            "accountID": "fake-account-discord",
+            "chatID": "fake-chat-discord",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-05T12:00:00+02:00",
+            "sortKey": "fake-sort-1",
+            "text": "Invented live orchard 1",
+            "isSender": false,
+            "linkedMessageID": null
+          }
+        ],
+        "hasMore": true,
+        "newestCursor": "fake-head",
+        "oldestCursor": "fake-page-1"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-discord/messages",
+      "params": {
+        "cursor": "fake-page-1",
+        "direction": "before"
+      },
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-2",
+            "accountID": "fake-account-discord",
+            "chatID": "fake-chat-discord",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-04T12:00:00+02:00",
+            "sortKey": "fake-sort-2",
+            "text": "Invented live orchard 2",
+            "isSender": true,
+            "linkedMessageID": null
+          },
+          {
+            "id": "fake-message-3",
+            "accountID": "fake-account-discord",
+            "chatID": "fake-chat-discord",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-03T12:00:00+02:00",
+            "sortKey": "fake-sort-3",
+            "text": "Invented live orchard 3",
+            "isSender": false,
+            "linkedMessageID": null,
+            "reactions": [
+              {
+                "id": "fake-reaction",
+                "participantID": "fake-beeper-sender",
+                "reactionKey": "+1"
+              }
+            ]
+          }
+        ],
+        "hasMore": true,
+        "newestCursor": "fake-page-1",
+        "oldestCursor": "fake-page-2"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-discord/messages",
+      "params": {
+        "cursor": "fake-page-2",
+        "direction": "before"
+      },
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-4",
+            "accountID": "fake-account-discord",
+            "chatID": "fake-chat-discord",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-02T12:00:00+02:00",
+            "sortKey": "fake-sort-4",
+            "text": "Invented live orchard 4",
+            "isSender": true,
+            "linkedMessageID": null
+          },
+          {
+            "id": "fake-message-5",
+            "accountID": "fake-account-discord",
+            "chatID": "fake-chat-discord",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-01T12:00:00+02:00",
+            "sortKey": "fake-sort-5",
+            "text": "Invented live orchard 5",
+            "isSender": false,
+            "linkedMessageID": null
+          }
+        ],
+        "hasMore": false,
+        "newestCursor": "fake-page-2",
+        "oldestCursor": "fake-end"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-discord/messages",
+      "params": {
+        "cursor": "fake-head",
+        "direction": "after"
+      },
+      "body": {
+        "items": [],
+        "hasMore": false,
+        "newestCursor": "fake-head",
+        "oldestCursor": "fake-head"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-discord/messages",
+      "params": {
+        "cursor": "fake-end",
+        "direction": "before"
+      },
+      "body": {
+        "items": [],
+        "hasMore": false,
+        "newestCursor": "fake-end",
+        "oldestCursor": "fake-end"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-instagram/messages",
+      "params": {},
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-0",
+            "accountID": "fake-account-instagram",
+            "chatID": "fake-chat-instagram",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-06T12:00:00+02:00",
+            "sortKey": "fake-sort-0",
+            "text": "Invented live orchard 0",
+            "isSender": true,
+            "linkedMessageID": "fake-message-5"
+          },
+          {
+            "id": "fake-message-1",
+            "accountID": "fake-account-instagram",
+            "chatID": "fake-chat-instagram",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-05T12:00:00+02:00",
+            "sortKey": "fake-sort-1",
+            "text": "Invented live orchard 1",
+            "isSender": false,
+            "linkedMessageID": null
+          }
+        ],
+        "hasMore": true,
+        "newestCursor": "fake-head",
+        "oldestCursor": "fake-page-1"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-instagram/messages",
+      "params": {
+        "cursor": "fake-page-1",
+        "direction": "before"
+      },
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-2",
+            "accountID": "fake-account-instagram",
+            "chatID": "fake-chat-instagram",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-04T12:00:00+02:00",
+            "sortKey": "fake-sort-2",
+            "text": "Invented live orchard 2",
+            "isSender": true,
+            "linkedMessageID": null
+          },
+          {
+            "id": "fake-message-3",
+            "accountID": "fake-account-instagram",
+            "chatID": "fake-chat-instagram",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-03T12:00:00+02:00",
+            "sortKey": "fake-sort-3",
+            "text": "Invented live orchard 3",
+            "isSender": false,
+            "linkedMessageID": null,
+            "reactions": [
+              {
+                "id": "fake-reaction",
+                "participantID": "fake-beeper-sender",
+                "reactionKey": "+1"
+              }
+            ]
+          }
+        ],
+        "hasMore": true,
+        "newestCursor": "fake-page-1",
+        "oldestCursor": "fake-page-2"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-instagram/messages",
+      "params": {
+        "cursor": "fake-page-2",
+        "direction": "before"
+      },
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-4",
+            "accountID": "fake-account-instagram",
+            "chatID": "fake-chat-instagram",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-02T12:00:00+02:00",
+            "sortKey": "fake-sort-4",
+            "text": "Invented live orchard 4",
+            "isSender": true,
+            "linkedMessageID": null
+          },
+          {
+            "id": "fake-message-5",
+            "accountID": "fake-account-instagram",
+            "chatID": "fake-chat-instagram",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-01T12:00:00+02:00",
+            "sortKey": "fake-sort-5",
+            "text": "Invented live orchard 5",
+            "isSender": false,
+            "linkedMessageID": null
+          }
+        ],
+        "hasMore": false,
+        "newestCursor": "fake-page-2",
+        "oldestCursor": "fake-end"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-instagram/messages",
+      "params": {
+        "cursor": "fake-head",
+        "direction": "after"
+      },
+      "body": {
+        "items": [],
+        "hasMore": false,
+        "newestCursor": "fake-head",
+        "oldestCursor": "fake-head"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-instagram/messages",
+      "params": {
+        "cursor": "fake-end",
+        "direction": "before"
+      },
+      "body": {
+        "items": [],
+        "hasMore": false,
+        "newestCursor": "fake-end",
+        "oldestCursor": "fake-end"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-sms/messages",
+      "params": {},
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-0",
+            "accountID": "fake-account-sms",
+            "chatID": "fake-chat-sms",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-06T12:00:00+02:00",
+            "sortKey": "fake-sort-0",
+            "text": "Invented live orchard 0",
+            "isSender": true,
+            "linkedMessageID": "fake-message-5"
+          },
+          {
+            "id": "fake-message-1",
+            "accountID": "fake-account-sms",
+            "chatID": "fake-chat-sms",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-05T12:00:00+02:00",
+            "sortKey": "fake-sort-1",
+            "text": "Invented live orchard 1",
+            "isSender": false,
+            "linkedMessageID": null
+          }
+        ],
+        "hasMore": true,
+        "newestCursor": "fake-head",
+        "oldestCursor": "fake-page-1"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-sms/messages",
+      "params": {
+        "cursor": "fake-page-1",
+        "direction": "before"
+      },
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-2",
+            "accountID": "fake-account-sms",
+            "chatID": "fake-chat-sms",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-04T12:00:00+02:00",
+            "sortKey": "fake-sort-2",
+            "text": "Invented live orchard 2",
+            "isSender": true,
+            "linkedMessageID": null
+          },
+          {
+            "id": "fake-message-3",
+            "accountID": "fake-account-sms",
+            "chatID": "fake-chat-sms",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-03T12:00:00+02:00",
+            "sortKey": "fake-sort-3",
+            "text": "Invented live orchard 3",
+            "isSender": false,
+            "linkedMessageID": null,
+            "reactions": [
+              {
+                "id": "fake-reaction",
+                "participantID": "fake-beeper-sender",
+                "reactionKey": "+1"
+              }
+            ]
+          }
+        ],
+        "hasMore": true,
+        "newestCursor": "fake-page-1",
+        "oldestCursor": "fake-page-2"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-sms/messages",
+      "params": {
+        "cursor": "fake-page-2",
+        "direction": "before"
+      },
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-4",
+            "accountID": "fake-account-sms",
+            "chatID": "fake-chat-sms",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-02T12:00:00+02:00",
+            "sortKey": "fake-sort-4",
+            "text": "Invented live orchard 4",
+            "isSender": true,
+            "linkedMessageID": null
+          },
+          {
+            "id": "fake-message-5",
+            "accountID": "fake-account-sms",
+            "chatID": "fake-chat-sms",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-01T12:00:00+02:00",
+            "sortKey": "fake-sort-5",
+            "text": "Invented live orchard 5",
+            "isSender": false,
+            "linkedMessageID": null
+          }
+        ],
+        "hasMore": false,
+        "newestCursor": "fake-page-2",
+        "oldestCursor": "fake-end"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-sms/messages",
+      "params": {
+        "cursor": "fake-head",
+        "direction": "after"
+      },
+      "body": {
+        "items": [],
+        "hasMore": false,
+        "newestCursor": "fake-head",
+        "oldestCursor": "fake-head"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-sms/messages",
+      "params": {
+        "cursor": "fake-end",
+        "direction": "before"
+      },
+      "body": {
+        "items": [],
+        "hasMore": false,
+        "newestCursor": "fake-end",
+        "oldestCursor": "fake-end"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-reddit/messages",
+      "params": {},
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-0",
+            "accountID": "fake-account-reddit",
+            "chatID": "fake-chat-reddit",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-06T12:00:00+02:00",
+            "sortKey": "fake-sort-0",
+            "text": "Invented live orchard 0",
+            "isSender": true,
+            "linkedMessageID": "fake-message-5"
+          },
+          {
+            "id": "fake-message-1",
+            "accountID": "fake-account-reddit",
+            "chatID": "fake-chat-reddit",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-05T12:00:00+02:00",
+            "sortKey": "fake-sort-1",
+            "text": "Invented live orchard 1",
+            "isSender": false,
+            "linkedMessageID": null
+          }
+        ],
+        "hasMore": true,
+        "newestCursor": "fake-head",
+        "oldestCursor": "fake-page-1"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-reddit/messages",
+      "params": {
+        "cursor": "fake-page-1",
+        "direction": "before"
+      },
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-2",
+            "accountID": "fake-account-reddit",
+            "chatID": "fake-chat-reddit",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-04T12:00:00+02:00",
+            "sortKey": "fake-sort-2",
+            "text": "Invented live orchard 2",
+            "isSender": true,
+            "linkedMessageID": null
+          },
+          {
+            "id": "fake-message-3",
+            "accountID": "fake-account-reddit",
+            "chatID": "fake-chat-reddit",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-03T12:00:00+02:00",
+            "sortKey": "fake-sort-3",
+            "text": "Invented live orchard 3",
+            "isSender": false,
+            "linkedMessageID": null,
+            "reactions": [
+              {
+                "id": "fake-reaction",
+                "participantID": "fake-beeper-sender",
+                "reactionKey": "+1"
+              }
+            ]
+          }
+        ],
+        "hasMore": true,
+        "newestCursor": "fake-page-1",
+        "oldestCursor": "fake-page-2"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-reddit/messages",
+      "params": {
+        "cursor": "fake-page-2",
+        "direction": "before"
+      },
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-4",
+            "accountID": "fake-account-reddit",
+            "chatID": "fake-chat-reddit",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-02T12:00:00+02:00",
+            "sortKey": "fake-sort-4",
+            "text": "Invented live orchard 4",
+            "isSender": true,
+            "linkedMessageID": null
+          },
+          {
+            "id": "fake-message-5",
+            "accountID": "fake-account-reddit",
+            "chatID": "fake-chat-reddit",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-01T12:00:00+02:00",
+            "sortKey": "fake-sort-5",
+            "text": "Invented live orchard 5",
+            "isSender": false,
+            "linkedMessageID": null
+          }
+        ],
+        "hasMore": false,
+        "newestCursor": "fake-page-2",
+        "oldestCursor": "fake-end"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-reddit/messages",
+      "params": {
+        "cursor": "fake-head",
+        "direction": "after"
+      },
+      "body": {
+        "items": [],
+        "hasMore": false,
+        "newestCursor": "fake-head",
+        "oldestCursor": "fake-head"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-reddit/messages",
+      "params": {
+        "cursor": "fake-end",
+        "direction": "before"
+      },
+      "body": {
+        "items": [],
+        "hasMore": false,
+        "newestCursor": "fake-end",
+        "oldestCursor": "fake-end"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-snapchat/messages",
+      "params": {},
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-0",
+            "accountID": "fake-account-snapchat",
+            "chatID": "fake-chat-snapchat",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-06T12:00:00+02:00",
+            "sortKey": "fake-sort-0",
+            "text": "Invented live orchard 0",
+            "isSender": true,
+            "linkedMessageID": "fake-message-5"
+          },
+          {
+            "id": "fake-message-1",
+            "accountID": "fake-account-snapchat",
+            "chatID": "fake-chat-snapchat",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-05T12:00:00+02:00",
+            "sortKey": "fake-sort-1",
+            "text": "Invented live orchard 1",
+            "isSender": false,
+            "linkedMessageID": null
+          }
+        ],
+        "hasMore": true,
+        "newestCursor": "fake-head",
+        "oldestCursor": "fake-page-1"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-snapchat/messages",
+      "params": {
+        "cursor": "fake-page-1",
+        "direction": "before"
+      },
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-2",
+            "accountID": "fake-account-snapchat",
+            "chatID": "fake-chat-snapchat",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-04T12:00:00+02:00",
+            "sortKey": "fake-sort-2",
+            "text": "Invented live orchard 2",
+            "isSender": true,
+            "linkedMessageID": null
+          },
+          {
+            "id": "fake-message-3",
+            "accountID": "fake-account-snapchat",
+            "chatID": "fake-chat-snapchat",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-03T12:00:00+02:00",
+            "sortKey": "fake-sort-3",
+            "text": "Invented live orchard 3",
+            "isSender": false,
+            "linkedMessageID": null,
+            "reactions": [
+              {
+                "id": "fake-reaction",
+                "participantID": "fake-beeper-sender",
+                "reactionKey": "+1"
+              }
+            ]
+          }
+        ],
+        "hasMore": true,
+        "newestCursor": "fake-page-1",
+        "oldestCursor": "fake-page-2"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-snapchat/messages",
+      "params": {
+        "cursor": "fake-page-2",
+        "direction": "before"
+      },
+      "body": {
+        "items": [
+          {
+            "id": "fake-message-4",
+            "accountID": "fake-account-snapchat",
+            "chatID": "fake-chat-snapchat",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-02T12:00:00+02:00",
+            "sortKey": "fake-sort-4",
+            "text": "Invented live orchard 4",
+            "isSender": true,
+            "linkedMessageID": null
+          },
+          {
+            "id": "fake-message-5",
+            "accountID": "fake-account-snapchat",
+            "chatID": "fake-chat-snapchat",
+            "senderID": "fake-beeper-sender",
+            "senderName": "Invented Sender",
+            "timestamp": "2020-01-01T12:00:00+02:00",
+            "sortKey": "fake-sort-5",
+            "text": "Invented live orchard 5",
+            "isSender": false,
+            "linkedMessageID": null
+          }
+        ],
+        "hasMore": false,
+        "newestCursor": "fake-page-2",
+        "oldestCursor": "fake-end"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-snapchat/messages",
+      "params": {
+        "cursor": "fake-head",
+        "direction": "after"
+      },
+      "body": {
+        "items": [],
+        "hasMore": false,
+        "newestCursor": "fake-head",
+        "oldestCursor": "fake-head"
+      }
+    },
+    {
+      "path": "v1/chats/fake-chat-snapchat/messages",
+      "params": {
+        "cursor": "fake-end",
+        "direction": "before"
+      },
+      "body": {
+        "items": [],
+        "hasMore": false,
+        "newestCursor": "fake-end",
+        "oldestCursor": "fake-end"
+      }
+    },
+    {
+      "path": "v1/accounts",
+      "params": {},
+      "body": [
+        {
+          "accountID": "fake-account-discord",
+          "network": "Discord",
+          "status": "connected",
+          "user": {
+            "id": "fake-owner"
+          }
+        },
+        {
+          "accountID": "fake-account-instagram",
+          "network": "Instagram",
+          "status": "connected",
+          "user": {
+            "id": "fake-owner"
+          }
+        },
+        {
+          "accountID": "fake-account-sms",
+          "network": "Sms",
+          "status": "connected",
+          "user": {
+            "id": "fake-owner"
+          }
+        },
+        {
+          "accountID": "fake-account-reddit",
+          "network": "Reddit",
+          "status": "connected",
+          "user": {
+            "id": "fake-owner"
+          }
+        },
+        {
+          "accountID": "fake-account-snapchat",
+          "network": "Snapchat",
+          "status": "connected",
+          "user": {
+            "id": "fake-owner"
+          }
+        }
+      ]
+    },
+    {
+      "path": "v1/chats",
+      "params": {
+        "limit": 200
+      },
+      "body": {
+        "items": [
+          {
+            "id": "fake-chat-discord",
+            "accountID": "fake-account-discord",
+            "network": "discord",
+            "title": "Invented discord conversation",
+            "type": "single"
+          },
+          {
+            "id": "fake-chat-instagram",
+            "accountID": "fake-account-instagram",
+            "network": "instagram",
+            "title": "Invented instagram conversation",
+            "type": "single"
+          }
+        ],
+        "hasMore": true,
+        "newestCursor": "fake-chats-head",
+        "oldestCursor": "fake-chats-next"
+      }
+    },
+    {
+      "path": "v1/chats",
+      "params": {
+        "limit": 200,
+        "cursor": "fake-chats-next",
+        "direction": "before"
+      },
+      "body": {
+        "items": [
+          {
+            "id": "fake-chat-sms",
+            "accountID": "fake-account-sms",
+            "network": "sms",
+            "title": "Invented sms conversation",
+            "type": "single"
+          },
+          {
+            "id": "fake-chat-reddit",
+            "accountID": "fake-account-reddit",
+            "network": "reddit",
+            "title": "Invented reddit conversation",
+            "type": "single"
+          },
+          {
+            "id": "fake-chat-snapchat",
+            "accountID": "fake-account-snapchat",
+            "network": "snapchat",
+            "title": "Invented snapchat conversation",
+            "type": "single"
+          }
+        ],
+        "hasMore": false,
+        "newestCursor": "fake-chats-next",
+        "oldestCursor": "fake-chats-end"
+      }
+    }
+  ]
+}

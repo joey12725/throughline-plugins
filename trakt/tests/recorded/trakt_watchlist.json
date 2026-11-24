@@ -1,0 +1,86 @@
+[
+ {
+  "rank": 1,
+  "id": 4440001,
+  "listed_at": "2021-01-20T09:00:00.000Z",
+  "notes": "Invented note: recommended by an example friend",
+  "type": "movie",
+  "movie": {
+   "title": "Fictional Futures",
+   "year": 2023,
+   "runtime": 131,
+   "ids": {
+    "trakt": 900004,
+    "slug": "fictional-futures-2023",
+    "imdb": "tt9990004",
+    "tmdb": 9990004
+   }
+  }
+ },
+ {
+  "rank": 2,
+  "id": 4440002,
+  "listed_at": "2021-01-25T09:00:00.000Z",
+  "notes": null,
+  "type": "show",
+  "show": {
+   "title": "The Synthetic Office",
+   "year": 2020,
+   "ids": {
+    "trakt": 800002,
+    "slug": "the-synthetic-office",
+    "tvdb": null,
+    "imdb": null,
+    "tmdb": 9980002
+   }
+  }
+ },
+ {
+  "rank": 3,
+  "id": 4440003,
+  "listed_at": "2021-02-12T08:00:00.000Z",
+  "notes": null,
+  "type": "movie",
+  "movie": {
+   "title": "Unreleased Invention",
+   "year": 2027,
+   "runtime": null,
+   "ids": {
+    "trakt": 900005,
+    "slug": "unreleased-invention-2027",
+    "imdb": null,
+    "tmdb": 9990005
+   }
+  }
+ },
+ {
+  "rank": 4,
+  "id": 4440004,
+  "listed_at": "2021-02-12T08:05:00.000Z",
+  "notes": null,
+  "type": "episode",
+  "episode": {
+   "season": 2,
+   "number": 3,
+   "title": "Invented Finale",
+   "runtime": 42,
+   "ids": {
+    "trakt": 700010,
+    "tvdb": null,
+    "imdb": "tt9970010",
+    "tmdb": 9970010
+   }
+  },
+  "show": {
+   "title": "Invented Station",
+   "year": 2018,
+   "ids": {
+    "trakt": 800001,
+    "slug": "invented-station",
+    "tvdb": 7770001,
+    "imdb": "tt9980001",
+    "tmdb": 9980001
+   }
+  }
+ }
+]

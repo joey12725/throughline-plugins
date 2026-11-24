@@ -1,0 +1,15 @@
+[project]
+name = "throughline-gps-push"
+version = "0.1.0"
+description = "Phone GPS trackers (OwnTracks, Overland, GPSLogger) as a Throughline location source"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk"]
+[project.scripts]
+throughline-gps-push = "throughline_gps_push:main"
+throughline-gps-push-receiver = "throughline_gps_push.receiver:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[tool.hatch.build.targets.wheel]
+packages = ["src/throughline_gps_push"]

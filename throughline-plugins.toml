@@ -1,0 +1,2531 @@
+schema = 1
+name = "Throughline starter plugins"
+description = "Connectors for messages, email, calendars, meetings, location, health, media, notes, AI assistants and more, maintained with Throughline."
+
+# Each entry follows docs/plugin-onboarding-contract.md. `setup.fields` lists
+# only what a typical owner fills in; every other Manifest setting stays
+# available under Advanced once the plugin is installed.
+#
+# `channel_roles` gives each channel's role (chat, email, calendar, telemetry,
+# transcript, voice_summary, location, media, notes, other) so the core can
+# treat channels by what they hold instead of by name. Track sources
+# (`track_sources`) are always `location`. plugins/catalog.json is generated
+# from this file by plugins/build_catalog.py; edit this file, then run it.
+
+# ---------------------------------------------------------------- messages
+
+[[plugins]]
+id = "beeper"
+path = "beeper"
+name = "Beeper"
+summary = "Chats from the networks you connect in Beeper (Discord, Instagram, SMS and more)."
+description = "Imports chat history through the Beeper Desktop API on your computer, one thread per conversation. An `archive` mode imports chat history you already hold from a Postgres database laid out as the plugin's published archive-schema.sql (useful when migrating). Attachment, Instagram and YouTube enrichment are off by default."
+category = "messages"
+icon = "messages-square"
+homepage = "https://www.beeper.com"
+channels = ["chat.*"]               # chat.<network> for every network Beeper bridges
+channel_roles = { "chat.*" = "chat" }
+requires = ["companion"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-beeper"
+
+[plugins.schedule]
+interval_s = 300
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports the history Beeper Desktop has loaded for each chat; some networks cap how far back Desktop can list."
+
+[[plugins.setup.steps]]
+title = "Turn on the Beeper Desktop API"
+body = "Run Beeper Desktop on this computer, enable its local API in the app's settings and create an access token."
+
+[[plugins.setup.fields]]
+key = "BEEPER_SOURCE"
+label = "Source"
+kind = "select"
+options = ["live", "archive"]
+default = "live"
+required = true
+help = "live reads Beeper Desktop; archive reads a Postgres database laid out as the plugin's archive-schema.sql."
+
+[[plugins.setup.fields]]
+key = "BEEPER_ACCESS_TOKEN"
+label = "Desktop API token"
+kind = "secret"
+required = true
+when = { BEEPER_SOURCE = ["live"] }
+
+[[plugins.setup.fields]]
+key = "BEEPER_BASE_URL"
+label = "Desktop API address"
+kind = "url"
+default = "http://localhost:23373"
+advanced = true
+when = { BEEPER_SOURCE = ["live"] }
+
+[[plugins.setup.fields]]
+key = "BEEPER_ARCHIVE_DSN"
+label = "Archive database (Postgres DSN)"
+kind = "secret"
+required = true
+help = "Use a read-only role."
+placeholder = "postgresql://reader:…@host/db"
+when = { BEEPER_SOURCE = ["archive"] }
+
+[[plugins]]
+id = "signal"
+path = "signal"
+name = "Signal"
+summary = "Your Signal messages, received through signal-cli as a linked device."
+description = "Runs [signal-cli](https://github.com/AsamK/signal-cli) as a linked device of your phone. A linked device only receives messages **from the moment it is linked**, so earlier history cannot be imported. Messages you send from your phone are imported as yours."
+category = "messages"
+icon = "message-circle-more"
+homepage = "https://signal.org"
+channels = ["signal.messages"]
+channel_roles = { "signal.messages" = "chat" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-signal"
+
+[plugins.schedule]
+interval_s = 300
+mode = "poll"
+
+[plugins.backfill]
+supported = false
+history = "none"
+note = "Signal gives linked devices no earlier history; messages arrive from the moment signal-cli is linked."
+
+[[plugins.setup.steps]]
+title = "Install and link signal-cli"
+body = "Install signal-cli, run `signal-cli link -n Throughline`, and scan the QR code in Signal → Settings → Linked devices."
+url = "https://github.com/AsamK/signal-cli"
+
+[[plugins.setup.steps]]
+title = "Run the daemon"
+body = "Start `signal-cli -a <your number> daemon --http 127.0.0.1:8080 --receive-mode=manual` as a service, listening on localhost only."
+
+[[plugins.setup.fields]]
+key = "SIGNAL_RPC_URL"
+label = "signal-cli daemon address"
+kind = "url"
+required = true
+default = "http://127.0.0.1:8080"
+
+[[plugins.setup.fields]]
+key = "SIGNAL_ACCOUNT"
+label = "Your Signal number"
+help = "In +E.164 form; needed when the daemon serves several accounts."
+placeholder = "+15555550100"
+
+[[plugins.setup.fields]]
+key = "SIGNAL_RPC_TOKEN"
+label = "Proxy bearer token"
+kind = "secret"
+help = "Only when the daemon sits behind an authenticating reverse proxy."
+advanced = true
+
+[[plugins]]
+id = "telegram"
+path = "telegram"
+name = "Telegram"
+summary = "Your Telegram private chats and small groups, with full history."
+description = "Logs in as you through Telegram's user API (Telethon), so it sees the same history as your apps. Broadcast channels, bots and groups larger than 50 members are skipped by default. The session string is a full login to your account: it is stored only as a secret."
+category = "messages"
+icon = "send"
+homepage = "https://telegram.org"
+channels = ["telegram.messages"]
+channel_roles = { "telegram.messages" = "chat" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-telegram"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Walks every included chat's full history, oldest first."
+
+[[plugins.setup.steps]]
+title = "Create a Telegram app"
+body = "Open API development tools and create an application; note its api_id and api_hash."
+url = "https://my.telegram.org"
+
+[[plugins.setup.steps]]
+title = "Log in once"
+body = "Run `throughline-telegram-login` with the api_id and api_hash set. It asks for your phone number, the login code and your 2FA password, then prints a session string."
+
+[[plugins.setup.fields]]
+key = "TELEGRAM_API_ID"
+label = "api_id"
+required = true
+kind = "number"
+
+[[plugins.setup.fields]]
+key = "TELEGRAM_API_HASH"
+label = "api_hash"
+kind = "secret"
+required = true
+
+[[plugins.setup.fields]]
+key = "TELEGRAM_SESSION"
+label = "Session string"
+kind = "secret"
+required = true
+help = "Printed by throughline-telegram-login. Revoke it under Settings → Devices if it leaks."
+
+[[plugins]]
+id = "imessage"
+path = "imessage"
+name = "iMessage"
+summary = "iMessage, SMS and RCS conversations from the Messages app on your Mac."
+description = "Reads `~/Library/Messages/chat.db` read-only, including messages your iPhone syncs through Messages in iCloud. Tapbacks, edits and unsends become new versions of the message. Needs Full Disk Access for the companion app."
+category = "messages"
+icon = "message-circle"
+channels = ["imessage.messages"]
+channel_roles = { "imessage.messages" = "chat" }
+platforms = ["macos"]
+requires = ["companion"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-imessage"
+
+[plugins.schedule]
+interval_s = 300
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports everything still in the Messages database on this Mac."
+
+[[plugins.setup.steps]]
+title = "Allow Full Disk Access"
+body = "In System Settings → Privacy & Security → Full Disk Access, allow the Throughline companion so it can read the Messages database."
+
+[[plugins.setup.fields]]
+key = "IMESSAGE_OWNER_HANDLE"
+label = "Your phone number or Apple ID email"
+help = "Used as the author of your own messages when the database does not record it."
+
+[[plugins.setup.fields]]
+key = "IMESSAGE_DB"
+label = "Messages database"
+kind = "path"
+default = "~/Library/Messages/chat.db"
+advanced = true
+
+[[plugins]]
+id = "android_sms"
+path = "android-sms"
+name = "Android SMS"
+summary = "SMS, MMS and call log from an Android phone's scheduled backups."
+description = "Android has no API for reading messages from another machine, so this reads the XML files the free **SMS Backup & Restore** app writes on a schedule. Point its backups at a folder synced to the Throughline machine and every new backup is picked up. Media attachments are never stored."
+category = "messages"
+icon = "smartphone"
+channels = ["android_sms.messages", "android_sms.calls"]
+channel_roles = { "android_sms.messages" = "chat", "android_sms.calls" = "other" }
+requires = ["upload"]
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-android-sms"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every message and call in the backups, however old."
+
+[[plugins.setup.steps]]
+title = "Install SMS Backup & Restore"
+body = "Install the app on your phone and schedule a daily backup of messages and calls."
+
+[[plugins.setup.steps]]
+title = "Sync the backup folder"
+body = "Send the backups to a folder the Throughline machine can read (Syncthing, Google Drive, Dropbox, Nextcloud or a network share), or upload the sms-*.xml and calls-*.xml files."
+
+[[plugins.setup.fields]]
+key = "ANDROID_SMS_DIR"
+label = "Backup folder"
+kind = "directory"
+required = true
+help = "Holds the sms-*.xml and calls-*.xml files."
+
+[[plugins.setup.fields]]
+key = "ANDROID_SMS_OWNER_NUMBER"
+label = "Your phone number"
+help = "Author of the messages you sent and the calls you placed."
+placeholder = "+15555550100"
+
+[[plugins.setup.fields]]
+key = "ANDROID_SMS_COUNTRY_CODE"
+label = "Country calling code"
+help = "Added to 10-digit national numbers so they match +E.164 forms."
+placeholder = "1"
+advanced = true
+
+# ---------------------------------------------------------------- social
+
+[[plugins]]
+id = "bluesky"
+path = "bluesky"
+name = "Bluesky"
+summary = "Your Bluesky posts, replies, reposts and likes."
+description = "Reads your own repository on your PDS: everything you wrote, reposted and liked. Notifications (replies, mentions and quotes of you) are optional. Direct messages are not read."
+category = "social"
+icon = "cloud"
+homepage = "https://bsky.app"
+channels = ["bluesky.posts", "bluesky.reposts", "bluesky.likes", "bluesky.notifications"]
+channel_roles = { "bluesky.posts" = "other", "bluesky.reposts" = "other", "bluesky.likes" = "other", "bluesky.notifications" = "other" }
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-bluesky"
+
+[plugins.schedule]
+interval_s = 1800
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Your whole repository is on your PDS, so the first run imports everything."
+
+[[plugins.setup.steps]]
+title = "Create an app password"
+body = "In Bluesky open Settings → Privacy and security → App passwords and create one. Never use your main password."
+
+[[plugins.setup.fields]]
+key = "BLUESKY_IDENTIFIER"
+label = "Handle or DID"
+required = true
+placeholder = "alice.bsky.social"
+
+[[plugins.setup.fields]]
+key = "BLUESKY_APP_PASSWORD"
+label = "App password"
+kind = "secret"
+required = true
+placeholder = "xxxx-xxxx-xxxx-xxxx"
+
+[[plugins.setup.fields]]
+key = "BLUESKY_SERVICE"
+label = "Sign-in server"
+kind = "url"
+default = "https://bsky.social"
+help = "Change only for a self-hosted PDS."
+advanced = true
+
+[[plugins]]
+id = "mastodon"
+path = "mastodon"
+name = "Mastodon"
+summary = "Your Mastodon posts, favourites and bookmarks from any instance."
+description = "Polls your instance with a personal access token: your own statuses, replies and boosts, the statuses you favourited and bookmarked, and optionally your mentions. Direct-visibility statuses get an access label."
+category = "social"
+icon = "megaphone"
+homepage = "https://joinmastodon.org"
+channels = ["mastodon.statuses", "mastodon.favourites", "mastodon.bookmarks", "mastodon.notifications"]
+channel_roles = { "mastodon.statuses" = "other", "mastodon.favourites" = "other", "mastodon.bookmarks" = "other", "mastodon.notifications" = "other" }
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-mastodon"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Reads each stream back to the very beginning on the first run."
+
+[[plugins.setup.steps]]
+title = "Create an access token"
+body = "On your instance open Preferences → Development → New application, grant read scopes, and copy the access token."
+
+[[plugins.setup.fields]]
+key = "MASTODON_BASE_URL"
+label = "Your instance"
+kind = "url"
+required = true
+placeholder = "https://mastodon.example"
+
+[[plugins.setup.fields]]
+key = "MASTODON_ACCESS_TOKEN"
+label = "Access token"
+kind = "secret"
+required = true
+
+[[plugins]]
+id = "instagram_feed"
+path = "instagram-feed"
+name = "Instagram feed"
+summary = "New posts and stories from public Instagram accounts you follow."
+description = "Opt-in: follows a list of **public** accounts and records their posts (and, with a cookies file, their 24-hour stories) as text and links. No media is downloaded. Requests are rate limited and rotate through the list. Instagram has no API for this; automated reading may break Instagram's Terms of Use and can get your IP or account rate limited, so use it only if that is acceptable to you."
+category = "social"
+icon = "image"
+channels = ["instagram.feed"]
+channel_roles = { "instagram.feed" = "other" }
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-instagram-feed"
+
+[plugins.schedule]
+interval_s = 7200
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "window"
+note = "Instagram shows only the newest 12 posts per account, so older posts are not reachable."
+
+[[plugins.setup.fields]]
+key = "INSTAGRAM_FEED_ACCOUNTS"
+label = "Accounts to follow"
+kind = "list"
+required = true
+help = "Comma-separated public handles."
+placeholder = "natgeo, nasa"
+
+[[plugins]]
+id = "reddit"
+path = "reddit"
+name = "Reddit"
+summary = "What you saved, upvoted, posted and commented on Reddit."
+description = "Reads your own account's listings (saved, upvoted, submitted, comments; downvoted optional), read only. Signs in through a Reddit OAuth app, or through a signed-in headless browser profile when you have no API app. The standard-library fetch.py can run on another host and ship JSONL back."
+category = "social"
+icon = "message-circle"
+homepage = "https://www.reddit.com"
+channels = ["reddit.saved", "reddit.votes", "reddit.posts", "reddit.comments"]
+channel_roles = { "reddit.saved" = "other", "reddit.votes" = "other", "reddit.posts" = "other", "reddit.comments" = "other" }
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-reddit"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "window"
+note = "Reddit lists only about the newest 1,000 items per listing; older saves and votes are not reachable."
+
+[[plugins.setup.steps]]
+title = "Create a Reddit app (OAuth)"
+body = "Signed in to the account to capture, create a script app at reddit.com/prefs/apps, then use its client id and secret with a refresh token (or your username and password). Without an app, choose the session transport."
+url = "https://www.reddit.com/prefs/apps"
+
+[[plugins.setup.fields]]
+key = "REDDIT_USER_AGENT"
+label = "User agent"
+required = true
+help = "Reddit requires a unique, descriptive one."
+placeholder = "<platform>:<app id>:0.1.0 (by /u/<your name>)"
+
+[[plugins.setup.fields]]
+key = "REDDIT_TRANSPORT"
+label = "Sign-in"
+kind = "select"
+options = ["oauth", "session"]
+default = "oauth"
+required = true
+help = "oauth uses a Reddit app; session uses a signed-in headless Chromium profile."
+
+[[plugins.setup.fields]]
+key = "REDDIT_CLIENT_ID"
+label = "App client id"
+kind = "secret"
+required = true
+when = { REDDIT_TRANSPORT = ["oauth"] }
+
+[[plugins.setup.fields]]
+key = "REDDIT_CLIENT_SECRET"
+label = "App secret"
+kind = "secret"
+when = { REDDIT_TRANSPORT = ["oauth"] }
+
+[[plugins.setup.fields]]
+key = "REDDIT_REFRESH_TOKEN"
+label = "Refresh token"
+kind = "secret"
+help = "Or leave empty and give your username and password (script apps without two-factor sign-in)."
+when = { REDDIT_TRANSPORT = ["oauth"] }
+
+[[plugins.setup.fields]]
+key = "REDDIT_SESSION_PROFILE"
+label = "Browser profile folder"
+kind = "directory"
+required = true
+help = "A private folder for the headless browser's sign-in."
+when = { REDDIT_TRANSPORT = ["session"] }
+
+[[plugins.setup.fields]]
+key = "REDDIT_USERNAME"
+label = "Reddit username"
+
+[[plugins.setup.fields]]
+key = "REDDIT_PASSWORD"
+label = "Reddit password"
+kind = "secret"
+help = "Only for the password grant or to sign the browser profile in."
+
+# ---------------------------------------------------------------- email
+
+[[plugins]]
+id = "imap"
+path = "imap"
+name = "Email (IMAP)"
+summary = "Mail from any IMAP mailbox: Fastmail, iCloud, Proton Bridge, Gmail and more."
+description = "Read-only over TLS: folders are opened with EXAMINE and bodies fetched with BODY.PEEK, so nothing is marked read. Uses All Mail when the server has one, otherwise INBOX."
+category = "email"
+icon = "inbox"
+channels = ["imap.message"]
+channel_roles = { "imap.message" = "email" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-imap"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every message in the chosen folders; set a start date to skip older mail."
+
+[[plugins.setup.steps]]
+title = "Create an app password"
+body = "Most providers (Fastmail, iCloud, Gmail, Yahoo) need an app-specific password for IMAP. Proton Mail needs Proton Mail Bridge running."
+
+[[plugins.setup.fields]]
+key = "IMAP_HOST"
+label = "IMAP server"
+required = true
+placeholder = "imap.fastmail.com"
+
+[[plugins.setup.fields]]
+key = "IMAP_USERNAME"
+label = "Login"
+kind = "email"
+required = true
+placeholder = "you@example.com"
+
+[[plugins.setup.fields]]
+key = "IMAP_PASSWORD"
+label = "Password or app password"
+kind = "secret"
+required = true
+
+[[plugins.setup.fields]]
+key = "IMAP_SINCE"
+label = "Skip mail before"
+help = "First run only, YYYY-MM-DD."
+placeholder = "2020-01-01"
+advanced = true
+
+[[plugins]]
+id = "email"
+path = "email"
+name = "Gmail (Composio)"
+summary = "Gmail messages from one or more accounts connected in Composio."
+description = "One message per email, threaded per Gmail thread. Reads through a Gmail connection you make in [Composio](https://composio.dev). Spam and trash are skipped. The first backfill keeps the newest 1,000 messages per account unless you raise the cap."
+category = "email"
+icon = "mail"
+homepage = "https://composio.dev"
+channels = ["email.message"]
+channel_roles = { "email.message" = "email" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-email"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Capped at the newest 1,000 messages per account by default; set EMAIL_MAX_MESSAGES to 0 for everything."
+
+[[plugins.setup.steps]]
+title = "Connect Gmail in Composio"
+body = "Create a Composio account, connect your Gmail account in the Gmail toolkit, and create an API key."
+url = "https://composio.dev"
+
+[[plugins.setup.fields]]
+key = "COMPOSIO_API_KEY"
+label = "Composio API key"
+kind = "secret"
+required = true
+
+[[plugins.setup.fields]]
+key = "EMAIL_ACCOUNTS"
+label = "Connected account ids"
+kind = "list"
+help = "Composio connected account ids, comma separated."
+
+[[plugins.setup.fields]]
+key = "EMAIL_MAX_MESSAGES"
+label = "Backfill cap per account"
+kind = "number"
+default = "1000"
+help = "0 imports every message."
+advanced = true
+
+[[plugins]]
+id = "msgraph"
+path = "msgraph"
+name = "Microsoft 365 / Outlook"
+summary = "Mail and calendar from Microsoft 365 or Outlook.com through Microsoft Graph."
+description = "Uses your own Entra app registration as a public client with the device-code sign-in: no client secret. Access is read-only (`Mail.Read`, `Calendars.Read`). Reads Inbox and Sent Items and a rolling calendar window."
+category = "email"
+icon = "mail-open"
+homepage = "https://learn.microsoft.com/graph/"
+channels = ["msgraph.message", "msgraph.events", "msgraph.changes"]
+channel_roles = { "msgraph.message" = "email", "msgraph.events" = "calendar", "msgraph.changes" = "other" }
+pairs_with = ["calendar"]
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-msgraph"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Mail goes back as far as the folders hold; calendar events cover a rolling window (30 days back, 90 ahead)."
+
+[[plugins.setup.steps]]
+title = "Register an app"
+body = "In Microsoft Entra, register an application, allow public client flows, and add the delegated Mail.Read and Calendars.Read permissions. Copy its Application (client) id."
+url = "https://entra.microsoft.com"
+
+[[plugins.setup.steps]]
+title = "Sign in once"
+body = "Run `throughline-msgraph-login` and finish the device-code sign-in in your browser. It writes the token cache."
+
+[[plugins.setup.fields]]
+key = "MSGRAPH_CLIENT_ID"
+label = "Application (client) id"
+required = true
+
+[[plugins.setup.fields]]
+key = "MSGRAPH_TENANT"
+label = "Account type"
+kind = "select"
+options = ["common", "consumers", "organizations"]
+default = "common"
+help = "consumers for Outlook.com, organizations for work or school, or common for both."
+
+[[plugins.setup.fields]]
+key = "MSGRAPH_TOKEN_CACHE"
+label = "Token cache file"
+kind = "path"
+default = "~/.config/throughline/msgraph-token.json"
+advanced = true
+
+# ---------------------------------------------------------------- calendar
+
+[[plugins]]
+id = "caldav"
+path = "caldav"
+name = "CalDAV & ICS calendars"
+summary = "Calendars from iCloud, Fastmail, Nextcloud or any CalDAV server, plus ICS feeds."
+description = "Reads a rolling window of events (30 days back, 90 ahead) and records when events are created, changed or cancelled. ICS subscription links are treated as secrets because they usually embed a private token."
+category = "calendar"
+icon = "calendar"
+channels = ["caldav.events", "caldav.changes"]
+channel_roles = { "caldav.events" = "calendar", "caldav.changes" = "other" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-caldav"
+
+[plugins.schedule]
+interval_s = 1800
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "window"
+note = "Reads a rolling window (30 days back by default); set a fixed window to import older events."
+
+[[plugins.setup.steps]]
+title = "Create an app password"
+body = "iCloud and Fastmail need an app-specific password for CalDAV. For a plain ICS feed, copy its subscription link instead."
+
+[[plugins.setup.fields]]
+key = "CALDAV_URL"
+label = "CalDAV server"
+kind = "url"
+placeholder = "https://caldav.icloud.com/"
+
+[[plugins.setup.fields]]
+key = "CALDAV_USERNAME"
+label = "Login"
+
+[[plugins.setup.fields]]
+key = "CALDAV_PASSWORD"
+label = "Password or app password"
+kind = "secret"
+
+[[plugins.setup.fields]]
+key = "CALDAV_ICS_URLS"
+label = "ICS subscription links"
+kind = "secret"
+help = "Comma separated; optional."
+
+[[plugins]]
+id = "calendar"
+path = "calendar"
+name = "Google Calendar (Composio)"
+summary = "Google Calendar events from accounts connected in Composio."
+description = "Reads every calendar of your connected accounts in a rolling window and records event changes and cancellations. Reads through a Google Calendar connection you make in [Composio](https://composio.dev)."
+category = "calendar"
+icon = "calendar-days"
+homepage = "https://composio.dev"
+channels = ["calendar.events", "calendar.changes"]
+channel_roles = { "calendar.events" = "calendar", "calendar.changes" = "other" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-calendar"
+
+[plugins.schedule]
+interval_s = 1800
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "window"
+note = "Reads 30 days back and 90 ahead by default; set a backfill start date for older events."
+
+[[plugins.setup.steps]]
+title = "Connect Google Calendar in Composio"
+body = "Create a Composio account, connect your Google account in the Google Calendar toolkit, and create an API key."
+url = "https://composio.dev"
+
+[[plugins.setup.fields]]
+key = "COMPOSIO_API_KEY"
+label = "Composio API key"
+kind = "secret"
+required = true
+
+[[plugins.setup.fields]]
+key = "CALENDAR_ACCOUNTS"
+label = "Connected account ids"
+kind = "list"
+help = "Composio connected account ids, comma separated."
+
+[[plugins.setup.fields]]
+key = "CALENDAR_BACKFILL_FROM"
+label = "Backfill from"
+help = "YYYY-MM-DD"
+advanced = true
+
+# ---------------------------------------------------------------- meetings
+
+[[plugins]]
+id = "wave"
+path = "wave"
+name = "Wave"
+summary = "Meeting recordings and transcripts from Wave."
+description = "Text only: transcripts, speakers and summaries; no audio or voiceprints are fetched. The `api` mode reads the official Wave API; the `archive` mode imports transcripts you already hold from a Postgres database laid out as the plugin's published archive-schema.sql (useful when migrating)."
+category = "meetings"
+icon = "audio-lines"
+homepage = "https://wave.co"
+channels = ["transcripts.wave", "recordings.wave"]
+channel_roles = { "transcripts.wave" = "transcript", "recordings.wave" = "voice_summary" }
+pairs_with = ["calendar"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-wave"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every finished session on your Wave account (or in the archive)."
+
+[[plugins.setup.steps]]
+title = "Create an API token"
+body = "Open Settings → Developers → API tokens and create a token with only sessions:read and transcripts:read."
+url = "https://app.wave.co/settings/integrations/api"
+
+[[plugins.setup.fields]]
+key = "WAVE_SOURCE"
+label = "Source"
+kind = "select"
+options = ["api", "archive"]
+default = "api"
+required = true
+
+[[plugins.setup.fields]]
+key = "WAVE_API_TOKEN"
+label = "API token"
+kind = "secret"
+required = true
+when = { WAVE_SOURCE = ["api"] }
+
+[[plugins.setup.fields]]
+key = "WAVE_ARCHIVE_DSN"
+label = "Archive database (Postgres DSN)"
+kind = "secret"
+required = true
+help = "Use a read-only role."
+when = { WAVE_SOURCE = ["archive"] }
+
+[[plugins]]
+id = "granola"
+path = "granola"
+name = "Granola"
+summary = "Granola meetings: transcripts, attendees, your notes and Granola's AI notes."
+description = "Granola's AI notes are kept apart from what people said or typed. The official API is recommended; the legacy `cache` mode reads the desktop app's local cache and only works with older app versions."
+category = "meetings"
+icon = "notebook-text"
+homepage = "https://www.granola.ai"
+channels = ["granola.transcript", "granola.meetings", "granola.my_notes", "granola.summaries"]
+channel_roles = { "granola.transcript" = "transcript", "granola.meetings" = "other", "granola.my_notes" = "notes", "granola.summaries" = "voice_summary" }
+pairs_with = ["calendar"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-granola"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every meeting the API (or the local cache) still holds."
+
+[[plugins.setup.steps]]
+title = "Create an API key"
+body = "In the Granola app open Settings → API and create a key (it starts with grn_)."
+url = "https://docs.granola.ai/introduction"
+
+[[plugins.setup.fields]]
+key = "GRANOLA_SOURCE"
+label = "Source"
+kind = "select"
+options = ["api", "cache", "auto"]
+default = "api"
+
+[[plugins.setup.fields]]
+key = "GRANOLA_API_KEY"
+label = "API key"
+kind = "secret"
+required = true
+placeholder = "grn_…"
+when = { GRANOLA_SOURCE = ["api", "auto"] }
+
+[[plugins.setup.fields]]
+key = "GRANOLA_CACHE_PATH"
+label = "Cache file or folder"
+kind = "path"
+help = "Default: ~/Library/Application Support/Granola"
+when = { GRANOLA_SOURCE = ["cache"] }
+
+[[plugins.setup.fields]]
+key = "GRANOLA_OWNER_EMAIL"
+label = "Your email"
+kind = "email"
+help = "Notes owned by someone else are then marked as not yours."
+
+[[plugins]]
+id = "zoom"
+path = "zoom"
+name = "Zoom"
+summary = "Transcripts of your Zoom cloud recordings, as speaker turns."
+description = "Text only: no audio or video is downloaded. Needs cloud recording with audio transcripts turned on, and a Server-to-Server OAuth app (an account admin has to create it)."
+category = "meetings"
+icon = "video"
+homepage = "https://zoom.us"
+channels = ["zoom.transcripts", "zoom.meetings"]
+channel_roles = { "zoom.transcripts" = "transcript", "zoom.meetings" = "other" }
+pairs_with = ["calendar"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-zoom"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Walks back to 2020 by default; only recordings Zoom still keeps can be imported."
+
+[[plugins.setup.steps]]
+title = "Create a Server-to-Server OAuth app"
+body = "In the Zoom App Marketplace choose Develop → Build App → Server-to-Server OAuth. Add the cloud_recording:read:list_user_recordings and user:read:user scopes, activate it, and copy the Account ID, Client ID and Client Secret."
+url = "https://marketplace.zoom.us/"
+
+[[plugins.setup.steps]]
+title = "Turn on transcripts"
+body = "In Zoom Settings → Recording, enable cloud recording and Create audio transcript."
+
+[[plugins.setup.fields]]
+key = "ZOOM_ACCOUNT_ID"
+label = "Account ID"
+kind = "secret"
+required = true
+
+[[plugins.setup.fields]]
+key = "ZOOM_CLIENT_ID"
+label = "Client ID"
+kind = "secret"
+required = true
+
+[[plugins.setup.fields]]
+key = "ZOOM_CLIENT_SECRET"
+label = "Client secret"
+kind = "secret"
+required = true
+
+[[plugins]]
+id = "audio_transcripts"
+path = "audio-transcripts"
+name = "Audio transcripts"
+summary = "Transcribes voice memos and recordings dropped into folders you choose."
+description = "Watches folders (synced voice memos, a recorder's export folder, OBS or Zoom recordings) and sends each new file to an OpenAI-compatible speech-to-text endpoint, such as OpenAI or a self-hosted whisper server. Per-run limits keep transcription costs bounded."
+category = "meetings"
+icon = "mic"
+channels = ["audio_transcripts.recordings", "audio_transcripts.segments"]
+channel_roles = { "audio_transcripts.recordings" = "voice_summary", "audio_transcripts.segments" = "transcript" }
+requires = ["companion"]
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-audio-transcripts"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Transcribes every file already in the folders, a limited number of minutes per run."
+
+[[plugins.setup.fields]]
+key = "AUDIO_TRANSCRIPTS_DIRS"
+label = "Folders to watch"
+kind = "list"
+required = true
+help = "label=path or bare paths."
+
+[[plugins.setup.fields]]
+key = "AUDIO_TRANSCRIPTS_URL"
+label = "Transcription endpoint"
+kind = "url"
+required = true
+help = "OpenAI-compatible API base ending in /v1."
+placeholder = "https://api.openai.com/v1"
+
+[[plugins.setup.fields]]
+key = "AUDIO_TRANSCRIPTS_API_KEY"
+label = "Endpoint API key"
+kind = "secret"
+help = "Leave empty for a local server without auth."
+
+[[plugins.setup.fields]]
+key = "AUDIO_TRANSCRIPTS_MODEL"
+label = "Model"
+default = "whisper-1"
+advanced = true
+
+# ---------------------------------------------------------------- location
+
+[[plugins]]
+id = "google_timeline"
+path = "google-timeline"
+name = "Google Timeline"
+summary = "Your Google Maps Timeline location history, from the on-device export."
+description = "Imports the `Timeline.json` file Google Maps exports from your phone. Visits and trips fill gaps between raw fixes, so other events can be placed where they happened. The file never leaves your Throughline server."
+category = "location"
+icon = "map-pin"
+track_sources = ["google_timeline"]
+requires = ["upload"]
+pairs_with = ["gps_push"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-google-timeline"
+
+[plugins.schedule]
+interval_s = 86400
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every point in the export; upload a newer export to add recent history."
+
+[[plugins.setup.steps]]
+title = "Export Timeline from your phone"
+body = "Timeline data now lives on the phone. On Android open Settings → Location → Location services → Timeline → Export Timeline data; on iPhone open Google Maps → Your Timeline → Settings → Export Timeline data. Save the Timeline.json file."
+
+[[plugins.setup.fields]]
+key = "GOOGLE_TIMELINE_EXPORT"
+label = "Timeline.json"
+kind = "file"
+required = true
+
+[[plugins]]
+id = "gps_push"
+path = "gps-push"
+name = "Phone GPS (OwnTracks, Overland, GPSLogger)"
+summary = "Live location from a GPS tracker app on your phone."
+description = "OwnTracks, Overland or GPSLogger push fixes to a small receiver; an OwnTracks Recorder can be polled instead. Fixes become your location track; OwnTracks regions and Overland visits become events."
+category = "location"
+icon = "navigation"
+homepage = "https://owntracks.org"
+channels = ["gps_push.transitions", "gps_push.regions"]
+channel_roles = { "gps_push.transitions" = "location", "gps_push.regions" = "location" }
+track_sources = ["gps_push"]
+requires = ["network"]
+pairs_with = ["google_timeline"]
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-gps-push"
+
+[plugins.schedule]
+interval_s = 300
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "none"
+note = "Pushed fixes arrive from setup onwards; an OwnTracks Recorder's stored history is read in full."
+
+[[plugins.setup.steps]]
+title = "Run the receiver"
+body = "Run `throughline-gps-push-receiver` behind HTTPS so your phone can reach it, or point the plugin at an existing OwnTracks Recorder."
+
+[[plugins.setup.steps]]
+title = "Configure the phone app"
+body = "In OwnTracks (HTTP mode), Overland or GPSLogger (Custom URL), set the receiver's URL as the endpoint."
+
+[[plugins.setup.fields]]
+key = "GPS_PUSH_SPOOL_DIR"
+label = "Receiver spool folder"
+kind = "directory"
+help = "The folder throughline-gps-push-receiver writes."
+
+[[plugins.setup.fields]]
+key = "GPS_PUSH_RECORDER_URL"
+label = "OwnTracks Recorder URL"
+kind = "url"
+placeholder = "https://recorder.example.com"
+
+[[plugins]]
+id = "homeassistant"
+path = "homeassistant"
+name = "Home Assistant location"
+summary = "Your phone's GPS track as recorded by Home Assistant."
+description = "Reads a JSON-lines export written by the bundled `remote_fetch.py`, which runs where your Home Assistant credentials live. Fixes become your location track."
+category = "location"
+icon = "house"
+homepage = "https://www.home-assistant.io"
+track_sources = ["homeassistant"]
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-homeassistant"
+
+[plugins.schedule]
+interval_s = 300
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "window"
+note = "Only what Home Assistant's recorder still keeps (10 days by default)."
+
+[[plugins.setup.steps]]
+title = "Export from Home Assistant"
+body = "Run remote_fetch.py where your Home Assistant URL and long-lived access token are available, writing a JSONL file the plugin can read."
+
+[[plugins.setup.fields]]
+key = "HOMEASSISTANT_RECORDING"
+label = "Export file"
+kind = "path"
+required = true
+help = "JSONL written by remote_fetch.py."
+
+# ---------------------------------------------------------------- health
+
+[[plugins]]
+id = "health"
+path = "health"
+name = "Oura & Weight Gurus"
+summary = "Sleep, readiness, activity and heart rate from Oura, and weigh-ins from Weight Gurus."
+description = "Oura uses the official API v2 with a personal access token; Weight Gurus uses its unofficial API with your account login. Read-only, full history, then incremental. Use whichever you own."
+category = "health"
+icon = "heart"
+homepage = "https://ouraring.com"
+channels = ["health.oura.daily", "health.oura.sleep", "health.oura.session", "health.oura.workout", "health.oura.heartrate", "health.weight"]
+channel_roles = { "health.oura.daily" = "telemetry", "health.oura.sleep" = "telemetry", "health.oura.session" = "telemetry", "health.oura.workout" = "telemetry", "health.oura.heartrate" = "telemetry", "health.weight" = "telemetry" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-health"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Reads back to 2015 by default, as far as each service has data."
+
+[[plugins.setup.steps]]
+title = "Create an Oura personal access token"
+body = "Sign in to Oura on the web and create a personal access token."
+url = "https://cloud.ouraring.com/personal-access-tokens"
+
+[[plugins.setup.fields]]
+key = "OURA_ACCESS_TOKEN"
+label = "Oura access token"
+kind = "secret"
+
+[[plugins.setup.fields]]
+key = "WEIGHTGURUS_EMAIL"
+label = "Weight Gurus email"
+kind = "secret"
+
+[[plugins.setup.fields]]
+key = "WEIGHTGURUS_PASSWORD"
+label = "Weight Gurus password"
+kind = "secret"
+
+[[plugins]]
+id = "apple_health"
+path = "apple-health"
+name = "Apple Health"
+summary = "Live Apple Health metrics, sleep, heart rate, weight and workouts from your iPhone."
+description = "Apple offers no server API for Health, so the [Health Auto Export](https://www.healthyapps.dev) iOS app (paid premium tier) posts your data to a small receiver on a schedule. Workout routes can optionally become location points."
+category = "health"
+icon = "heart-pulse"
+homepage = "https://www.healthyapps.dev"
+channels = ["apple_health.metrics", "apple_health.heart_rate", "apple_health.sleep", "apple_health.weight", "apple_health.workouts"]
+channel_roles = { "apple_health.metrics" = "telemetry", "apple_health.heart_rate" = "telemetry", "apple_health.sleep" = "telemetry", "apple_health.weight" = "telemetry", "apple_health.workouts" = "telemetry" }
+requires = ["network"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-apple-health"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "none"
+note = "Imports what the app posts to the receiver; the automation's date range decides how far back the first post reaches."
+
+[[plugins.setup.steps]]
+title = "Run the receiver"
+body = "Run `throughline-apple-health-receiver` behind HTTPS with a long random secret; it writes each post to a spool folder."
+
+[[plugins.setup.steps]]
+title = "Add a REST API automation"
+body = "In Health Auto Export create a REST API automation that posts JSON to the receiver's URL with the secret as a Bearer token."
+url = "https://www.healthyapps.dev"
+
+[[plugins.setup.fields]]
+key = "APPLE_HEALTH_SPOOL_DIR"
+label = "Receiver spool folder"
+kind = "directory"
+required = true
+
+# ---------------------------------------------------------------- media
+
+[[plugins]]
+id = "spotify"
+path = "spotify"
+name = "Spotify"
+summary = "Everything you've played on Spotify, from your streaming history export and live."
+description = "Your Extended streaming history export gives the full play history without any credentials. A Spotify developer app adds near-live recently played tracks. No audio is downloaded."
+category = "media"
+icon = "disc-3"
+homepage = "https://www.spotify.com"
+channels = ["music.spotify"]
+channel_roles = { "music.spotify" = "media" }
+requires = ["upload"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-spotify"
+
+[plugins.schedule]
+interval_s = 15
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Full history comes from the export; the API alone only sees the most recent plays."
+
+[[plugins.setup.steps]]
+title = "Request your streaming history"
+body = "On your Spotify account's privacy page, request Extended streaming history. When it arrives, extract the archive."
+url = "https://www.spotify.com/account/privacy/"
+
+[[plugins.setup.steps]]
+title = "Optional: create a developer app"
+body = "For live plays, create an app with redirect URI http://127.0.0.1:8765/callback, then run `throughline-spotify-auth` once to save a refresh token."
+url = "https://developer.spotify.com/dashboard"
+
+[[plugins.setup.fields]]
+key = "SPOTIFY_EXPORT_PATH"
+label = "Extracted export folder"
+kind = "directory"
+help = "Holds the Streaming_History_Audio_*.json files."
+
+[[plugins.setup.fields]]
+key = "SPOTIFY_CLIENT_ID"
+label = "App client ID"
+kind = "secret"
+
+[[plugins.setup.fields]]
+key = "SPOTIFY_CLIENT_SECRET"
+label = "App client secret"
+kind = "secret"
+
+[[plugins.setup.fields]]
+key = "SPOTIFY_TOKEN_FILE"
+label = "Refresh-token file"
+kind = "path"
+help = "Written by throughline-spotify-auth."
+advanced = true
+
+[[plugins]]
+id = "lastfm"
+path = "lastfm"
+name = "Last.fm"
+summary = "Your complete Last.fm scrobble history and loved tracks."
+category = "media"
+icon = "music"
+homepage = "https://www.last.fm"
+channels = ["lastfm.scrobbles", "lastfm.loved"]
+channel_roles = { "lastfm.scrobbles" = "media", "lastfm.loved" = "media" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-lastfm"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every scrobble on the account."
+
+[[plugins.setup.steps]]
+title = "Create an API account"
+body = "Create a Last.fm API account (any application name) and copy the API key."
+url = "https://www.last.fm/api/account/create"
+
+[[plugins.setup.fields]]
+key = "LASTFM_USER"
+label = "Last.fm user name"
+required = true
+
+[[plugins.setup.fields]]
+key = "LASTFM_API_KEY"
+label = "API key"
+kind = "secret"
+required = true
+
+[[plugins]]
+id = "listenbrainz"
+path = "listenbrainz"
+name = "ListenBrainz"
+summary = "Your full ListenBrainz listen history and loved or hated recordings."
+category = "media"
+icon = "headphones"
+homepage = "https://listenbrainz.org"
+channels = ["listenbrainz.listens", "listenbrainz.feedback"]
+channel_roles = { "listenbrainz.listens" = "media", "listenbrainz.feedback" = "media" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-listenbrainz"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every listen on the account."
+
+[[plugins.setup.steps]]
+title = "Copy your user token"
+body = "Open your ListenBrainz settings and copy the user token."
+url = "https://listenbrainz.org/settings/"
+
+[[plugins.setup.fields]]
+key = "LISTENBRAINZ_USER"
+label = "ListenBrainz user name"
+required = true
+
+[[plugins.setup.fields]]
+key = "LISTENBRAINZ_TOKEN"
+label = "User token"
+kind = "secret"
+required = true
+
+[[plugins.setup.fields]]
+key = "LISTENBRAINZ_API_URL"
+label = "API root"
+kind = "url"
+default = "https://api.listenbrainz.org"
+help = "Change only for a self-hosted server."
+advanced = true
+
+[[plugins]]
+id = "letterboxd"
+path = "letterboxd"
+name = "Letterboxd"
+summary = "Your film diary, ratings, likes and reviews from Letterboxd."
+description = "Reads your public profile's RSS feed; no API key or login is needed."
+category = "media"
+icon = "film"
+homepage = "https://letterboxd.com"
+channels = ["letterboxd.diary"]
+channel_roles = { "letterboxd.diary" = "media" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-letterboxd"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "window"
+note = "The feed holds only your most recent 50 entries; older ones arrive only if you keep the plugin running."
+
+[[plugins.setup.fields]]
+key = "LETTERBOXD_USER"
+label = "Letterboxd user name"
+required = true
+
+[[plugins]]
+id = "goodreads"
+path = "goodreads"
+name = "Goodreads"
+summary = "Your Goodreads shelves, read dates, ratings and reviews."
+description = "Reads your shelves' RSS feeds (Goodreads closed its public API in 2020). A private profile needs the key from its RSS link."
+category = "media"
+icon = "book-open"
+homepage = "https://www.goodreads.com"
+channels = ["goodreads.books", "goodreads.reading"]
+channel_roles = { "goodreads.books" = "media", "goodreads.reading" = "media" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-goodreads"
+
+[plugins.schedule]
+interval_s = 21600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Pages through each shelf's feed, up to 50 pages per shelf."
+
+[[plugins.setup.steps]]
+title = "Find your user ID"
+body = "Open your Goodreads profile; the number in its URL is your user ID."
+
+[[plugins.setup.fields]]
+key = "GOODREADS_USER_ID"
+label = "Goodreads user ID"
+required = true
+placeholder = "12345678"
+
+[[plugins.setup.fields]]
+key = "GOODREADS_FEED_KEY"
+label = "RSS key (private profiles)"
+kind = "secret"
+help = "The key= value from your shelf's RSS link."
+advanced = true
+
+[[plugins]]
+id = "trakt"
+path = "trakt"
+name = "Trakt"
+summary = "Your complete Trakt movie and episode history, ratings and watchlist."
+category = "media"
+icon = "popcorn"
+homepage = "https://trakt.tv"
+channels = ["trakt.history", "trakt.ratings", "trakt.watchlist"]
+channel_roles = { "trakt.history" = "media", "trakt.ratings" = "media", "trakt.watchlist" = "media" }
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-trakt"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports your whole watch history."
+
+[[plugins.setup.steps]]
+title = "Create an API app"
+body = "Create an app (any name) with redirect URI urn:ietf:wg:oauth:2.0:oob and copy its Client ID and Client Secret."
+url = "https://trakt.tv/oauth/applications"
+
+[[plugins.setup.steps]]
+title = "Sign in once"
+body = "Run `throughline-trakt-login`; it prints a code to enter at trakt.tv/activate and writes the token file."
+url = "https://trakt.tv/activate"
+
+[[plugins.setup.fields]]
+key = "TRAKT_CLIENT_ID"
+label = "Client ID"
+kind = "secret"
+required = true
+
+[[plugins.setup.fields]]
+key = "TRAKT_CLIENT_SECRET"
+label = "Client secret"
+kind = "secret"
+required = true
+
+[[plugins.setup.fields]]
+key = "TRAKT_TOKEN_FILE"
+label = "Token file"
+kind = "path"
+default = "~/.config/throughline/trakt-token.json"
+advanced = true
+
+[[plugins]]
+id = "jellyfin"
+path = "jellyfin"
+name = "Jellyfin"
+summary = "What you play on your Jellyfin server, and what gets added to it."
+description = "Movies, episodes, music and audiobooks you played, plus library additions. With the Playback Reporting plugin installed on the server, every play is imported; otherwise only last-played dates."
+category = "media"
+icon = "tv"
+homepage = "https://jellyfin.org"
+channels = ["jellyfin.plays", "jellyfin.library"]
+channel_roles = { "jellyfin.plays" = "media", "jellyfin.library" = "media" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-jellyfin"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports the play history the server keeps."
+
+[[plugins.setup.steps]]
+title = "Create an API key"
+body = "In Jellyfin open Dashboard → API Keys and create a key."
+
+[[plugins.setup.fields]]
+key = "JELLYFIN_URL"
+label = "Server URL"
+kind = "url"
+required = true
+placeholder = "http://jellyfin.local:8096"
+
+[[plugins.setup.fields]]
+key = "JELLYFIN_USER"
+label = "Jellyfin user name"
+required = true
+
+[[plugins.setup.fields]]
+key = "JELLYFIN_API_KEY"
+label = "API key"
+kind = "secret"
+required = true
+
+[[plugins]]
+id = "plex"
+path = "plex"
+name = "Plex"
+summary = "Watch and listen history from your Plex server, polled live."
+description = "Imports the server's play history and polls active sessions. Read-only; the token is sent only in a header."
+category = "media"
+icon = "clapperboard"
+homepage = "https://www.plex.tv"
+channels = ["media.plex"]
+channel_roles = { "media.plex" = "media" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-plex"
+
+[plugins.schedule]
+interval_s = 30
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports the history the server still keeps."
+
+[[plugins.setup.steps]]
+title = "Find your Plex token"
+body = "Use the server owner's token so every user the server permits is visible."
+url = "https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/"
+
+[[plugins.setup.fields]]
+key = "PLEX_SERVER_URL"
+label = "Server URL"
+kind = "url"
+required = true
+placeholder = "http://plex.local:32400"
+
+[[plugins.setup.fields]]
+key = "PLEX_TOKEN"
+label = "Plex token"
+kind = "secret"
+required = true
+
+[[plugins.setup.fields]]
+key = "PLEX_ACCOUNTS"
+label = "Accounts"
+kind = "list"
+help = "Account IDs or names to import; empty means all."
+advanced = true
+
+[[plugins]]
+id = "consumption"
+path = "consumption"
+name = "Media consumption (Audiobookshelf and more)"
+summary = "Listening sessions from Audiobookshelf, plus Plex, Spotify and YouTube in one channel."
+description = "Records what you played, listened to, liked or saved across several services in one `media.consumption` channel. Audiobookshelf listening sessions are its main use; finished audiobooks can optionally be matched to ebook text in Kavita. Every call is read-only."
+category = "media"
+icon = "library"
+channels = ["media.consumption", "audiobooks.text"]
+channel_roles = { "media.consumption" = "media", "audiobooks.text" = "media" }
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-consumption"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports each service's stored history; Spotify via its API covers only recent plays."
+
+[[plugins.setup.fields]]
+key = "AUDIOBOOKSHELF_URL"
+label = "Audiobookshelf URL"
+kind = "url"
+
+[[plugins.setup.fields]]
+key = "AUDIOBOOKSHELF_TOKEN"
+label = "Audiobookshelf API token"
+kind = "secret"
+
+[[plugins.setup.fields]]
+key = "CONSUMPTION_SERVICES"
+label = "Services"
+kind = "list"
+help = "Subset of spotify, spotify_backup, plex, audiobookshelf, youtube; empty means all configured."
+advanced = true
+
+[[plugins]]
+id = "youtube"
+path = "youtube"
+name = "YouTube"
+summary = "Your YouTube watch history, Watch Later and subscriptions from Google Takeout."
+description = "Imports an extracted Google Takeout of YouTube history, playlists and subscriptions. Live routes (OAuth subscription snapshots, a cookie-based history watcher) are off by default. No videos or transcripts are downloaded."
+category = "media"
+icon = "play"
+homepage = "https://www.youtube.com"
+channels = ["youtube.history", "youtube.watch_later", "youtube.subscriptions"]
+channel_roles = { "youtube.history" = "media", "youtube.watch_later" = "media", "youtube.subscriptions" = "media" }
+requires = ["upload"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-youtube"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports the whole history in the Takeout export."
+
+[[plugins.setup.steps]]
+title = "Export from Google Takeout"
+body = "Select only YouTube and YouTube Music, choose JSON for history, and download the archive."
+url = "https://takeout.google.com"
+
+[[plugins.setup.steps]]
+title = "Extract the archive"
+body = "Unzip the download and give the plugin the extracted folder."
+
+[[plugins.setup.fields]]
+key = "YOUTUBE_TAKEOUT"
+label = "Extracted Takeout folder"
+kind = "directory"
+required = true
+
+[[plugins]]
+id = "youtube_feed"
+path = "youtube-feed"
+name = "YouTube channel feed"
+summary = "New uploads from the YouTube channels you follow."
+description = "Reads public channel feeds for a list of channels. An optional model-based router can score each upload as watch or skip (paid, off by default)."
+category = "media"
+icon = "rss"
+channels = ["youtube.uploads", "youtube.picks"]
+channel_roles = { "youtube.uploads" = "media", "youtube.picks" = "media" }
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-youtube-feed"
+
+[plugins.schedule]
+interval_s = 1800
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "window"
+note = "Channel feeds list only each channel's most recent uploads."
+
+[[plugins.setup.fields]]
+key = "YOUTUBE_FEED_CHANNELS"
+label = "Channel list file"
+kind = "file"
+help = "OPML, JSON, CSV or text, for example the subscriptions.csv from Google Takeout."
+
+[[plugins.setup.fields]]
+key = "YOUTUBE_FEED_CHANNEL_IDS"
+label = "Channel IDs"
+kind = "list"
+help = "Comma-separated channel IDs (UC…), in addition to the file."
+
+# ---------------------------------------------------------------- notes
+
+[[plugins]]
+id = "markdown_notes"
+path = "markdown-notes"
+name = "Markdown notes"
+summary = "Obsidian vaults, Logseq graphs or any folder of Markdown notes, versioned."
+description = "Keeps every note as a versioned page: frontmatter, tags, wikilinks and daily notes are understood. The plugin never writes to your notes."
+category = "notes"
+icon = "file-text"
+channels = ["markdown_notes.notes"]
+channel_roles = { "markdown_notes.notes" = "notes" }
+requires = ["companion"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-markdown-notes"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Reads every note in the folders; history starts from the current version of each."
+
+[[plugins.setup.fields]]
+key = "MARKDOWN_NOTES_ROOTS"
+label = "Note folders"
+kind = "list"
+required = true
+help = "label=path or bare paths, comma separated."
+placeholder = "vault=~/Documents/Vault"
+
+[[plugins.setup.fields]]
+key = "MARKDOWN_NOTES_IGNORE"
+label = "Ignore patterns"
+kind = "list"
+help = "Globs relative to each folder."
+advanced = true
+
+[[plugins]]
+id = "apple_notes"
+path = "apple-notes"
+name = "Apple Notes"
+summary = "Your Apple Notes, including notes synced from iPhone, as versioned pages."
+description = "Copies the Notes database on your Mac and reads the copy, so Notes is never touched. Locked (password-protected) notes are skipped. Needs Full Disk Access for the companion app."
+category = "notes"
+icon = "notebook-pen"
+channels = ["apple_notes.notes"]
+channel_roles = { "apple_notes.notes" = "notes" }
+platforms = ["macos"]
+requires = ["companion"]
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-apple-notes"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every note in the database; history starts from each note's current version."
+
+[[plugins.setup.steps]]
+title = "Allow Full Disk Access"
+body = "In System Settings → Privacy & Security → Full Disk Access, allow the Throughline companion so it can read the Notes database."
+
+[[plugins.setup.fields]]
+key = "APPLE_NOTES_INCLUDE_TRASH"
+label = "Keep notes in Recently Deleted"
+kind = "boolean"
+default = "true"
+advanced = true
+
+[[plugins]]
+id = "notion"
+path = "notion"
+name = "Notion (Composio)"
+summary = "Your Notion pages and databases, read-only, as versioned pages."
+description = "Imports page titles, properties and Markdown content, and database schemas, through a Notion connection you make in [Composio](https://composio.dev). No Notion write action is ever called."
+category = "notes"
+icon = "notebook"
+homepage = "https://www.notion.so"
+channels = ["notion.pages", "notion.databases"]
+channel_roles = { "notion.pages" = "notes", "notion.databases" = "notes" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-notion"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every page the connection can see; edits after that become new versions."
+
+[[plugins.setup.steps]]
+title = "Connect Notion in Composio"
+body = "Connect your Notion workspace in the Composio Notion toolkit and copy your MCP URL."
+url = "https://composio.dev"
+
+[[plugins.setup.fields]]
+key = "COMPOSIO_MCP_URL"
+label = "Composio MCP URL"
+kind = "secret"
+required = true
+help = "Treated as a secret because it may embed a token."
+
+[[plugins.setup.fields]]
+key = "COMPOSIO_MCP_TOKEN"
+label = "Composio MCP token"
+kind = "secret"
+
+[[plugins]]
+id = "readwise"
+path = "readwise"
+name = "Readwise"
+summary = "Every highlight and note in Readwise, plus documents saved to Reader."
+description = "Highlights from Kindle, Apple Books, Instapaper, podcasts and more, with your own notes kept separate from the author's words. Reader documents and reading progress are included with a Reader subscription."
+category = "notes"
+icon = "highlighter"
+homepage = "https://readwise.io"
+channels = ["readwise.highlights", "readwise.books", "readwise.reader"]
+channel_roles = { "readwise.highlights" = "notes", "readwise.books" = "media", "readwise.reader" = "notes" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-readwise"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every highlight on the account."
+
+[[plugins.setup.steps]]
+title = "Copy your access token"
+body = "The same token works for Reader if you subscribe to it."
+url = "https://readwise.io/access_token"
+
+[[plugins.setup.fields]]
+key = "READWISE_TOKEN"
+label = "Access token"
+kind = "secret"
+required = true
+
+[[plugins.setup.fields]]
+key = "READWISE_READER"
+label = "Import Reader documents"
+kind = "boolean"
+default = "true"
+help = "Turn off without a Reader subscription."
+
+# ---------------------------------------------------------------- AI assistants
+
+[[plugins]]
+id = "claude_code"
+path = "claude-code"
+name = "Claude Code"
+summary = "Your Claude Code sessions: prompts, replies and tool-call summaries."
+description = "Reads the transcripts Claude Code keeps on your computer, one thread per session. Tool output is never sent, and secret-shaped strings are redacted. Claude Code deletes transcripts older than 30 days by default: raise `cleanupPeriodDays` in `~/.claude/settings.json` to keep more."
+category = "ai"
+icon = "bot"
+homepage = "https://docs.anthropic.com/en/docs/claude-code"
+channels = ["claude_code.messages", "claude_code.sessions"]
+channel_roles = { "claude_code.messages" = "chat", "claude_code.sessions" = "other" }
+requires = ["companion"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-claude-code"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every transcript still on disk (Claude Code removes ones older than 30 days by default)."
+
+[[plugins.setup.fields]]
+key = "CLAUDE_CODE_HOMES"
+label = "Claude Code homes"
+kind = "list"
+help = "LABEL=PATH, comma separated. Default: local=~/.claude"
+advanced = true
+
+[[plugins]]
+id = "codex"
+path = "codex"
+name = "Codex"
+summary = "Your OpenAI Codex sessions: prompts, replies and reasoning summaries."
+description = "Reads the session rollouts Codex (CLI, IDE extension or apps built on it) keeps on your computer, including archived sessions. Tool output is never sent, and secret-shaped strings are redacted."
+category = "ai"
+icon = "code"
+homepage = "https://github.com/openai/codex"
+channels = ["codex.messages", "codex.sessions"]
+channel_roles = { "codex.messages" = "chat", "codex.sessions" = "other" }
+requires = ["companion"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-codex"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every session still on disk."
+
+[[plugins.setup.fields]]
+key = "CODEX_HOMES"
+label = "Codex homes"
+kind = "list"
+help = "LABEL=PATH, comma separated. Default: local=~/.codex"
+advanced = true
+
+[[plugins]]
+id = "cursor"
+path = "cursor"
+name = "Cursor"
+summary = "Your Cursor chat and agent conversations."
+description = "Reads the local stores Cursor keeps on your computer, so new prompts and replies arrive while Cursor runs. No account credentials are needed."
+category = "ai"
+icon = "mouse-pointer-2"
+homepage = "https://cursor.com"
+channels = ["cursor.messages"]
+channel_roles = { "cursor.messages" = "chat" }
+requires = ["companion"]
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-cursor"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every conversation Cursor still stores."
+
+[[plugins.setup.fields]]
+key = "CURSOR_USER_DIR"
+label = "Cursor User folder"
+kind = "directory"
+help = "Default: the platform's standard location."
+advanced = true
+
+[[plugins]]
+id = "aider"
+path = "aider"
+name = "aider"
+summary = "Your aider sessions from the chat history files in your repositories."
+category = "ai"
+icon = "terminal"
+homepage = "https://aider.chat"
+channels = ["aider.messages"]
+channel_roles = { "aider.messages" = "chat" }
+requires = ["companion"]
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-aider"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every session in the history files found."
+
+[[plugins.setup.fields]]
+key = "AIDER_ROOTS"
+label = "Folders to search"
+kind = "list"
+required = true
+help = "Folders holding your repositories (searched 3 levels deep for .aider.chat.history.md)."
+placeholder = "~/code"
+
+[[plugins]]
+id = "lmstudio"
+path = "lmstudio"
+name = "LM Studio"
+summary = "Your chats with local models in LM Studio."
+description = "Reads LM Studio's conversation files, including regenerated replies and edited turns."
+category = "ai"
+icon = "cpu"
+homepage = "https://lmstudio.ai"
+channels = ["lmstudio.messages"]
+channel_roles = { "lmstudio.messages" = "chat" }
+requires = ["companion"]
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-lmstudio"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every saved conversation."
+
+[[plugins.setup.fields]]
+key = "LMSTUDIO_CONVERSATIONS_DIRS"
+label = "Conversation folders"
+kind = "list"
+help = "Default: ~/.lmstudio/conversations"
+advanced = true
+
+[[plugins]]
+id = "openwebui"
+path = "openwebui"
+name = "Open WebUI"
+summary = "Every chat on your Open WebUI server, including regenerated branches."
+category = "ai"
+icon = "message-square"
+homepage = "https://openwebui.com"
+channels = ["openwebui.messages"]
+channel_roles = { "openwebui.messages" = "chat" }
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-openwebui"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every chat, archived ones included."
+
+[[plugins.setup.steps]]
+title = "Create an API key"
+body = "In Open WebUI open Settings → Account → API keys. An admin may first need to enable API keys under Admin Panel → Settings → General."
+
+[[plugins.setup.fields]]
+key = "OPENWEBUI_URL"
+label = "Server URL"
+kind = "url"
+required = true
+placeholder = "https://chat.example.com"
+
+[[plugins.setup.fields]]
+key = "OPENWEBUI_API_KEY"
+label = "API key"
+kind = "secret"
+required = true
+
+[[plugins]]
+id = "t3code"
+path = "t3code"
+name = "T3 Code"
+summary = "Your T3 Code projects, threads and messages, plus AI subscription usage."
+description = "Reads T3 Code's files read-only on each machine: every project, thread and message, and the usage windows and resets of the subscriptions it is connected to. Account email addresses are hashed, never stored."
+category = "ai"
+icon = "square-terminal"
+channels = ["t3code.messages", "t3code.threads", "t3code.projects", "t3code.usage", "t3code.resets", "t3code.subscriptions"]
+channel_roles = { "t3code.messages" = "chat", "t3code.threads" = "other", "t3code.projects" = "other", "t3code.usage" = "telemetry", "t3code.resets" = "telemetry", "t3code.subscriptions" = "other" }
+requires = ["companion"]
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-t3code"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports everything T3 Code still stores on this machine."
+
+[[plugins.setup.fields]]
+key = "T3CODE_HOMES"
+label = "T3 homes"
+kind = "list"
+default = "local=~/.t3"
+help = "LABEL=PATH, comma separated."
+advanced = true
+
+# ---------------------------------------------------------------- dev
+
+[[plugins]]
+id = "github"
+path = "github"
+name = "GitHub"
+summary = "Your GitHub activity: commits, pull requests, issues, reviews, releases and stars."
+description = "Only your own activity, read with a read-only fine-grained token. Full history on the first run, then incremental. The plugin never writes to GitHub."
+category = "dev"
+icon = "git-branch"
+homepage = "https://github.com"
+channels = ["github.commits", "github.pull_requests", "github.issues", "github.comments", "github.reviews", "github.releases", "github.stars"]
+channel_roles = { "github.commits" = "other", "github.pull_requests" = "other", "github.issues" = "other", "github.comments" = "other", "github.reviews" = "other", "github.releases" = "other", "github.stars" = "other" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-github"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Reads all of your activity back to 2008; large accounts take a while because of rate limits."
+
+[[plugins.setup.steps]]
+title = "Create a fine-grained token"
+body = "Create a read-only fine-grained personal access token with access to the repositories you want included."
+url = "https://github.com/settings/personal-access-tokens/new"
+
+[[plugins.setup.fields]]
+key = "GITHUB_TOKEN"
+label = "Personal access token"
+kind = "secret"
+required = true
+placeholder = "github_pat_…"
+
+[[plugins.setup.fields]]
+key = "GITHUB_API_URL"
+label = "API URL"
+kind = "url"
+default = "https://api.github.com"
+help = "GitHub Enterprise: https://HOST/api/v3"
+advanced = true
+
+# ---------------------------------------------------------------- activity
+
+[[plugins]]
+id = "browser_history"
+path = "browser-history"
+name = "Browser history"
+summary = "Pages you visit and your bookmarks, from Chrome, Firefox, Safari, Brave, Edge and more."
+description = "Reads the browsers' own history databases on your computer (from a copy, so a running browser is never locked). localhost addresses are excluded; add domains you never want recorded. Visits synced from other devices are skipped by default."
+category = "activity"
+icon = "globe"
+channels = ["browser_history.visits", "browser_history.bookmarks"]
+channel_roles = { "browser_history.visits" = "telemetry", "browser_history.bookmarks" = "other" }
+requires = ["companion"]
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-browser-history"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports whatever history each browser still keeps (Chrome keeps about 90 days)."
+
+[[plugins.setup.fields]]
+key = "BROWSER_HISTORY_EXCLUDE_DOMAINS"
+label = "Domains never recorded"
+kind = "list"
+help = "Suffix match, * globs allowed."
+placeholder = "bank.example.com, *.internal"
+
+[[plugins.setup.fields]]
+key = "BROWSER_HISTORY_BROWSERS"
+label = "Browsers"
+kind = "list"
+help = "Only these browsers (default: all found)."
+advanced = true
+
+[[plugins]]
+id = "activitywatch"
+path = "activitywatch"
+name = "ActivityWatch"
+summary = "Which apps, windows, pages and files you used, and when you were at the computer."
+description = "Reads ActivityWatch's local API and stores coalesced sessions rather than raw watcher events. Private/incognito tabs are skipped by default; you can exclude apps such as a password manager."
+category = "activity"
+icon = "activity"
+homepage = "https://activitywatch.net"
+channels = ["activitywatch.windows", "activitywatch.web", "activitywatch.editor", "activitywatch.afk"]
+channel_roles = { "activitywatch.windows" = "telemetry", "activitywatch.web" = "telemetry", "activitywatch.editor" = "telemetry", "activitywatch.afk" = "telemetry" }
+requires = ["companion"]
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-activitywatch"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports everything ActivityWatch has recorded."
+
+[[plugins.setup.steps]]
+title = "Install ActivityWatch"
+body = "Install and start ActivityWatch, plus its browser and editor watchers if you want those."
+url = "https://activitywatch.net"
+
+[[plugins.setup.fields]]
+key = "ACTIVITYWATCH_EXCLUDE_APPS"
+label = "Apps never stored"
+kind = "list"
+placeholder = "1Password, KeePassXC"
+
+[[plugins.setup.fields]]
+key = "ACTIVITYWATCH_URL"
+label = "ActivityWatch API"
+kind = "url"
+default = "http://localhost:5600/api/0"
+advanced = true
+
+# ---------------------------------------------------------------- finance
+
+[[plugins]]
+id = "simplefin"
+path = "simplefin"
+name = "SimpleFIN Bridge"
+summary = "Bank, card, loan and investment accounts and their transactions."
+description = "Reads through a [SimpleFIN Bridge](https://beta-bridge.simplefin.org) read-only access URL. **This is the most sensitive data in your hub:** every record carries the `financial` access label, so non-owner askers are denied by default and it is held back from remote model providers."
+category = "finance"
+icon = "wallet"
+homepage = "https://beta-bridge.simplefin.org"
+channels = ["simplefin.accounts", "simplefin.transactions"]
+channel_roles = { "simplefin.accounts" = "other", "simplefin.transactions" = "other" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-simplefin"
+
+[plugins.schedule]
+interval_s = 21600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "window"
+note = "The first run asks for the last 90 days unless you set a start date; how far back the Bridge goes depends on the institution."
+
+[[plugins.setup.steps]]
+title = "Create a setup token"
+body = "Create a Bridge account, connect your institutions, and create a setup token under Apps → New connection."
+url = "https://beta-bridge.simplefin.org"
+
+[[plugins.setup.steps]]
+title = "Claim the access URL"
+body = "Run `throughline-simplefin-claim --output <file>` once and paste the setup token when asked. A setup token can be claimed only once."
+
+[[plugins.setup.fields]]
+key = "SIMPLEFIN_ACCESS_URL_FILE"
+label = "Access URL file"
+kind = "path"
+help = "Written by throughline-simplefin-claim."
+
+[[plugins.setup.fields]]
+key = "SIMPLEFIN_ACCESS_URL"
+label = "Access URL"
+kind = "secret"
+help = "Alternative to the file; it contains credentials."
+advanced = true
+
+[[plugins.setup.fields]]
+key = "SIMPLEFIN_START_DATE"
+label = "Start date"
+help = "First run only, YYYY-MM-DD; default 90 days ago."
+
+# ---------------------------------------------------------------- migration
+
+[[plugins]]
+id = "gbrain"
+path = "gbrain"
+name = "GBrain"
+summary = "Import a GBrain knowledge base: pages, history and timelines."
+description = "A read-only importer for an existing GBrain PostgreSQL database. It never modifies or starts GBrain; use a SELECT-only role."
+category = "migration"
+icon = "brain"
+channels = ["gbrain.pages", "gbrain.timeline", "gbrain.legacy", "gbrain.legacy_timeline"]
+channel_roles = { "gbrain.pages" = "notes", "gbrain.timeline" = "notes", "gbrain.legacy" = "notes", "gbrain.legacy_timeline" = "notes" }
+check = false
+starter = true
+
+[plugins.install]
+kind = "python"
+entry = "throughline-gbrain"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every page, snapshot and timeline event in the database."
+
+[[plugins.setup.steps]]
+title = "Get a read-only DSN"
+body = "Ask the GBrain database's administrator (or create yourself) a SELECT-only PostgreSQL role and connection string."
+
+[[plugins.setup.fields]]
+key = "GBRAIN_DSN"
+label = "GBrain database (Postgres DSN)"
+kind = "secret"
+required = true
+placeholder = "postgresql://reader:…@host/gbrain"
+
+[[plugins]]
+id = "hermes"
+path = "hermes"
+name = "Hermes Agent"
+summary = "Import every conversation with a Hermes Agent assistant, from every surface it serves."
+description = "User, assistant and tool turns from Discord, Telegram, CLI, desktop and web, cron jobs and more, plus one record per session. Reads the Hermes session store read-only, so it must run where Hermes runs (or read an export written there)."
+category = "migration"
+icon = "bot-message-square"
+homepage = "https://github.com/NousResearch/hermes-agent"
+channels = ["hermes.messages", "hermes.automation", "hermes.sessions"]
+channel_roles = { "hermes.messages" = "chat", "hermes.automation" = "other", "hermes.sessions" = "other" }
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-hermes"
+
+[plugins.schedule]
+interval_s = 1800
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every session in the Hermes store."
+
+[[plugins.setup.fields]]
+key = "HERMES_HOME"
+label = "Hermes home folder"
+kind = "directory"
+required = true
+help = "Holds state.db."
+
+[[plugins.setup.fields]]
+key = "HERMES_CLI"
+label = "Hermes command"
+help = "How to run the Hermes CLI, e.g. hermes or docker exec -i hermes hermes."
+advanced = true
+
+# ---------------------------------------------------------------- other
+
+[[plugins]]
+id = "qbittorrent"
+path = "qbittorrent"
+name = "qBittorrent"
+summary = "Torrents added, completed and removed in qBittorrent."
+description = "Read-only: it never adds, pauses or deletes a torrent. qBittorrent keeps no history of removed torrents, so removals are captured only from setup onwards."
+category = "other"
+icon = "download"
+homepage = "https://www.qbittorrent.org"
+channels = ["downloads.qbittorrent"]
+channel_roles = { "downloads.qbittorrent" = "media" }
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-qbittorrent"
+
+[plugins.schedule]
+interval_s = 900
+mode = "poll"
+
+[plugins.backfill]
+supported = true
+history = "full"
+note = "Imports every torrent still present; torrents removed before setup are not recoverable."
+
+[[plugins.setup.fields]]
+key = "QBITTORRENT_URL"
+label = "WebUI URL"
+kind = "url"
+required = true
+placeholder = "http://localhost:8080"
+
+[[plugins.setup.fields]]
+key = "QBITTORRENT_USERNAME"
+label = "WebUI username"
+kind = "secret"
+required = true
+
+[[plugins.setup.fields]]
+key = "QBITTORRENT_PASSWORD"
+label = "WebUI password"
+kind = "secret"
+required = true
+
+[[plugins]]
+id = "research"
+path = "research"
+name = "Research streams"
+summary = "Recurring web searches you define, with their findings and cited sources."
+description = "Runs named lists of searches on a cadence through an OpenAI-compatible model with web search, and records each result and the events or items found in it. Results are model output and never count as evidence on their own. Model calls are paid and off until you enable them."
+category = "other"
+icon = "search"
+channels = ["research.results", "research.items"]
+channel_roles = { "research.results" = "other", "research.items" = "other" }
+check = false
+starter = false
+
+[plugins.install]
+kind = "python"
+entry = "throughline-research"
+
+[plugins.schedule]
+interval_s = 3600
+mode = "poll"
+
+[plugins.backfill]
+supported = false
+history = "none"
+note = "Results exist only from the first run onwards."
+
+[[plugins.setup.fields]]
+key = "RESEARCH_STREAMS"
+label = "Stream config"
+kind = "path"
+required = true
+help = "File or folder describing your search streams."
+
+[[plugins.setup.fields]]
+key = "RESEARCH_OPENAI_BASE_URL"
+label = "Model endpoint"
+kind = "url"
+placeholder = "https://api.openai.com/v1"
+
+[[plugins.setup.fields]]
+key = "RESEARCH_OPENAI_MODEL"
+label = "Model"
+
+[[plugins.setup.fields]]
+key = "RESEARCH_OPENAI_API_KEY"
+label = "Endpoint API key"
+kind = "secret"

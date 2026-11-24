@@ -1,0 +1,448 @@
+{
+ "buckets": {
+  "aw-watcher-window_invented-laptop": {
+   "id": "aw-watcher-window_invented-laptop",
+   "type": "currentwindow",
+   "client": "aw-watcher-window",
+   "hostname": "invented-laptop",
+   "created": "2024-02-05T08:00:00+00:00",
+   "last_updated": "2024-02-06T11:05:00+00:00"
+  },
+  "aw-watcher-afk_invented-laptop": {
+   "id": "aw-watcher-afk_invented-laptop",
+   "type": "afkstatus",
+   "client": "aw-watcher-afk",
+   "hostname": "invented-laptop",
+   "created": "2024-02-05T08:00:00+00:00",
+   "last_updated": "2024-02-06T11:06:40+00:00"
+  },
+  "aw-watcher-web-chrome_invented-laptop": {
+   "id": "aw-watcher-web-chrome_invented-laptop",
+   "type": "web.tab.current",
+   "client": "aw-client-web",
+   "hostname": "unknown",
+   "created": "2024-02-05T08:00:00+00:00",
+   "last_updated": "2024-02-06T10:58:20+00:00"
+  },
+  "aw-watcher-vscode_invented-laptop": {
+   "id": "aw-watcher-vscode_invented-laptop",
+   "type": "app.editor.activity",
+   "client": "aw-watcher-vscode",
+   "hostname": "invented-laptop",
+   "created": "2024-02-05T08:00:00+00:00",
+   "last_updated": "2024-02-06T10:36:40+00:00"
+  },
+  "aw-watcher-window_invented-desktop": {
+   "id": "aw-watcher-window_invented-desktop",
+   "type": "currentwindow",
+   "client": "aw-watcher-window",
+   "hostname": "invented-desktop",
+   "created": "2024-02-06T19:00:00+00:00",
+   "last_updated": "2024-02-07T09:00:00+00:00"
+  },
+  "aw-watcher-input_invented-desktop": {
+   "id": "aw-watcher-input_invented-desktop",
+   "type": "os.hid.input",
+   "client": "aw-watcher-input",
+   "hostname": "invented-desktop",
+   "created": "2024-02-06T19:00:00+00:00"
+  }
+ },
+ "events": {
+  "aw-watcher-window_invented-laptop": [
+   {
+    "id": 1,
+    "timestamp": "2024-02-05T09:00:00+00:00",
+    "duration": 120,
+    "data": {
+     "app": "Invented Editor",
+     "title": "notes.txt - Invented Editor"
+    }
+   },
+   {
+    "id": 2,
+    "timestamp": "2024-02-05T09:02:00+00:00",
+    "duration": 2,
+    "data": {
+     "app": "Invented Chat",
+     "title": "Invented Chat"
+    }
+   },
+   {
+    "id": 3,
+    "timestamp": "2024-02-05T09:02:02+00:00",
+    "duration": 300,
+    "data": {
+     "app": "Invented Editor",
+     "title": "notes.txt - Invented Editor"
+    }
+   },
+   {
+    "id": 4,
+    "timestamp": "2024-02-05T09:07:02+00:00",
+    "duration": 40,
+    "data": {
+     "app": "Invented Browser",
+     "title": "Example Domain - Invented Browser"
+    }
+   },
+   {
+    "id": 5,
+    "timestamp": "2024-02-05T09:07:42+00:00",
+    "duration": 900,
+    "data": {
+     "app": "Invented Terminal",
+     "title": "invented@laptop: ~/project"
+    }
+   },
+   {
+    "id": 6,
+    "timestamp": "2024-02-05T09:22:42+00:00",
+    "duration": 3,
+    "data": {
+     "app": "Invented Browser",
+     "title": "Example Domain - Invented Browser"
+    }
+   },
+   {
+    "id": 7,
+    "timestamp": "2024-02-05T09:22:45+00:00",
+    "duration": 1800,
+    "data": {
+     "app": "Invented Terminal",
+     "title": "invented@laptop: ~/project"
+    }
+   },
+   {
+    "id": 8,
+    "timestamp": "2024-02-05T09:52:45+00:00",
+    "duration": 20,
+    "data": {
+     "app": "Invented Music",
+     "title": "Invented Song - Invented Artist"
+    }
+   },
+   {
+    "id": 9,
+    "timestamp": "2024-02-05T09:53:05+00:00",
+    "duration": 2400,
+    "data": {
+     "app": "Invented Browser",
+     "title": "Invented Docs - Invented Browser"
+    }
+   },
+   {
+    "id": 10,
+    "timestamp": "2024-02-06T09:00:00+00:00",
+    "duration": 1100,
+    "data": {
+     "app": "Invented Editor",
+     "title": "file0.py - Invented Editor"
+    }
+   },
+   {
+    "id": 11,
+    "timestamp": "2024-02-06T09:20:00+00:00",
+    "duration": 1100,
+    "data": {
+     "app": "Invented Browser",
+     "title": "Example Domain - Invented Browser"
+    }
+   },
+   {
+    "id": 12,
+    "timestamp": "2024-02-06T09:40:00+00:00",
+    "duration": 1100,
+    "data": {
+     "app": "Invented Editor",
+     "title": "file2.py - Invented Editor"
+    }
+   },
+   {
+    "id": 13,
+    "timestamp": "2024-02-06T10:00:00+00:00",
+    "duration": 1100,
+    "data": {
+     "app": "Invented Browser",
+     "title": "Example Domain - Invented Browser"
+    }
+   },
+   {
+    "id": 14,
+    "timestamp": "2024-02-06T10:20:00+00:00",
+    "duration": 1100,
+    "data": {
+     "app": "Invented Editor",
+     "title": "file4.py - Invented Editor"
+    }
+   },
+   {
+    "id": 15,
+    "timestamp": "2024-02-06T10:40:00+00:00",
+    "duration": 1100,
+    "data": {
+     "app": "Invented Browser",
+     "title": "Example Domain - Invented Browser"
+    }
+   },
+   {
+    "id": 16,
+    "timestamp": "2024-02-06T11:00:00+00:00",
+    "duration": 300,
+    "data": {
+     "app": "Invented Editor",
+     "title": "draft.md - Invented Editor"
+    }
+   }
+  ],
+  "aw-watcher-afk_invented-laptop": [
+   {
+    "id": 1,
+    "timestamp": "2024-02-05T09:00:00+00:00",
+    "duration": 2000,
+    "data": {
+     "status": "not-afk"
+    }
+   },
+   {
+    "id": 2,
+    "timestamp": "2024-02-05T09:33:20+00:00",
+    "duration": 600,
+    "data": {
+     "status": "afk"
+    }
+   },
+   {
+    "id": 3,
+    "timestamp": "2024-02-05T09:43:20+00:00",
+    "duration": 3000,
+    "data": {
+     "status": "not-afk"
+    }
+   },
+   {
+    "id": 4,
+    "timestamp": "2024-02-05T10:33:20+00:00",
+    "duration": 80000,
+    "data": {
+     "status": "afk"
+    }
+   },
+   {
+    "id": 5,
+    "timestamp": "2024-02-06T09:00:00+00:00",
+    "duration": 7600,
+    "data": {
+     "status": "not-afk"
+    }
+   }
+  ],
+  "aw-watcher-web-chrome_invented-laptop": [
+   {
+    "id": 1,
+    "timestamp": "2024-02-05T09:07:02+00:00",
+    "duration": 40,
+    "data": {
+     "url": "https://example.com/",
+     "title": "Example Domain",
+     "audible": false,
+     "incognito": false,
+     "tabCount": 3
+    }
+   },
+   {
+    "id": 2,
+    "timestamp": "2024-02-05T09:53:05+00:00",
+    "duration": 1200,
+    "data": {
+     "url": "https://docs.example.org/guide",
+     "title": "Invented Docs",
+     "audible": false,
+     "incognito": false,
+     "tabCount": 3
+    }
+   },
+   {
+    "id": 3,
+    "timestamp": "2024-02-05T10:13:05+00:00",
+    "duration": 10,
+    "data": {
+     "url": "https://example.net/private",
+     "title": "Invented Private",
+     "audible": false,
+     "incognito": true,
+     "tabCount": 3
+    }
+   },
+   {
+    "id": 4,
+    "timestamp": "2024-02-05T10:13:15+00:00",
+    "duration": 1190,
+    "data": {
+     "url": "https://www.example.org/video",
+     "title": "Invented Video",
+     "audible": true,
+     "incognito": false,
+     "tabCount": 3
+    }
+   },
+   {
+    "id": 5,
+    "timestamp": "2024-02-06T09:20:00+00:00",
+    "duration": 1100,
+    "data": {
+     "url": "https://example.com/page0",
+     "title": "Invented Page 0",
+     "audible": false,
+     "incognito": false,
+     "tabCount": 3
+    }
+   },
+   {
+    "id": 6,
+    "timestamp": "2024-02-06T10:00:00+00:00",
+    "duration": 1100,
+    "data": {
+     "url": "https://example.com/page1",
+     "title": "Invented Page 1",
+     "audible": false,
+     "incognito": false,
+     "tabCount": 3
+    }
+   },
+   {
+    "id": 7,
+    "timestamp": "2024-02-06T10:40:00+00:00",
+    "duration": 1100,
+    "data": {
+     "url": "https://example.com/page2",
+     "title": "Invented Page 2",
+     "audible": false,
+     "incognito": false,
+     "tabCount": 3
+    }
+   },
+   {
+    "id": 8,
+    "timestamp": "2024-02-06T10:56:40+00:00",
+    "duration": 100,
+    "data": {
+     "url": "https://example.com/tail",
+     "title": "Invented Tail",
+     "audible": false,
+     "incognito": false,
+     "tabCount": 3
+    }
+   }
+  ],
+  "aw-watcher-vscode_invented-laptop": [
+   {
+    "id": 1,
+    "timestamp": "2024-02-05T09:00:00+00:00",
+    "duration": 60,
+    "data": {
+     "file": "notes.txt",
+     "project": "/home/invented/project",
+     "language": "plaintext"
+    }
+   },
+   {
+    "id": 2,
+    "timestamp": "2024-02-05T09:01:05+00:00",
+    "duration": 100,
+    "data": {
+     "file": "notes.txt",
+     "project": "/home/invented/project",
+     "language": "plaintext"
+    }
+   },
+   {
+    "id": 3,
+    "timestamp": "2024-02-06T09:00:00+00:00",
+    "duration": 1000,
+    "data": {
+     "file": "file0.py",
+     "project": "/home/invented/project",
+     "language": "python"
+    }
+   },
+   {
+    "id": 4,
+    "timestamp": "2024-02-06T09:40:00+00:00",
+    "duration": 1000,
+    "data": {
+     "file": "file2.py",
+     "project": "/home/invented/project",
+     "language": "python"
+    }
+   },
+   {
+    "id": 5,
+    "timestamp": "2024-02-06T10:20:00+00:00",
+    "duration": 1000,
+    "data": {
+     "file": "file4.py",
+     "project": "/home/invented/project",
+     "language": "python"
+    }
+   }
+  ],
+  "aw-watcher-window_invented-desktop": [
+   {
+    "id": 1,
+    "timestamp": "2024-02-06T20:00:00+00:00",
+    "duration": 600,
+    "data": {
+     "app": "Invented Game",
+     "title": "Invented Level 0"
+    }
+   },
+   {
+    "id": 2,
+    "timestamp": "2024-02-06T20:11:40+00:00",
+    "duration": 600,
+    "data": {
+     "app": "Invented Game",
+     "title": "Invented Level 0"
+    }
+   },
+   {
+    "id": 3,
+    "timestamp": "2024-02-06T20:23:20+00:00",
+    "duration": 600,
+    "data": {
+     "app": "Invented Game",
+     "title": "Invented Level 1"
+    }
+   },
+   {
+    "id": 4,
+    "timestamp": "2024-02-06T20:35:00+00:00",
+    "duration": 600,
+    "data": {
+     "app": "Invented Game",
+     "title": "Invented Level 1"
+    }
+   },
+   {
+    "id": 5,
+    "timestamp": "2024-02-06T20:46:40+00:00",
+    "duration": 600,
+    "data": {
+     "app": "Invented Game",
+     "title": "Invented Level 2"
+    }
+   }
+  ],
+  "aw-watcher-input_invented-desktop": [
+   {
+    "id": 1,
+    "timestamp": "2024-02-06T20:00:00+00:00",
+    "duration": 60,
+    "data": {
+     "presses": 3
+    }
+   }
+  ]
+ }
+}

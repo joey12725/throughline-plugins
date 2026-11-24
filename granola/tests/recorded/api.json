@@ -1,0 +1,305 @@
+[
+ {
+  "method": "GET",
+  "path": "/v1/notes",
+  "params": {
+   "cursor": "page-2"
+  },
+  "json": {
+   "notes": [
+    {
+     "id": "not_Invented00003c",
+     "object": "note",
+     "title": "Invented",
+     "owner": {
+      "name": "Invented Robin Owner",
+      "email": "robin@example.com"
+     },
+     "created_at": "2025-04-03T12:00:00Z",
+     "updated_at": "2025-04-03T12:00:00Z",
+     "deleted_at": null
+    },
+    {
+     "id": "not_Invented00004d",
+     "object": "note",
+     "title": "Invented",
+     "owner": {
+      "name": "Invented Robin Owner",
+      "email": "robin@example.com"
+     },
+     "created_at": "2025-04-04T12:00:00Z",
+     "updated_at": "2025-04-04T12:00:00Z",
+     "deleted_at": "2025-04-04T13:00:00Z"
+    }
+   ],
+   "hasMore": false,
+   "cursor": null
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/v1/notes",
+  "json": {
+   "notes": [
+    {
+     "id": "not_Invented00002b",
+     "object": "note",
+     "title": "Invented",
+     "owner": {
+      "name": "Invented Robin Owner",
+      "email": "robin@example.com"
+     },
+     "created_at": "2025-04-02T09:00:00Z",
+     "updated_at": "2025-04-02T09:00:00Z",
+     "deleted_at": null
+    },
+    {
+     "id": "not_Invented00001a",
+     "object": "note",
+     "title": "Invented",
+     "owner": {
+      "name": "Invented Robin Owner",
+      "email": "robin@example.com"
+     },
+     "created_at": "2025-04-01T16:00:00Z",
+     "updated_at": "2025-04-01T16:00:00Z",
+     "deleted_at": null
+    }
+   ],
+   "hasMore": true,
+   "cursor": "page-2"
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/v1/notes/not_Invented00001a",
+  "params": {
+   "include": "transcript"
+  },
+  "json": {
+   "id": "not_Invented00001a",
+   "object": "note",
+   "title": "Invented design review",
+   "owner": {
+    "name": "Invented Robin Owner",
+    "email": "robin@example.com"
+   },
+   "created_at": "2025-04-01T16:00:00Z",
+   "updated_at": "2025-04-01T16:00:00Z",
+   "deleted_at": null,
+   "web_url": "https://notes.example.com/d/not_Invented00001a",
+   "calendar_event": {
+    "event_title": "Design review",
+    "invitees": [
+     {
+      "email": "robin@example.com"
+     },
+     {
+      "email": "avery@example.com"
+     },
+     {
+      "email": "blake@example.com"
+     }
+    ],
+    "organiser": "avery@example.com",
+    "calendar_event_id": "evt-invented-api-1",
+    "scheduled_start_time": "2025-04-01T15:00:00Z",
+    "scheduled_end_time": "2025-04-01T15:45:00Z"
+   },
+   "attachments": [
+    {
+     "id": "att_Invented000001",
+     "object": "attachment",
+     "type": "photo",
+     "url": "https://files.example.com/secret-ish",
+     "width": 10,
+     "height": 10
+    }
+   ],
+   "attendees": [
+    {
+     "name": "Invented Robin Owner",
+     "email": "robin@example.com"
+    },
+    {
+     "name": "Invented Avery Example",
+     "email": "avery@example.com"
+    },
+    {
+     "name": "Invented Blake Sample",
+     "email": "blake@example.com"
+    }
+   ],
+   "folder_membership": [
+    {
+     "id": "fol_Invented000001",
+     "object": "folder",
+     "name": "Invented Design",
+     "parent_folder_id": null
+    }
+   ],
+   "space_membership": [],
+   "summary_text": "Invented summary",
+   "summary_markdown": "## Invented summary\n- Ship the invented mockups",
+   "private_notes_text": "mockups",
+   "private_notes_markdown": "- invented mockups look good",
+   "transcript": [
+    {
+     "speaker": {
+      "source": "microphone",
+      "attribution": "me"
+     },
+     "text": "Let's review the invented mockups.",
+     "start_time": "2025-04-01T15:01:00Z",
+     "end_time": "2025-04-01T15:01:05Z"
+    },
+    {
+     "speaker": {
+      "source": "speaker",
+      "attribution": "them",
+      "name": "Invented Avery Example"
+     },
+     "text": "I like the invented header.",
+     "start_time": "2025-04-01T15:01:06Z",
+     "end_time": "2025-04-01T15:01:09Z"
+    },
+    {
+     "speaker": {
+      "source": "speaker",
+      "attribution": "them"
+     },
+     "text": "Footer needs invented work.",
+     "start_time": "2025-04-01T15:01:10Z",
+     "end_time": "2025-04-01T15:01:14Z"
+    }
+   ]
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/v1/notes/not_Invented00002b",
+  "params": {
+   "include": "transcript"
+  },
+  "status": 413,
+  "json": {
+   "error": "TRANSCRIPT_TOO_LARGE"
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/v1/notes/not_Invented00002b",
+  "json": {
+   "id": "not_Invented00002b",
+   "object": "note",
+   "title": "Invented phone memo",
+   "owner": {
+    "name": "Invented Robin Owner",
+    "email": "robin@example.com"
+   },
+   "created_at": "2025-04-02T09:00:00Z",
+   "updated_at": "2025-04-02T09:00:00Z",
+   "deleted_at": null,
+   "web_url": "https://notes.example.com/d/not_Invented00002b",
+   "calendar_event": null,
+   "attachments": [],
+   "attendees": [],
+   "folder_membership": [],
+   "space_membership": [],
+   "summary_text": "Invented memo summary",
+   "summary_markdown": null,
+   "private_notes_text": null,
+   "private_notes_markdown": null,
+   "transcript": null
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/v1/notes/not_Invented00002b/transcript",
+  "params": {
+   "cursor": "t-2"
+  },
+  "json": {
+   "transcript": [
+    {
+     "speaker": {
+      "source": "microphone",
+      "diarization_label": "Speaker A"
+     },
+     "text": "Invented memo closing line.",
+     "start_time": "2025-04-02T08:00:10Z",
+     "end_time": "2025-04-02T08:00:14Z"
+    }
+   ],
+   "hasMore": false,
+   "cursor": null
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/v1/notes/not_Invented00002b/transcript",
+  "json": {
+   "transcript": [
+    {
+     "speaker": {
+      "source": "microphone",
+      "diarization_label": "Speaker A"
+     },
+     "text": "Invented memo first line.",
+     "start_time": "2025-04-02T08:00:00Z",
+     "end_time": "2025-04-02T08:00:04Z"
+    },
+    {
+     "speaker": {
+      "source": "microphone",
+      "diarization_label": "Speaker B"
+     },
+     "text": "Invented reply from the other voice.",
+     "start_time": "2025-04-02T08:00:05Z",
+     "end_time": "2025-04-02T08:00:09Z"
+    }
+   ],
+   "hasMore": true,
+   "cursor": "t-2"
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/v1/notes/not_Invented00003c",
+  "params": {
+   "include": "transcript"
+  },
+  "json": {
+   "id": "not_Invented00003c",
+   "object": "note",
+   "title": "Invented transcript-less note",
+   "owner": {
+    "name": "Invented Robin Owner",
+    "email": "robin@example.com"
+   },
+   "created_at": "2025-04-03T12:00:00Z",
+   "updated_at": "2025-04-03T12:00:00Z",
+   "deleted_at": null,
+   "web_url": "https://notes.example.com/d/not_Invented00003c",
+   "calendar_event": null,
+   "attachments": [],
+   "attendees": [
+    {
+     "name": "Invented Robin Owner",
+     "email": "robin@example.com"
+    },
+    {
+     "name": "Invented Casey Placeholder",
+     "email": "casey@example.com"
+    }
+   ],
+   "folder_membership": [],
+   "space_membership": [],
+   "summary_text": "Invented summary without transcript access",
+   "summary_markdown": "Invented summary without transcript access",
+   "private_notes_text": null,
+   "private_notes_markdown": null,
+   "transcript": null
+  }
+ }
+]

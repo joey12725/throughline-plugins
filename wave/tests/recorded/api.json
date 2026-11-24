@@ -1,0 +1,107 @@
+{
+  "sessions": {
+    "sessions": [
+      {
+        "id": "fake-session-3"
+      },
+      {
+        "id": "fake-session-2"
+      }
+    ],
+    "has_more": true,
+    "next_cursor": "2020-01-02T00:00:00Z"
+  },
+  "sessions?cursor=2020-01-02T00:00:00Z": {
+    "sessions": [
+      {
+        "id": "fake-session-1"
+      }
+    ],
+    "has_more": false,
+    "next_cursor": null
+  },
+  "sessions/fake-session-1": {
+    "id": "fake-session-1",
+    "title": "Invented orchard session 1",
+    "timestamp": "2020-01-01T10:00:00+02:00",
+    "duration_seconds": 30,
+    "type": "meeting",
+    "platform": "desktop",
+    "summary": "Invented planning summary",
+    "audio_deleted_at": null
+  },
+  "sessions/fake-session-1/transcript": {
+    "id": "fake-session-1",
+    "transcript": "Voice A: Invented first turn\nVoice B: Invented second turn",
+    "segments": [
+      {
+        "speaker": "Voice A",
+        "start": 1.5,
+        "end": 4.0,
+        "text": "Invented first turn"
+      },
+      {
+        "speaker": "Voice B",
+        "start": 6.0,
+        "end": 8.5,
+        "text": "Invented second turn"
+      }
+    ]
+  },
+  "sessions/fake-session-2": {
+    "id": "fake-session-2",
+    "title": "Invented orchard session 2",
+    "timestamp": "2020-01-02T10:00:00+02:00",
+    "duration_seconds": 30,
+    "type": "meeting",
+    "platform": "desktop",
+    "summary": "Invented planning summary",
+    "audio_deleted_at": null
+  },
+  "sessions/fake-session-2/transcript": {
+    "id": "fake-session-2",
+    "transcript": "Voice A: Invented first turn\nVoice B: Invented second turn",
+    "segments": [
+      {
+        "speaker": "Voice A",
+        "start": 1.5,
+        "end": 4.0,
+        "text": "Invented first turn"
+      },
+      {
+        "speaker": "Voice B",
+        "start": 6.0,
+        "end": 8.5,
+        "text": "Invented second turn"
+      }
+    ]
+  },
+  "sessions/fake-session-3": {
+    "id": "fake-session-3",
+    "title": "Invented orchard session 3",
+    "timestamp": "2020-01-03T10:00:00+02:00",
+    "duration_seconds": 30,
+    "type": "meeting",
+    "platform": "desktop",
+    "summary": "Invented planning summary",
+    "audio_deleted_at": null
+  },
+  "sessions/fake-session-3/transcript": {
+    "id": "fake-session-3",
+    "transcript": "Voice A: Invented first turn\nVoice B: Invented second turn",
+    "segments": [
+      {
+        "speaker": "Voice A",
+        "start": 1.5,
+        "end": 4.0,
+        "text": "Invented first turn"
+      },
+      {
+        "speaker": "Voice B",
+        "start": 6.0,
+        "end": 8.5,
+        "text": "Invented second turn"
+      }
+    ]
+  }
+}

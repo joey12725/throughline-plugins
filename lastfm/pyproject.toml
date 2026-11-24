@@ -1,0 +1,14 @@
+[project]
+name = "throughline-lastfm"
+version = "0.1.0"
+description = "Throughline source plugin: lastfm"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk", "httpx"]
+[project.scripts]
+throughline-lastfm = "throughline_lastfm:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[tool.hatch.build.targets.wheel]
+packages = ["src/throughline_lastfm"]

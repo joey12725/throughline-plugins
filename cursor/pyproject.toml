@@ -1,0 +1,14 @@
+[project]
+name = "throughline-cursor"
+version = "0.1.0"
+description = "Throughline plugin: Cursor chat and composer history from its local SQLite stores"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk"]
+[project.scripts]
+throughline-cursor = "throughline_cursor:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[tool.hatch.build.targets.wheel]
+packages = ["src/throughline_cursor"]

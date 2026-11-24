@@ -1,0 +1,229 @@
+{
+  "history": {
+    "MediaContainer": {
+      "Metadata": [
+        {
+          "historyKey": "/status/sessions/history/1",
+          "ratingKey": "101",
+          "type": "movie",
+          "title": "Invented movie 1",
+          "viewedAt": 1600010000,
+          "accountID": 9001,
+          "deviceID": 7001,
+          "librarySectionID": "81"
+        },
+        {
+          "historyKey": "/status/sessions/history/2",
+          "ratingKey": "102",
+          "type": "episode",
+          "title": "Invented episode 2",
+          "viewedAt": 1600020000,
+          "accountID": 9002,
+          "deviceID": 7001,
+          "librarySectionID": "81"
+        },
+        {
+          "historyKey": "/status/sessions/history/3",
+          "ratingKey": "103",
+          "type": "track",
+          "title": "Invented track 3",
+          "viewedAt": 1600030000,
+          "accountID": 9001,
+          "deviceID": 7001,
+          "librarySectionID": "81"
+        },
+        {
+          "historyKey": "/status/sessions/history/4",
+          "ratingKey": "102",
+          "type": "episode",
+          "title": "Invented episode 2",
+          "viewedAt": 1600040000,
+          "accountID": 9002,
+          "deviceID": 7001,
+          "librarySectionID": "81"
+        },
+        {
+          "historyKey": "/status/sessions/history/5",
+          "ratingKey": "105",
+          "type": "movie",
+          "title": "Invented movie 5",
+          "viewedAt": 1600050000,
+          "accountID": 9001,
+          "deviceID": 7001,
+          "librarySectionID": "81"
+        },
+        {
+          "historyKey": "/status/sessions/history/6",
+          "ratingKey": "106",
+          "type": "track",
+          "title": "Invented track 6",
+          "viewedAt": 1600060000,
+          "accountID": 9002,
+          "deviceID": 7001,
+          "librarySectionID": "81"
+        }
+      ]
+    }
+  },
+  "/identity": {
+    "MediaContainer": {
+      "machineIdentifier": "invented-server"
+    }
+  },
+  "/accounts": {
+    "MediaContainer": {
+      "Account": [
+        {
+          "id": 9001,
+          "name": "Invented Alpha"
+        },
+        {
+          "id": 9002,
+          "name": "Invented Beta"
+        }
+      ]
+    }
+  },
+  "/devices": {
+    "MediaContainer": {
+      "Device": [
+        {
+          "id": 7001,
+          "name": "Invented TV",
+          "platform": "Invented Player"
+        }
+      ]
+    }
+  },
+  "/status/sessions": {
+    "MediaContainer": {
+      "Metadata": []
+    }
+  },
+  "/library/metadata/101": {
+    "MediaContainer": {
+      "Metadata": [
+        {
+          "ratingKey": "101",
+          "type": "movie",
+          "title": "Invented movie 1",
+          "guid": "plex://movie/invented-1",
+          "duration": 2400000,
+          "year": 2019,
+          "librarySectionTitle": "Invented Library",
+          "grandparentTitle": "Invented Artist",
+          "grandparentRatingKey": "500",
+          "grandparentGuid": "plex://show/invented-show",
+          "parentRatingKey": "501",
+          "parentIndex": 1,
+          "index": 2
+        }
+      ]
+    }
+  },
+  "/library/metadata/102": {
+    "MediaContainer": {
+      "Metadata": [
+        {
+          "ratingKey": "102",
+          "type": "episode",
+          "title": "Invented episode 2",
+          "guid": "plex://episode/invented-2",
+          "duration": 2400000,
+          "year": 2019,
+          "librarySectionTitle": "Invented Library",
+          "grandparentTitle": "Invented Show",
+          "grandparentRatingKey": "500",
+          "grandparentGuid": "plex://show/invented-show",
+          "parentRatingKey": "501",
+          "parentIndex": 1,
+          "index": 2
+        }
+      ]
+    }
+  },
+  "/library/metadata/103": {
+    "MediaContainer": {
+      "Metadata": [
+        {
+          "ratingKey": "103",
+          "type": "track",
+          "title": "Invented track 3",
+          "guid": "plex://track/invented-3",
+          "duration": 2400000,
+          "year": 2019,
+          "librarySectionTitle": "Invented Library",
+          "grandparentTitle": "Invented Artist",
+          "grandparentRatingKey": "500",
+          "grandparentGuid": "plex://show/invented-show",
+          "parentRatingKey": "501",
+          "parentIndex": 1,
+          "index": 2
+        }
+      ]
+    }
+  },
+  "/library/metadata/104": {
+    "MediaContainer": {
+      "Metadata": [
+        {
+          "ratingKey": "104",
+          "type": "episode",
+          "title": "Invented episode 4",
+          "guid": "plex://episode/invented-4",
+          "duration": 2400000,
+          "year": 2019,
+          "librarySectionTitle": "Invented Library",
+          "grandparentTitle": "Invented Show",
+          "grandparentRatingKey": "500",
+          "grandparentGuid": "plex://show/invented-show",
+          "parentRatingKey": "501",
+          "parentIndex": 1,
+          "index": 2
+        }
+      ]
+    }
+  },
+  "/library/metadata/105": {
+    "MediaContainer": {
+      "Metadata": [
+        {
+          "ratingKey": "105",
+          "type": "movie",
+          "title": "Invented movie 5",
+          "guid": "plex://movie/invented-5",
+          "duration": 2400000,
+          "year": 2019,
+          "librarySectionTitle": "Invented Library",
+          "grandparentTitle": "Invented Artist",
+          "grandparentRatingKey": "500",
+          "grandparentGuid": "plex://show/invented-show",
+          "parentRatingKey": "501",
+          "parentIndex": 1,
+          "index": 2
+        }
+      ]
+    }
+  },
+  "/library/metadata/106": {
+    "MediaContainer": {
+      "Metadata": [
+        {
+          "ratingKey": "106",
+          "type": "track",
+          "title": "Invented track 6",
+          "guid": "plex://track/invented-6",
+          "duration": 2400000,
+          "year": 2019,
+          "librarySectionTitle": "Invented Library",
+          "grandparentTitle": "Invented Artist",
+          "grandparentRatingKey": "500",
+          "grandparentGuid": "plex://show/invented-show",
+          "parentRatingKey": "501",
+          "parentIndex": 1,
+          "index": 2
+        }
+      ]
+    }
+  }
+}

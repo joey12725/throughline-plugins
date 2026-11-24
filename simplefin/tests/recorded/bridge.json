@@ -1,0 +1,202 @@
+{
+ "errors": [],
+ "accounts": [
+  {
+   "org": {
+    "domain": "invented-bank.example.com",
+    "sfin-url": "https://bridge.example.com/simplefin",
+    "name": "Invented Credit Union",
+    "url": "https://invented-bank.example.com",
+    "id": "ORG-INVENTED-1"
+   },
+   "id": "ACT-INVENTED-CHK",
+   "name": "Invented Checking",
+   "currency": "USD",
+   "balance": "1840.44",
+   "available-balance": "1827.94",
+   "balance-date": 1748757600,
+   "transactions": [
+    {
+     "id": "TRN-CHK-0001",
+     "posted": 1735982100,
+     "amount": "-54.20",
+     "description": "GROCERY 555-0100",
+     "transacted_at": 1735895700,
+     "payee": "Invented Grocer"
+    },
+    {
+     "id": "TRN-CHK-0002",
+     "posted": 1737028800,
+     "amount": "2500.00",
+     "description": "PAYROLL DEPOSIT",
+     "transacted_at": 1736942400,
+     "payee": "Invented Employer Payroll"
+    },
+    {
+     "id": "TRN-CHK-0003",
+     "posted": 1738607400,
+     "amount": "-60.00",
+     "description": "ATM WITHDRAWAL 0001",
+     "transacted_at": 1738521000
+    },
+    {
+     "id": "TRN-CHK-0004",
+     "posted": 1739650200,
+     "amount": "-35.75",
+     "description": "FLORIST 555-0199",
+     "transacted_at": 1739563800,
+     "payee": "Fictional Florist",
+     "memo": "Invented memo"
+    },
+    {
+     "id": "TRN-CHK-0005",
+     "posted": 1740902400,
+     "amount": "-1200.00",
+     "description": "RENT MARCH",
+     "transacted_at": 1740816000,
+     "payee": "Make-Believe Rent LLC"
+    },
+    {
+     "id": "TRN-CHK-0006",
+     "posted": 1742575500,
+     "amount": "-81.10",
+     "description": "GROCERY 555-0100",
+     "transacted_at": 1742489100,
+     "payee": "Invented Grocer"
+    },
+    {
+     "id": "TRN-CHK-0007",
+     "posted": 1743580800,
+     "amount": "-1200.00",
+     "description": "RENT APRIL",
+     "transacted_at": 1743494400,
+     "payee": "Make-Believe Rent LLC"
+    },
+    {
+     "id": "TRN-CHK-0008",
+     "posted": 1744804800,
+     "amount": "2500.00",
+     "description": "PAYROLL DEPOSIT",
+     "transacted_at": 1744718400,
+     "payee": "Invented Employer Payroll"
+    },
+    {
+     "id": "TRN-CHK-0009",
+     "posted": 1746872400,
+     "amount": "-92.31",
+     "description": "UTILITY BILL",
+     "transacted_at": 1746786000,
+     "payee": "Pretend Utility"
+    },
+    {
+     "id": "TRN-CHK-PEND",
+     "posted": 0,
+     "amount": "-12.50",
+     "description": "INVENTED COFFEE (PENDING)",
+     "payee": "Invented Coffee",
+     "transacted_at": 1748682000,
+     "pending": true
+    }
+   ],
+   "extra": {}
+  },
+  {
+   "org": {
+    "domain": "fakecard.example.com",
+    "sfin-url": "https://bridge.example.com/simplefin",
+    "name": "Fake Card Co",
+    "id": "ORG-INVENTED-2"
+   },
+   "id": "ACT-INVENTED-CARD",
+   "name": "Fake Rewards Card",
+   "currency": "USD",
+   "balance": "-412.73",
+   "available-balance": "4587.27",
+   "balance-date": 1748757600,
+   "transactions": [
+    {
+     "id": "TRN-CARD-0001",
+     "posted": 1736622000,
+     "amount": "-23.40",
+     "description": "DINER 555-0123",
+     "transacted_at": 1736535600,
+     "payee": "Imaginary Diner"
+    },
+    {
+     "id": "TRN-CARD-0002",
+     "posted": 1740229500,
+     "amount": "-18.99",
+     "description": "BOOKS",
+     "transacted_at": 1740143100,
+     "payee": "Fake Bookshop"
+    },
+    {
+     "id": "TRN-CARD-0003",
+     "posted": 1741765200,
+     "amount": "-45.00",
+     "description": "TRANSIT PASS",
+     "transacted_at": 1741678800,
+     "payee": "Invented Transit"
+    },
+    {
+     "id": "TRN-CARD-0004",
+     "posted": 1745961300,
+     "amount": "-31.60",
+     "description": "DINER 555-0123",
+     "transacted_at": 1745874900,
+     "payee": "Imaginary Diner"
+    },
+    {
+     "id": "TRN-CARD-0005",
+     "posted": 1748689860,
+     "amount": "300.00",
+     "description": "PAYMENT THANK YOU",
+     "transacted_at": 1748603460,
+     "payee": "Fake Card Co"
+    },
+    {
+     "id": "TRN-CARD-PEND",
+     "posted": 0,
+     "amount": "-7.25",
+     "description": "FAKE SNACK BAR",
+     "transacted_at": 1748705400,
+     "pending": true
+    }
+   ]
+  },
+  {
+   "org": {
+    "domain": "pretend-broker.example.com",
+    "sfin-url": "https://bridge.example.com/simplefin",
+    "name": "Pretend Brokerage",
+    "id": "ORG-INVENTED-3"
+   },
+   "id": "ACT-INVENTED-BRK",
+   "name": "Pretend Brokerage Account",
+   "currency": "USD",
+   "balance": "10234.10",
+   "balance-date": 1748757600,
+   "transactions": [
+    {
+     "id": "TRN-BRK-0001",
+     "posted": 1738594800,
+     "amount": "500.00",
+     "description": "TRANSFER IN"
+    }
+   ],
+   "holdings": [
+    {
+     "id": "HOL-1",
+     "created": 1738594800,
+     "currency": "USD",
+     "cost_basis": "500.00",
+     "description": "Invented Index Fund",
+     "market_value": "534.10",
+     "purchase_price": "50.00",
+     "shares": "10",
+     "symbol": "FAKEX"
+    }
+   ]
+  }
+ ]
+}

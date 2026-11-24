@@ -1,0 +1,348 @@
+[
+ {
+  "id": 5550001000,
+  "watched_at": "2021-02-01T10:00:00.000Z",
+  "action": "scrobble",
+  "type": "movie",
+  "movie": {
+   "title": "The Invented Expedition",
+   "year": 2019,
+   "runtime": 118,
+   "ids": {
+    "trakt": 900001,
+    "slug": "the-invented-expedition-2019",
+    "imdb": "tt9990001",
+    "tmdb": 9990001
+   }
+  }
+ },
+ {
+  "id": 5550001001,
+  "watched_at": "2021-02-01T21:15:00.000Z",
+  "action": "scrobble",
+  "type": "episode",
+  "episode": {
+   "season": 1,
+   "number": 1,
+   "title": "Pilot of Inventions",
+   "runtime": 42,
+   "ids": {
+    "trakt": 700001,
+    "tvdb": null,
+    "imdb": "tt9970001",
+    "tmdb": 9970001
+   }
+  },
+  "show": {
+   "title": "Invented Station",
+   "year": 2018,
+   "ids": {
+    "trakt": 800001,
+    "slug": "invented-station",
+    "tvdb": 7770001,
+    "imdb": "tt9980001",
+    "tmdb": 9980001
+   }
+  }
+ },
+ {
+  "id": 5550001002,
+  "watched_at": "2021-02-02T20:00:00.000Z",
+  "action": "checkin",
+  "type": "episode",
+  "episode": {
+   "season": 1,
+   "number": 2,
+   "title": "The Placeholder",
+   "runtime": 42,
+   "ids": {
+    "trakt": 700002,
+    "tvdb": null,
+    "imdb": "tt9970002",
+    "tmdb": 9970002
+   }
+  },
+  "show": {
+   "title": "Invented Station",
+   "year": 2018,
+   "ids": {
+    "trakt": 800001,
+    "slug": "invented-station",
+    "tvdb": 7770001,
+    "imdb": "tt9980001",
+    "tmdb": 9980001
+   }
+  }
+ },
+ {
+  "id": 5550001003,
+  "watched_at": "2021-02-02T20:45:00.000Z",
+  "action": "scrobble",
+  "type": "episode",
+  "episode": {
+   "season": 1,
+   "number": 3,
+   "title": null,
+   "runtime": 42,
+   "ids": {
+    "trakt": 700003,
+    "tvdb": null,
+    "imdb": "tt9970003",
+    "tmdb": 9970003
+   }
+  },
+  "show": {
+   "title": "Invented Station",
+   "year": 2018,
+   "ids": {
+    "trakt": 800001,
+    "slug": "invented-station",
+    "tvdb": 7770001,
+    "imdb": "tt9980001",
+    "tmdb": 9980001
+   }
+  }
+ },
+ {
+  "id": 5550001004,
+  "watched_at": "2021-02-03T19:30:00.000Z",
+  "action": "watch",
+  "type": "movie",
+  "movie": {
+   "title": "Placeholder Heist",
+   "year": 2021,
+   "runtime": 104,
+   "ids": {
+    "trakt": 900002,
+    "slug": "placeholder-heist-2021",
+    "imdb": null,
+    "tmdb": 9990002
+   }
+  }
+ },
+ {
+  "id": 5550001005,
+  "watched_at": "2021-02-05T22:00:00.000Z",
+  "action": "scrobble",
+  "type": "episode",
+  "episode": {
+   "season": 1,
+   "number": 1,
+   "title": "Synthetic Monday",
+   "runtime": 42,
+   "ids": {
+    "trakt": 700004,
+    "tvdb": null,
+    "imdb": null,
+    "tmdb": 9970004
+   }
+  },
+  "show": {
+   "title": "The Synthetic Office",
+   "year": 2020,
+   "ids": {
+    "trakt": 800002,
+    "slug": "the-synthetic-office",
+    "tvdb": null,
+    "imdb": null,
+    "tmdb": 9980002
+   }
+  }
+ },
+ {
+  "id": 5550001006,
+  "watched_at": "2021-02-06T18:00:00.000Z",
+  "action": "scrobble",
+  "type": "movie",
+  "movie": {
+   "title": "Example Documentary",
+   "year": 2016,
+   "runtime": 90,
+   "ids": {
+    "trakt": 900003,
+    "slug": "example-documentary-2016",
+    "imdb": null,
+    "tmdb": null
+   }
+  }
+ },
+ {
+  "id": 5550001007,
+  "watched_at": "2021-02-06T21:00:00.000Z",
+  "action": "scrobble",
+  "type": "episode",
+  "episode": {
+   "season": 1,
+   "number": 2,
+   "title": "Synthetic Tuesday",
+   "runtime": 42,
+   "ids": {
+    "trakt": 700005,
+    "tvdb": null,
+    "imdb": null,
+    "tmdb": 9970005
+   }
+  },
+  "show": {
+   "title": "The Synthetic Office",
+   "year": 2020,
+   "ids": {
+    "trakt": 800002,
+    "slug": "the-synthetic-office",
+    "tvdb": null,
+    "imdb": null,
+    "tmdb": 9980002
+   }
+  }
+ },
+ {
+  "id": 5550001008,
+  "watched_at": "2021-02-07T12:00:00.000Z",
+  "action": "scrobble",
+  "type": "episode",
+  "episode": {
+   "season": 2,
+   "number": 1,
+   "title": "Second Season Invented",
+   "runtime": 42,
+   "ids": {
+    "trakt": 700006,
+    "tvdb": null,
+    "imdb": "tt9970006",
+    "tmdb": 9970006
+   }
+  },
+  "show": {
+   "title": "Invented Station",
+   "year": 2018,
+   "ids": {
+    "trakt": 800001,
+    "slug": "invented-station",
+    "tvdb": 7770001,
+    "imdb": "tt9980001",
+    "tmdb": 9980001
+   }
+  }
+ },
+ {
+  "id": 5550001009,
+  "watched_at": "2021-02-08T20:00:00.000Z",
+  "action": "checkin",
+  "type": "movie",
+  "movie": {
+   "title": "Fictional Futures",
+   "year": 2023,
+   "runtime": 131,
+   "ids": {
+    "trakt": 900004,
+    "slug": "fictional-futures-2023",
+    "imdb": "tt9990004",
+    "tmdb": 9990004
+   }
+  }
+ },
+ {
+  "id": 5550001010,
+  "watched_at": "2021-02-09T20:00:00.000Z",
+  "action": "scrobble",
+  "type": "movie",
+  "movie": {
+   "title": "The Invented Expedition",
+   "year": 2019,
+   "runtime": 118,
+   "ids": {
+    "trakt": 900001,
+    "slug": "the-invented-expedition-2019",
+    "imdb": "tt9990001",
+    "tmdb": 9990001
+   }
+  }
+ },
+ {
+  "id": 5550001011,
+  "watched_at": "2021-02-10T21:00:00.000Z",
+  "action": "scrobble",
+  "type": "episode",
+  "episode": {
+   "season": 2,
+   "number": 2,
+   "title": "Another Invented Hour",
+   "runtime": 42,
+   "ids": {
+    "trakt": 700007,
+    "tvdb": null,
+    "imdb": "tt9970007",
+    "tmdb": 9970007
+   }
+  },
+  "show": {
+   "title": "Invented Station",
+   "year": 2018,
+   "ids": {
+    "trakt": 800001,
+    "slug": "invented-station",
+    "tvdb": 7770001,
+    "imdb": "tt9980001",
+    "tmdb": 9980001
+   }
+  }
+ },
+ {
+  "id": 5550001012,
+  "watched_at": "2021-02-10T21:00:00.000Z",
+  "action": "watch",
+  "type": "episode",
+  "episode": {
+   "season": 1,
+   "number": 3,
+   "title": "Synthetic Wednesday",
+   "runtime": 42,
+   "ids": {
+    "trakt": 700008,
+    "tvdb": null,
+    "imdb": null,
+    "tmdb": 9970008
+   }
+  },
+  "show": {
+   "title": "The Synthetic Office",
+   "year": 2020,
+   "ids": {
+    "trakt": 800002,
+    "slug": "the-synthetic-office",
+    "tvdb": null,
+    "imdb": null,
+    "tmdb": 9980002
+   }
+  }
+ },
+ {
+  "id": 5550001013,
+  "watched_at": "2021-02-11T23:30:00.000Z",
+  "action": "scrobble",
+  "type": "episode",
+  "episode": {
+   "season": 1,
+   "number": 4,
+   "title": "Synthetic Thursday",
+   "runtime": 42,
+   "ids": {
+    "trakt": 700009,
+    "tvdb": null,
+    "imdb": null,
+    "tmdb": 9970009
+   }
+  },
+  "show": {
+   "title": "The Synthetic Office",
+   "year": 2020,
+   "ids": {
+    "trakt": 800002,
+    "slug": "the-synthetic-office",
+    "tvdb": null,
+    "imdb": null,
+    "tmdb": 9980002
+   }
+  }
+ }
+]

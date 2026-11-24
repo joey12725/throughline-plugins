@@ -1,0 +1,75 @@
+[
+ {
+  "created": 1612000000,
+  "score": 1,
+  "user_id": "invented_listener",
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000002",
+  "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000002",
+  "track_metadata": {
+   "artist_name": "Synthetic Singer",
+   "track_name": "Example Ballad",
+   "release_name": "Invented Album 1",
+   "additional_info": {},
+   "mbid_mapping": {
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000002",
+    "artist_mbids": [
+     "22222222-0000-4000-8000-000000000002"
+    ],
+    "release_mbid": "cccccccc-0000-4000-8000-000000000001"
+   }
+  }
+ },
+ {
+  "created": 1612090000,
+  "score": 1,
+  "user_id": "invented_listener",
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000000",
+  "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000001",
+  "track_metadata": {
+   "artist_name": "Invented Band",
+   "track_name": "Imaginary Song",
+   "release_name": null,
+   "additional_info": {},
+   "mbid_mapping": {
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000001",
+    "artist_mbids": [
+     "11111111-0000-4000-8000-000000000001"
+    ],
+    "release_mbid": null
+   }
+  }
+ },
+ {
+  "created": 1612180000,
+  "score": -1,
+  "user_id": "invented_listener",
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000001",
+  "recording_mbid": null,
+  "track_metadata": {
+   "artist_name": "The Fictional Quartet",
+   "track_name": "Placeholder Anthem",
+   "release_name": "Invented Album 2",
+   "additional_info": {}
+  }
+ },
+ {
+  "created": 1612270000,
+  "score": 1,
+  "user_id": "invented_listener",
+  "recording_msid": null,
+  "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000003",
+  "track_metadata": {
+   "artist_name": "Mock Orchestra",
+   "track_name": "Sample Symphony No. 0",
+   "release_name": "Fixture Classics",
+   "additional_info": {},
+   "mbid_mapping": {
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000003",
+    "artist_mbids": [
+     "33333333-0000-4000-8000-000000000003"
+    ],
+    "release_mbid": "cccccccc-0000-4000-8000-000000000002"
+   }
+  }
+ }
+]

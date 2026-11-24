@@ -1,0 +1,14 @@
+[project]
+name = "throughline-mastodon"
+version = "0.1.0"
+description = "Throughline connector for any Mastodon instance: your posts, favourites, bookmarks and notifications"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk"]
+[project.scripts]
+throughline-mastodon = "throughline_mastodon:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[tool.hatch.build.targets.wheel]
+packages = ["src/throughline_mastodon"]

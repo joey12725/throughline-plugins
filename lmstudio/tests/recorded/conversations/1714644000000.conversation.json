@@ -1,0 +1,153 @@
+{
+ "name": "Invented travel plan",
+ "pinned": true,
+ "createdAt": 1714644000000,
+ "preset": "",
+ "tokenCount": 99,
+ "systemPrompt": "You are an invented assistant.",
+ "messages": [
+  {
+   "versions": [
+    {
+     "type": "singleStep",
+     "role": "user",
+     "content": [
+      {
+       "type": "text",
+       "text": "Invented trip question"
+      }
+     ]
+    }
+   ],
+   "currentlySelected": 0
+  },
+  {
+   "versions": [
+    {
+     "type": "multiStep",
+     "role": "assistant",
+     "senderInfo": {
+      "senderName": "invented-7b"
+     },
+     "steps": [
+      {
+       "type": "contentBlock",
+       "stepIdentifier": "s1",
+       "style": {
+        "type": "thinking"
+       },
+       "content": [
+        {
+         "type": "text",
+         "text": "Invented hidden reasoning"
+        }
+       ]
+      },
+      {
+       "type": "contentBlock",
+       "stepIdentifier": "s2",
+       "content": [
+        {
+         "type": "text",
+         "text": "Invented trip answer"
+        }
+       ],
+       "genInfo": {
+        "indexedModelIdentifier": "invented-org/invented-7b-gguf",
+        "identifier": "invented-7b",
+        "stats": {
+         "promptTokensCount": 21,
+         "predictedTokensCount": 42,
+         "tokensPerSecond": 33.5
+        }
+       }
+      },
+      {
+       "type": "debugInfoBlock",
+       "debugInfo": "invented"
+      }
+     ]
+    }
+   ],
+   "currentlySelected": 0
+  },
+  {
+   "versions": [
+    {
+     "type": "singleStep",
+     "role": "user",
+     "content": [
+      {
+       "type": "text",
+       "text": "Invented with a file"
+      },
+      {
+       "type": "file",
+       "fileIdentifier": "invented.pdf"
+      }
+     ]
+    }
+   ],
+   "currentlySelected": 0
+  },
+  {
+   "versions": [
+    {
+     "type": "multiStep",
+     "role": "assistant",
+     "senderInfo": {
+      "senderName": "invented-7b"
+     },
+     "steps": [
+      {
+       "type": "contentBlock",
+       "stepIdentifier": "s1",
+       "style": {
+        "type": "thinking"
+       },
+       "content": [
+        {
+         "type": "text",
+         "text": "Invented hidden reasoning"
+        }
+       ]
+      },
+      {
+       "type": "contentBlock",
+       "stepIdentifier": "s2",
+       "content": [
+        {
+         "type": "text",
+         "text": "Invented file answer"
+        }
+       ],
+       "genInfo": {
+        "indexedModelIdentifier": "invented-org/invented-7b-gguf",
+        "identifier": "invented-7b",
+        "stats": {
+         "promptTokensCount": 21,
+         "predictedTokensCount": 42,
+         "tokensPerSecond": 33.5
+        }
+       }
+      },
+      {
+       "type": "debugInfoBlock",
+       "debugInfo": "invented"
+      }
+     ]
+    }
+   ],
+   "currentlySelected": 0
+  },
+  {
+   "mystery": true
+  }
+ ],
+ "lastUsedModel": {
+  "identifier": "invented-7b",
+  "indexedModelIdentifier": "invented-org/invented-7b-gguf"
+ },
+ "notes": [],
+ "plugins": []
+}

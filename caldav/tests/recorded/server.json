@@ -1,0 +1,46 @@
+{
+ "routes": [
+  {
+   "method": "PROPFIND",
+   "path": "/dav/",
+   "body": "<?xml version=\"1.0\" encoding=\"utf-8\"?><d:multistatus xmlns:d=\"DAV:\" xmlns:c=\"urn:ietf:params:xml:ns:caldav\" xmlns:cs=\"http://calendarserver.org/ns/\"><d:response><d:href>/dav/</d:href><d:propstat><d:prop><d:current-user-principal><d:href>/dav/principals/invented/</d:href></d:current-user-principal></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response></d:multistatus>",
+   "status": 207
+  },
+  {
+   "method": "PROPFIND",
+   "path": "/dav/principals/invented/",
+   "body": "<?xml version=\"1.0\" encoding=\"utf-8\"?><d:multistatus xmlns:d=\"DAV:\" xmlns:c=\"urn:ietf:params:xml:ns:caldav\" xmlns:cs=\"http://calendarserver.org/ns/\"><d:response><d:href>/dav/principals/invented/</d:href><d:propstat><d:prop><c:calendar-home-set><d:href>/dav/calendars/invented/</d:href></c:calendar-home-set></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response></d:multistatus>",
+   "status": 207
+  },
+  {
+   "method": "PROPFIND",
+   "path": "/dav/calendars/invented/",
+   "status": 207,
+   "body": "<?xml version=\"1.0\" encoding=\"utf-8\"?><d:multistatus xmlns:d=\"DAV:\" xmlns:c=\"urn:ietf:params:xml:ns:caldav\" xmlns:cs=\"http://calendarserver.org/ns/\"><d:response><d:href>/dav/calendars/invented/</d:href><d:propstat><d:prop><d:resourcetype><d:collection/></d:resourcetype></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response><d:response><d:href>/dav/calendars/invented/personal/</d:href><d:propstat><d:prop><d:resourcetype><d:collection/><c:calendar/></d:resourcetype><d:displayname>Invented personal</d:displayname><cs:getctag>ctag-p-1</cs:getctag><c:supported-calendar-component-set><c:comp name=\"VEVENT\"/></c:supported-calendar-component-set></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response><d:response><d:href>/dav/calendars/invented/work/</d:href><d:propstat><d:prop><d:resourcetype><d:collection/><c:calendar/></d:resourcetype><d:displayname>Invented work</d:displayname><d:sync-token>http://example.com/sync/w-1</d:sync-token></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response><d:response><d:href>/dav/calendars/invented/tasks/</d:href><d:propstat><d:prop><d:resourcetype><d:collection/><c:calendar/></d:resourcetype><d:displayname>Invented tasks</d:displayname><c:supported-calendar-component-set><c:comp name=\"VTODO\"/></c:supported-calendar-component-set></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response></d:multistatus>"
+  },
+  {
+   "method": "REPORT",
+   "path": "/dav/calendars/invented/personal/",
+   "body_contains": "calendar-data",
+   "status": 207,
+   "body": "<?xml version=\"1.0\" encoding=\"utf-8\"?><d:multistatus xmlns:d=\"DAV:\" xmlns:c=\"urn:ietf:params:xml:ns:caldav\" xmlns:cs=\"http://calendarserver.org/ns/\"><d:response><d:href>/dav/calendars/invented/personal/standup.ics</d:href><d:propstat><d:prop><d:getetag>\"e-standup-1\"</d:getetag><c:calendar-data>BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Invented//Fixture//EN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Berlin\r\nBEGIN:STANDARD\r\nDTSTART:19701025T030000\r\nRRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU\r\nTZOFFSETFROM:+0200\r\nTZOFFSETTO:+0100\r\nEND:STANDARD\r\nBEGIN:DAYLIGHT\r\nDTSTART:19700329T020000\r\nRRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU\r\nTZOFFSETFROM:+0100\r\nTZOFFSETTO:+0200\r\nEND:DAYLIGHT\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nUID:standup-1@example.com\r\nDTSTAMP:20250301T000000Z\r\nDTSTART;TZID=Europe/Berlin:20250106T090000\r\nDTEND;TZID=Europe/Berlin:20250106T093000\r\nRRULE:FREQ=WEEKLY;COUNT=4\r\nEXDATE;TZID=Europe/Berlin:20250113T090000\r\nSUMMARY:Invented standup\r\nLOCATION:Invented room 1\r\nORGANIZER;CN=Invented Lead:mailto:lead@example.com\r\nATTENDEE;CN=Invented Owner;PARTSTAT=ACCEPTED:mailto:owner@example.com\r\nATTENDEE;CN=Invented Colleague;PARTSTAT=NEEDS-ACTION;ROLE=OPT-PARTICIPANT:mailto:colleague@example.com\r\nCREATED:20241201T100000Z\r\nLAST-MODIFIED:20241201T100030Z\r\nEND:VEVENT\r\nBEGIN:VEVENT\r\nUID:standup-1@example.com\r\nDTSTAMP:20250301T000000Z\r\nRECURRENCE-ID;TZID=Europe/Berlin:20250120T090000\r\nDTSTART;TZID=Europe/Berlin:20250120T100000\r\nDTEND;TZID=Europe/Berlin:20250120T103000\r\nSUMMARY:Invented standup\r\nSTATUS:CANCELLED\r\nCREATED:20241201T100000Z\r\nLAST-MODIFIED:20250115T080000Z\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n</c:calendar-data></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response><d:response><d:href>/dav/calendars/invented/personal/trip.ics</d:href><d:propstat><d:prop><d:getetag>\"e-trip-1\"</d:getetag><c:calendar-data>BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Invented//Fixture//EN\r\nBEGIN:VEVENT\r\nUID:trip-1@example.com\r\nDTSTAMP:20250301T000000Z\r\nDTSTART;VALUE=DATE:20250110\r\nDTEND;VALUE=DATE:20250113\r\nSUMMARY:Invented trip to the coast\r\nDESCRIPTION:Pack the invented tent.\\nBring snacks.\r\nTRANSP:TRANSPARENT\r\nCREATED:20241120T120000Z\r\nLAST-MODIFIED:20241125T120000Z\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n</c:calendar-data></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response><d:response><d:href>/dav/calendars/invented/personal/dentist.ics</d:href><d:propstat><d:prop><d:getetag>\"e-dentist-1\"</d:getetag><c:calendar-data>BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Invented//Fixture//EN\r\nBEGIN:VEVENT\r\nUID:dentist-1@example.com\r\nDTSTAMP:20250301T000000Z\r\nDTSTART:20250115T140000Z\r\nDTEND:20250115T143000Z\r\nSUMMARY:Invented dentist\r\nLOCATION:Invented Street 5\r\nCLASS:PRIVATE\r\nCREATED:20241210T090000Z\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n</c:calendar-data></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response><d:response><d:href>/dav/calendars/invented/personal/dinner.ics</d:href><d:propstat><d:prop><d:getetag>\"e-dinner-1\"</d:getetag><c:calendar-data>BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Invented//Fixture//EN\r\nBEGIN:VEVENT\r\nUID:dinner-1@example.com\r\nDTSTAMP:20250301T000000Z\r\nDTSTART:20250125T180000Z\r\nDTEND:20250125T200000Z\r\nSUMMARY:Invented dinner\r\nSTATUS:CANCELLED\r\nCREATED:20250101T090000Z\r\nLAST-MODIFIED:20250120T090000Z\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n</c:calendar-data></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response></d:multistatus>"
+  },
+  {
+   "method": "REPORT",
+   "path": "/dav/calendars/invented/work/",
+   "body_contains": "calendar-data",
+   "status": 207,
+   "body": "<?xml version=\"1.0\" encoding=\"utf-8\"?><d:multistatus xmlns:d=\"DAV:\" xmlns:c=\"urn:ietf:params:xml:ns:caldav\" xmlns:cs=\"http://calendarserver.org/ns/\"><d:response><d:href>/dav/calendars/invented/work/review.ics</d:href><d:propstat><d:prop><d:getetag>\"e-review-1\"</d:getetag><c:calendar-data>BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Invented//Fixture//EN\r\nBEGIN:VTIMEZONE\r\nTZID:America/New_York\r\nBEGIN:STANDARD\r\nDTSTART:19701101T020000\r\nRRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU\r\nTZOFFSETFROM:-0400\r\nTZOFFSETTO:-0500\r\nEND:STANDARD\r\nBEGIN:DAYLIGHT\r\nDTSTART:19700308T020000\r\nRRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU\r\nTZOFFSETFROM:-0500\r\nTZOFFSETTO:-0400\r\nEND:DAYLIGHT\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nUID:review-1@example.com\r\nDTSTAMP:20250301T000000Z\r\nDTSTART;TZID=America/New_York:20250205T110000\r\nDTEND;TZID=America/New_York:20250205T120000\r\nSUMMARY:Invented quarterly review\r\nORGANIZER;CN=Invented Owner:mailto:owner@example.com\r\nATTENDEE;CN=Invented Room;CUTYPE=ROOM;PARTSTAT=ACCEPTED:mailto:room-7@example.com\r\nX-MICROSOFT-SKYPETEAMSMEETINGURL:https://meet.example.com/invented-review\r\nCREATED:20250110T150000Z\r\nLAST-MODIFIED:20250110T150010Z\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n</c:calendar-data></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response><d:response><d:href>/dav/calendars/invented/work/floating.ics</d:href><d:propstat><d:prop><d:getetag>\"e-floating-1\"</d:getetag><c:calendar-data>BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Invented//Fixture//EN\r\nBEGIN:VEVENT\r\nUID:floating-1@example.com\r\nDTSTAMP:20250301T000000Z\r\nDTSTART:20250210T080000\r\nDTEND:20250210T090000\r\nSUMMARY:Invented floating breakfast\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n</c:calendar-data></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response></d:multistatus>"
+  },
+  {
+   "method": "GET",
+   "path": "/invented/private-token-abc123/club.ics",
+   "host": "feeds.example.org",
+   "body": "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Invented//Fixture//EN\r\nX-WR-CALNAME:Invented club feed\r\nBEGIN:VEVENT\r\nUID:club-run@example.org\r\nDTSTAMP:20250301T000000Z\r\nDTSTART:20250201T070000Z\r\nDTEND:20250201T080000Z\r\nRRULE:FREQ=DAILY;COUNT=3\r\nSUMMARY:Invented club run\r\nCREATED:20250105T100000Z\r\nEND:VEVENT\r\nBEGIN:VEVENT\r\nUID:club-party@example.org\r\nDTSTAMP:20250301T000000Z\r\nDTSTART;VALUE=DATE:20250214\r\nSUMMARY:Invented club party\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n",
+   "response_headers": {
+    "ETag": "\"feed-1\"",
+    "Content-Type": "text/calendar"
+   }
+  }
+ ]
+}

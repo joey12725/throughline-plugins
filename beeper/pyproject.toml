@@ -1,0 +1,31 @@
+[project]
+name = "throughline-beeper"
+version = "0.1.0"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = [
+    "throughline-sdk",
+    "throughline-media",
+    "httpx",
+    "psycopg[binary]>=3.2",
+    "pypdfium2>=5.15.2",
+    "pillow>=13.0.0",
+    "mammoth>=1.13.0",
+    "openpyxl>=3.1.5",
+    "markdownify>=1.2.3",
+    "beautifulsoup4>=4.12",
+]
+[project.scripts]
+throughline-beeper = "throughline_beeper:main"
+
+[project.optional-dependencies]
+whisper = [
+    "faster-whisper>=1.2.1",
+    "huggingface-hub<1",
+]
+[tool.uv.sources]
+throughline-media = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

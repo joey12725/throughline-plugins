@@ -1,0 +1,896 @@
+{
+ "user": {
+  "login": "invented-dev",
+  "id": 1001,
+  "type": "User",
+  "name": "Invented Developer"
+ },
+ "repos": [
+  {
+   "id": 64458,
+   "full_name": "invented-dev/invented-notes",
+   "name": "invented-notes",
+   "owner": {
+    "login": "invented-dev"
+   },
+   "private": true,
+   "html_url": "https://github.com/invented-dev/invented-notes",
+   "pushed_at": "2023-12-01T00:00:00Z",
+   "fork": false,
+   "description": "Invented invented-notes"
+  },
+  {
+   "id": 98782,
+   "full_name": "invented-dev/invented-cli",
+   "name": "invented-cli",
+   "owner": {
+    "login": "invented-dev"
+   },
+   "private": false,
+   "html_url": "https://github.com/invented-dev/invented-cli",
+   "pushed_at": "2023-12-01T00:00:00Z",
+   "fork": false,
+   "description": "Invented invented-cli"
+  },
+  {
+   "id": 50996,
+   "full_name": "example-org/example-shared",
+   "name": "example-shared",
+   "owner": {
+    "login": "example-org"
+   },
+   "private": false,
+   "html_url": "https://github.com/example-org/example-shared",
+   "pushed_at": "2023-12-01T00:00:00Z",
+   "fork": false,
+   "description": "Invented example-shared"
+  }
+ ],
+ "commits": {
+  "invented-dev/invented-notes": [
+   {
+    "sha": "0000000000000000000000000000000000000001",
+    "commit": {
+     "author": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-03-01T10:00:00Z"
+     },
+     "committer": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-03-01T10:00:00Z"
+     },
+     "message": "Initial invented notes"
+    },
+    "author": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "committer": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "html_url": "https://github.com/invented-dev/invented-notes/commit/0000000000000000000000000000000000000001",
+    "parents": [
+     {
+      "sha": "0000000000000000000000000000000000000000"
+     }
+    ]
+   },
+   {
+    "sha": "0000000000000000000000000000000000000002",
+    "commit": {
+     "author": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-03-02T11:30:00Z"
+     },
+     "committer": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-03-02T11:30:00Z"
+     },
+     "message": "Add invented search\n\nLonger body explaining the invented change."
+    },
+    "author": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "committer": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "html_url": "https://github.com/invented-dev/invented-notes/commit/0000000000000000000000000000000000000002",
+    "parents": [
+     {
+      "sha": "0000000000000000000000000000000000000001"
+     }
+    ]
+   },
+   {
+    "sha": "0000000000000000000000000000000000000003",
+    "commit": {
+     "author": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-03-05T09:15:00Z"
+     },
+     "committer": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-03-05T09:15:00Z"
+     },
+     "message": "Refactor invented parser\n\nCo-Authored-By: Claude <noreply@anthropic.com>"
+    },
+    "author": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "committer": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "html_url": "https://github.com/invented-dev/invented-notes/commit/0000000000000000000000000000000000000003",
+    "parents": [
+     {
+      "sha": "0000000000000000000000000000000000000002"
+     }
+    ]
+   },
+   {
+    "sha": "0000000000000000000000000000000000000004",
+    "commit": {
+     "author": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-04-10T16:45:00Z"
+     },
+     "committer": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-04-10T16:45:00Z"
+     },
+     "message": "Fix invented typo\n\nCo-authored-by: Other Invented <other@example.com>"
+    },
+    "author": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "committer": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "html_url": "https://github.com/invented-dev/invented-notes/commit/0000000000000000000000000000000000000004",
+    "parents": [
+     {
+      "sha": "0000000000000000000000000000000000000003"
+     }
+    ]
+   },
+   {
+    "sha": "0000000000000000000000000000000000000005",
+    "commit": {
+     "author": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-05-20T08:00:00Z"
+     },
+     "committer": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-05-20T08:00:00Z"
+     },
+     "message": "Bump invented version"
+    },
+    "author": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "committer": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "html_url": "https://github.com/invented-dev/invented-notes/commit/0000000000000000000000000000000000000005",
+    "parents": [
+     {
+      "sha": "0000000000000000000000000000000000000004"
+     }
+    ]
+   }
+  ],
+  "invented-dev/invented-cli": [
+   {
+    "sha": "0000000000000000000000000000000000000006",
+    "commit": {
+     "author": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-06-01T12:00:00Z"
+     },
+     "committer": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-06-01T12:00:00Z"
+     },
+     "message": "Invented CLI skeleton"
+    },
+    "author": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "committer": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "html_url": "https://github.com/invented-dev/invented-cli/commit/0000000000000000000000000000000000000006",
+    "parents": [
+     {
+      "sha": "0000000000000000000000000000000000000005"
+     }
+    ]
+   },
+   {
+    "sha": "0000000000000000000000000000000000000007",
+    "commit": {
+     "author": {
+      "name": "Other Invented",
+      "email": "other@example.com",
+      "date": "2023-06-02T12:00:00Z"
+     },
+     "committer": {
+      "name": "Other Invented",
+      "email": "other@example.com",
+      "date": "2023-06-02T12:00:00Z"
+     },
+     "message": "Other person's invented commit"
+    },
+    "author": {
+     "login": "other-invented",
+     "id": 2002,
+     "type": "User"
+    },
+    "committer": {
+     "login": "other-invented",
+     "id": 2002,
+     "type": "User"
+    },
+    "html_url": "https://github.com/invented-dev/invented-cli/commit/0000000000000000000000000000000000000007",
+    "parents": [
+     {
+      "sha": "0000000000000000000000000000000000000006"
+     }
+    ]
+   },
+   {
+    "sha": "0000000000000000000000000000000000000008",
+    "commit": {
+     "author": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-06-03T12:00:00Z"
+     },
+     "committer": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-06-03T12:00:00Z"
+     },
+     "message": "Add invented flag"
+    },
+    "author": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "committer": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "html_url": "https://github.com/invented-dev/invented-cli/commit/0000000000000000000000000000000000000008",
+    "parents": [
+     {
+      "sha": "0000000000000000000000000000000000000007"
+     }
+    ]
+   },
+   {
+    "sha": "0000000000000000000000000000000000000009",
+    "commit": {
+     "author": {
+      "name": "invented-bot",
+      "email": "bot@example.com",
+      "date": "2023-06-04T12:00:00Z"
+     },
+     "committer": {
+      "name": "invented-bot",
+      "email": "bot@example.com",
+      "date": "2023-06-04T12:00:00Z"
+     },
+     "message": "Invented dependency bump"
+    },
+    "author": {
+     "login": "invented-bot[bot]",
+     "id": 3003,
+     "type": "Bot"
+    },
+    "committer": {
+     "login": "invented-bot[bot]",
+     "id": 3003,
+     "type": "Bot"
+    },
+    "html_url": "https://github.com/invented-dev/invented-cli/commit/0000000000000000000000000000000000000009",
+    "parents": [
+     {
+      "sha": "0000000000000000000000000000000000000008"
+     }
+    ]
+   }
+  ],
+  "example-org/example-shared": [
+   {
+    "sha": "000000000000000000000000000000000000000a",
+    "commit": {
+     "author": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-07-01T15:00:00Z"
+     },
+     "committer": {
+      "name": "Invented Developer",
+      "email": "invented@example.com",
+      "date": "2023-07-01T15:00:00Z"
+     },
+     "message": "Shared invented fix"
+    },
+    "author": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "committer": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "html_url": "https://github.com/example-org/example-shared/commit/000000000000000000000000000000000000000a",
+    "parents": [
+     {
+      "sha": "0000000000000000000000000000000000000009"
+     }
+    ]
+   }
+  ]
+ },
+ "foreign_commits": [
+  {
+   "sha": "000000000000000000000000000000000000000b",
+   "commit": {
+    "author": {
+     "name": "Invented Developer",
+     "email": "invented@example.com",
+     "date": "2023-08-15T13:20:00.000+02:00"
+    },
+    "committer": {
+     "name": "Invented Developer",
+     "email": "invented@example.com",
+     "date": "2023-08-15T13:20:00.000+02:00"
+    },
+    "message": "Contribute invented docs"
+   },
+   "author": {
+    "login": "invented-dev",
+    "id": 1001,
+    "type": "User",
+    "name": "Invented Developer"
+   },
+   "committer": {
+    "login": "invented-dev",
+    "id": 1001,
+    "type": "User",
+    "name": "Invented Developer"
+   },
+   "html_url": "https://github.com/example-org/foreign-lib/commit/000000000000000000000000000000000000000b",
+   "parents": [
+    {
+     "sha": "000000000000000000000000000000000000000a"
+    }
+   ],
+   "repository": {
+    "full_name": "example-org/foreign-lib"
+   }
+  },
+  {
+   "sha": "000000000000000000000000000000000000000c",
+   "commit": {
+    "author": {
+     "name": "Invented Developer",
+     "email": "invented@example.com",
+     "date": "2023-08-16T09:00:00Z"
+    },
+    "committer": {
+     "name": "Invented Developer",
+     "email": "invented@example.com",
+     "date": "2023-08-16T09:00:00Z"
+    },
+    "message": "Second invented contribution"
+   },
+   "author": {
+    "login": "invented-dev",
+    "id": 1001,
+    "type": "User",
+    "name": "Invented Developer"
+   },
+   "committer": {
+    "login": "invented-dev",
+    "id": 1001,
+    "type": "User",
+    "name": "Invented Developer"
+   },
+   "html_url": "https://github.com/example-org/foreign-lib/commit/000000000000000000000000000000000000000c",
+   "parents": [
+    {
+     "sha": "000000000000000000000000000000000000000b"
+    }
+   ],
+   "repository": {
+    "full_name": "example-org/foreign-lib"
+   }
+  }
+ ],
+ "issues": [
+  {
+   "number": 7,
+   "title": "Invented docs improvement",
+   "user": {
+    "login": "invented-dev",
+    "id": 1001,
+    "type": "User",
+    "name": "Invented Developer"
+   },
+   "state": "closed",
+   "created_at": "2023-08-15T14:00:00Z",
+   "updated_at": "2023-08-20T10:00:00Z",
+   "closed_at": "2023-08-20T10:00:00Z",
+   "html_url": "https://github.com/example-org/foreign-lib/pull/7",
+   "body": "Invented body.",
+   "labels": [
+    {
+     "name": "docs"
+    }
+   ],
+   "comments": 0,
+   "author_association": "OWNER",
+   "repository": "example-org/foreign-lib",
+   "pull_request": {
+    "url": "https://api.github.com/repos/example-org/foreign-lib/pulls/7",
+    "html_url": "https://github.com/example-org/foreign-lib/pull/7",
+    "merged_at": "2023-08-20T10:00:00Z"
+   },
+   "draft": false
+  },
+  {
+   "number": 3,
+   "title": "Invented flag parsing",
+   "user": {
+    "login": "invented-dev",
+    "id": 1001,
+    "type": "User",
+    "name": "Invented Developer"
+   },
+   "state": "open",
+   "created_at": "2023-06-03T13:00:00Z",
+   "updated_at": "2023-06-10T09:00:00Z",
+   "closed_at": null,
+   "html_url": "https://github.com/invented-dev/invented-cli/pull/3",
+   "body": "Invented body.",
+   "labels": [
+    {
+     "name": "enhancement"
+    }
+   ],
+   "comments": 0,
+   "author_association": "OWNER",
+   "repository": "invented-dev/invented-cli",
+   "pull_request": {
+    "url": "https://api.github.com/repos/invented-dev/invented-cli/pulls/3",
+    "html_url": "https://github.com/invented-dev/invented-cli/pull/3",
+    "merged_at": null
+   },
+   "draft": true
+  },
+  {
+   "number": 4,
+   "title": "Invented colour output",
+   "user": {
+    "login": "other-invented",
+    "id": 2002,
+    "type": "User"
+   },
+   "state": "closed",
+   "created_at": "2023-06-05T08:00:00Z",
+   "updated_at": "2023-06-07T18:00:00Z",
+   "closed_at": "2023-06-07T18:00:00Z",
+   "html_url": "https://github.com/invented-dev/invented-cli/pull/4",
+   "body": "Invented body.",
+   "labels": [],
+   "comments": 0,
+   "author_association": "OWNER",
+   "repository": "invented-dev/invented-cli",
+   "pull_request": {
+    "url": "https://api.github.com/repos/invented-dev/invented-cli/pulls/4",
+    "html_url": "https://github.com/invented-dev/invented-cli/pull/4",
+    "merged_at": "2023-06-07T18:00:00Z"
+   },
+   "draft": false
+  },
+  {
+   "number": 1,
+   "title": "Invented crash on empty note",
+   "user": {
+    "login": "invented-dev",
+    "id": 1001,
+    "type": "User",
+    "name": "Invented Developer"
+   },
+   "state": "closed",
+   "created_at": "2023-03-03T08:00:00Z",
+   "updated_at": "2023-03-04T12:00:00Z",
+   "closed_at": "2023-03-04T12:00:00Z",
+   "html_url": "https://github.com/invented-dev/invented-notes/issues/1",
+   "body": "Invented body.",
+   "labels": [],
+   "comments": 0,
+   "author_association": "OWNER",
+   "repository": "invented-dev/invented-notes"
+  },
+  {
+   "number": 12,
+   "title": "Invented question about the shared API",
+   "user": {
+    "login": "invented-dev",
+    "id": 1001,
+    "type": "User",
+    "name": "Invented Developer"
+   },
+   "state": "open",
+   "created_at": "2023-07-02T10:00:00Z",
+   "updated_at": "2023-07-03T10:00:00Z",
+   "closed_at": null,
+   "html_url": "https://github.com/example-org/example-shared/issues/12",
+   "body": "Invented body.",
+   "labels": [],
+   "comments": 0,
+   "author_association": "OWNER",
+   "repository": "example-org/example-shared"
+  },
+  {
+   "number": 13,
+   "title": "Invented feature from someone else",
+   "user": {
+    "login": "other-invented",
+    "id": 2002,
+    "type": "User"
+   },
+   "state": "open",
+   "created_at": "2023-07-04T10:00:00Z",
+   "updated_at": "2023-07-06T10:00:00Z",
+   "closed_at": null,
+   "html_url": "https://github.com/example-org/example-shared/issues/13",
+   "body": "Invented body.",
+   "labels": [],
+   "comments": 0,
+   "author_association": "OWNER",
+   "repository": "example-org/example-shared"
+  }
+ ],
+ "issue_comments": {
+  "invented-dev/invented-notes#1": [
+   {
+    "id": 5001,
+    "user": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "body": "Invented reproduction steps.",
+    "created_at": "2023-03-03T09:00:00Z",
+    "updated_at": "2023-03-03T09:00:00Z",
+    "html_url": "https://github.com/x#c5001"
+   },
+   {
+    "id": 5002,
+    "user": {
+     "login": "other-invented",
+     "id": 2002,
+     "type": "User"
+    },
+    "body": "Invented reply from someone else.",
+    "created_at": "2023-03-03T10:00:00Z",
+    "updated_at": "2023-03-03T10:00:00Z",
+    "html_url": "https://github.com/x#c5002"
+   },
+   {
+    "id": 5003,
+    "user": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "body": "Fixed in the invented commit.",
+    "created_at": "2023-03-04T11:00:00Z",
+    "updated_at": "2023-03-04T11:30:00Z",
+    "html_url": "https://github.com/x#c5003"
+   }
+  ],
+  "invented-dev/invented-cli#4": [
+   {
+    "id": 5004,
+    "user": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "body": "Thanks, invented looks good.",
+    "created_at": "2023-06-06T09:00:00Z",
+    "updated_at": "2023-06-06T09:00:00Z",
+    "html_url": "https://github.com/x#c5004"
+   }
+  ],
+  "example-org/example-shared#13": [
+   {
+    "id": 5005,
+    "user": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "body": "+1 to this invented feature.",
+    "created_at": "2023-07-05T10:00:00Z",
+    "updated_at": "2023-07-05T10:00:00Z",
+    "html_url": "https://github.com/x#c5005"
+   }
+  ]
+ },
+ "review_comments": {
+  "invented-dev/invented-cli#4": [
+   {
+    "id": 5006,
+    "user": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "body": "Invented nit: rename this.",
+    "created_at": "2023-06-06T09:30:00Z",
+    "updated_at": "2023-06-06T09:30:00Z",
+    "html_url": "https://github.com/x#c5006",
+    "path": "src/invented.py",
+    "line": 12,
+    "pull_request_review_id": 9001
+   }
+  ]
+ },
+ "reviews": {
+  "invented-dev/invented-cli#4": [
+   {
+    "id": 9001,
+    "user": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "state": "COMMENTED",
+    "body": "",
+    "submitted_at": "2023-06-06T09:30:00Z",
+    "html_url": "https://github.com/invented-dev/invented-cli/pull/4#r9001",
+    "commit_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+   },
+   {
+    "id": 9002,
+    "user": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "state": "APPROVED",
+    "body": "Invented approval.",
+    "submitted_at": "2023-06-07T17:00:00Z",
+    "html_url": "https://github.com/invented-dev/invented-cli/pull/4#r9002",
+    "commit_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   {
+    "id": 9003,
+    "user": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "state": "PENDING",
+    "body": "draft",
+    "html_url": "https://github.com/invented-dev/invented-cli/pull/4#r9003",
+    "commit_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "submitted_at": null
+   }
+  ],
+  "invented-dev/invented-cli#3": [
+   {
+    "id": 9004,
+    "user": {
+     "login": "other-invented",
+     "id": 2002,
+     "type": "User"
+    },
+    "state": "CHANGES_REQUESTED",
+    "body": "Invented change request.",
+    "submitted_at": "2023-06-08T10:00:00Z",
+    "html_url": "https://github.com/x#r9004",
+    "commit_id": "cccccccccccccccccccccccccccccccccccccccc"
+   }
+  ]
+ },
+ "releases": {
+  "invented-dev/invented-cli": [
+   {
+    "id": 7001,
+    "tag_name": "v0.1.0",
+    "name": "Invented first release",
+    "body": "Invented notes.",
+    "draft": false,
+    "prerelease": false,
+    "created_at": "2023-06-10T10:00:00Z",
+    "published_at": "2023-06-10T10:05:00Z",
+    "author": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "html_url": "https://github.com/invented-dev/invented-cli/releases/v0.1.0"
+   },
+   {
+    "id": 7002,
+    "tag_name": "v0.2.0-rc1",
+    "name": null,
+    "body": "",
+    "draft": false,
+    "prerelease": true,
+    "created_at": "2023-09-01T10:00:00Z",
+    "published_at": "2023-09-01T10:00:00Z",
+    "author": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "html_url": "https://github.com/invented-dev/invented-cli/releases/v0.2.0-rc1"
+   },
+   {
+    "id": 7003,
+    "tag_name": "v0.3.0",
+    "name": "Draft",
+    "body": "",
+    "draft": true,
+    "prerelease": false,
+    "created_at": "2023-10-01T10:00:00Z",
+    "published_at": null,
+    "author": {
+     "login": "invented-dev",
+     "id": 1001,
+     "type": "User",
+     "name": "Invented Developer"
+    },
+    "html_url": "https://github.com/x"
+   },
+   {
+    "id": 7004,
+    "tag_name": "v0.1.1",
+    "name": "By someone else",
+    "body": "",
+    "draft": false,
+    "prerelease": false,
+    "created_at": "2023-07-01T10:00:00Z",
+    "published_at": "2023-07-01T10:00:00Z",
+    "author": {
+     "login": "other-invented",
+     "id": 2002,
+     "type": "User"
+    },
+    "html_url": "https://github.com/x"
+   }
+  ]
+ },
+ "stars": [
+  {
+   "starred_at": "2023-02-01T10:00:00Z",
+   "repo": {
+    "id": 60412,
+    "full_name": "example-org/invented-db",
+    "name": "invented-db",
+    "owner": {
+     "login": "example-org"
+    },
+    "private": false,
+    "html_url": "https://github.com/example-org/invented-db",
+    "pushed_at": "2023-12-01T00:00:00Z",
+    "fork": false,
+    "description": "Invented invented-db",
+    "language": "Rust",
+    "topics": [
+     "database",
+     "invented"
+    ]
+   }
+  },
+  {
+   "starred_at": "2023-05-01T10:00:00Z",
+   "repo": {
+    "id": 70081,
+    "full_name": "example-org/invented-ui",
+    "name": "invented-ui",
+    "owner": {
+     "login": "example-org"
+    },
+    "private": false,
+    "html_url": "https://github.com/example-org/invented-ui",
+    "pushed_at": "2023-12-01T00:00:00Z",
+    "fork": false,
+    "description": "Invented invented-ui",
+    "language": "TypeScript"
+   }
+  },
+  {
+   "starred_at": "2023-11-11T10:00:00Z",
+   "repo": {
+    "id": 50601,
+    "full_name": "example-org/foreign-lib",
+    "name": "foreign-lib",
+    "owner": {
+     "login": "example-org"
+    },
+    "private": false,
+    "html_url": "https://github.com/example-org/foreign-lib",
+    "pushed_at": "2023-12-01T00:00:00Z",
+    "fork": false,
+    "description": null,
+    "language": "Python"
+   }
+  }
+ ]
+}

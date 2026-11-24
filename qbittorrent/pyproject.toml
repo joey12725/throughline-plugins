@@ -1,0 +1,15 @@
+[project]
+name = "throughline-qbittorrent"
+version = "0.1.0"
+description = "Read-only qBittorrent lifecycle history for Throughline"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk"]
+
+[project.scripts]
+throughline-qbittorrent = "throughline_qbittorrent:main"
+throughline-qbittorrent-fetch = "throughline_qbittorrent.fetch:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

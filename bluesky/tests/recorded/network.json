@@ -1,0 +1,447 @@
+{
+ "did": "did:plc:inventedowner000000000001",
+ "handle": "invented-owner.example.com",
+ "password": "invented-app-password-canary",
+ "did_doc": {
+  "id": "did:plc:inventedowner000000000001",
+  "alsoKnownAs": [
+   "at://invented-owner.example.com"
+  ],
+  "service": [
+   {
+    "id": "#atproto_pds",
+    "type": "AtprotoPersonalDataServer",
+    "serviceEndpoint": "https://pds.example.com"
+   }
+  ]
+ },
+ "session_did_doc": false,
+ "records": {
+  "app.bsky.feed.post": [
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3leyedmwm222b",
+    "cid": "bafyinvented3leyedmwm222b",
+    "value": {
+     "$type": "app.bsky.feed.post",
+     "text": "Hello from an invented account #intro",
+     "createdAt": "2025-01-05T10:00:00Z",
+     "langs": [
+      "en"
+     ],
+     "facets": [
+      {
+       "index": {
+        "byteStart": 28,
+        "byteEnd": 34
+       },
+       "features": [
+        {
+         "$type": "app.bsky.richtext.facet#tag",
+         "tag": "intro"
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3lf2ztiabk22b",
+    "cid": "bafyinvented3lf2ztiabk22b",
+    "value": {
+     "$type": "app.bsky.feed.post",
+     "text": "Invented photo of a pretend garden",
+     "createdAt": "2025-01-06T11:30:00Z",
+     "langs": [
+      "en"
+     ],
+     "embed": {
+      "$type": "app.bsky.embed.images",
+      "images": [
+       {
+        "alt": "Invented tomatoes on a vine",
+        "image": {
+         "$type": "blob",
+         "ref": {
+          "$link": "bafkreiinvented1"
+         },
+         "mimeType": "image/jpeg",
+         "size": 1000
+        }
+       }
+      ]
+     }
+    }
+   },
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3lg63dgtu222b",
+    "cid": "bafyinvented3lg63dgtu222b",
+    "value": {
+     "$type": "app.bsky.feed.post",
+     "text": "Totally agree with this invented take",
+     "createdAt": "2025-01-20T10:00:00Z",
+     "langs": [
+      "en"
+     ],
+     "reply": {
+      "root": {
+       "uri": "at://did:plc:inventedfriend00000000002/app.bsky.feed.post/3lg5xy5ml222b",
+       "cid": "bafyfriend1"
+      },
+      "parent": {
+       "uri": "at://did:plc:inventedfriend00000000002/app.bsky.feed.post/3lg5xy5ml222b",
+       "cid": "bafyfriend1"
+      }
+     }
+    }
+   },
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3lgaf3ru2222b",
+    "cid": "bafyinvented3lgaf3ru2222b",
+    "value": {
+     "$type": "app.bsky.feed.post",
+     "text": "Reading this invented article",
+     "createdAt": "2025-01-21T08:00:00Z",
+     "langs": [
+      "en"
+     ],
+     "embed": {
+      "$type": "app.bsky.embed.external",
+      "external": {
+       "uri": "https://example.com/invented-article",
+       "title": "An Invented Article",
+       "description": "Nothing real"
+      }
+     },
+     "facets": [
+      {
+       "index": {
+        "byteStart": 0,
+        "byteEnd": 4
+       },
+       "features": [
+        {
+         "$type": "app.bsky.richtext.facet#link",
+         "uri": "https://example.com/invented-article"
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3lhvmcbgw222b",
+    "cid": "bafyinvented3lhvmcbgw222b",
+    "value": {
+     "$type": "app.bsky.feed.post",
+     "text": "Quoting this one @invented-friend.example.com",
+     "createdAt": "2025-02-11T12:00:00Z",
+     "langs": [
+      "en"
+     ],
+     "embed": {
+      "$type": "app.bsky.embed.record",
+      "record": {
+       "uri": "at://did:plc:inventedstranger000000003/app.bsky.feed.post/3lhsrricd222b",
+       "cid": "bafystr1"
+      }
+     },
+     "facets": [
+      {
+       "index": {
+        "byteStart": 17,
+        "byteEnd": 45
+       },
+       "features": [
+        {
+         "$type": "app.bsky.richtext.facet#mention",
+         "did": "did:plc:inventedfriend00000000002"
+        }
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3lhy4r6vo222b",
+    "cid": "bafyinvented3lhy4r6vo222b",
+    "value": {
+     "$type": "app.bsky.feed.post",
+     "text": "",
+     "createdAt": "2025-02-12T12:00:00Z",
+     "langs": [
+      "en"
+     ],
+     "embed": {
+      "$type": "app.bsky.embed.recordWithMedia",
+      "record": {
+       "$type": "app.bsky.embed.record",
+       "record": {
+        "uri": "at://did:plc:inventedfriend00000000002/app.bsky.feed.post/3lg5xy5ml222b",
+        "cid": "bafyfriend1"
+       }
+      },
+      "media": {
+       "$type": "app.bsky.embed.images",
+       "images": [
+        {
+         "alt": ""
+        }
+       ]
+      }
+     }
+    }
+   },
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3li2na4eg222b",
+    "cid": "bafyinvented3li2na4eg222b",
+    "value": {
+     "$type": "app.bsky.feed.post",
+     "text": "Following up on my own invented post",
+     "createdAt": "2025-02-13T12:00:00Z",
+     "langs": [
+      "en"
+     ],
+     "reply": {
+      "root": {
+       "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3leyedmwm222b",
+       "cid": "x"
+      },
+      "parent": {
+       "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3leyedmwm222b",
+       "cid": "x"
+      }
+     }
+    }
+   },
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3ljcvjo2ac22b",
+    "cid": "bafyinvented3ljcvjo2ac22b",
+    "value": {
+     "$type": "app.bsky.feed.post",
+     "text": "An invented morning post with an offset",
+     "createdAt": "2025-03-01T07:15:00-05:00",
+     "langs": [
+      "en"
+     ]
+    }
+   }
+  ],
+  "app.bsky.feed.like": [
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.like/3lg5znsa7k22b",
+    "cid": "bafylike3lg5znsa7k22b",
+    "value": {
+     "$type": "app.bsky.feed.like",
+     "subject": {
+      "uri": "at://did:plc:inventedfriend00000000002/app.bsky.feed.post/3lg5xy5ml222b",
+      "cid": "bafysubject"
+     },
+     "createdAt": "2025-01-20T09:30:00Z"
+    }
+   },
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.like/3lhsv4rjm222b",
+    "cid": "bafylike3lhsv4rjm222b",
+    "value": {
+     "$type": "app.bsky.feed.like",
+     "subject": {
+      "uri": "at://did:plc:inventedstranger000000003/app.bsky.feed.post/3lhsrricd222b",
+      "cid": "bafysubject"
+     },
+     "createdAt": "2025-02-10T10:00:00Z"
+    }
+   },
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.like/3li7hhete222b",
+    "cid": "bafylike3li7hhete222b",
+    "value": {
+     "$type": "app.bsky.feed.like",
+     "subject": {
+      "uri": "at://did:plc:inventedstranger000000003/app.bsky.feed.post/3li3vhl3s222b",
+      "cid": "bafysubject"
+     },
+     "createdAt": "2025-02-15T10:00:00Z"
+    }
+   },
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.like/3libxwcc4222b",
+    "cid": "bafylike3libxwcc4222b",
+    "value": {
+     "$type": "app.bsky.feed.like",
+     "subject": {
+      "uri": "at://did:plc:inventedfeed/app.bsky.feed.generator/invented",
+      "cid": "bafysubject"
+     },
+     "createdAt": "2025-02-16T10:00:00Z"
+    }
+   }
+  ],
+  "app.bsky.feed.repost": [
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.repost/3lg5zplhbc22b",
+    "cid": "bafyrepost3lg5zplhbc22b",
+    "value": {
+     "$type": "app.bsky.feed.repost",
+     "subject": {
+      "uri": "at://did:plc:inventedfriend00000000002/app.bsky.feed.post/3lg5xy5ml222b",
+      "cid": "bafysubject"
+     },
+     "createdAt": "2025-01-20T09:31:00Z"
+    }
+   },
+   {
+    "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.repost/3lhsvfpmus22b",
+    "cid": "bafyrepost3lhsvfpmus22b",
+    "value": {
+     "$type": "app.bsky.feed.repost",
+     "subject": {
+      "uri": "at://did:plc:inventedstranger000000003/app.bsky.feed.post/3lhsrricd222b",
+      "cid": "bafysubject"
+     },
+     "createdAt": "2025-02-10T10:05:00Z"
+    }
+   }
+  ]
+ },
+ "posts": {
+  "at://did:plc:inventedfriend00000000002/app.bsky.feed.post/3lg5xy5ml222b": {
+   "uri": "at://did:plc:inventedfriend00000000002/app.bsky.feed.post/3lg5xy5ml222b",
+   "cid": "bafyfriend1",
+   "author": {
+    "did": "did:plc:inventedfriend00000000002",
+    "handle": "invented-friend.example.com",
+    "displayName": "Invented Friend"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "text": "Invented friend post about orchards",
+    "createdAt": "2025-01-20T09:00:00.000Z"
+   },
+   "indexedAt": "2025-01-20T09:00:01.000Z"
+  },
+  "at://did:plc:inventedstranger000000003/app.bsky.feed.post/3lhsrricd222b": {
+   "uri": "at://did:plc:inventedstranger000000003/app.bsky.feed.post/3lhsrricd222b",
+   "cid": "bafystr1",
+   "author": {
+    "did": "did:plc:inventedstranger000000003",
+    "handle": "invented-stranger.example.com"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "text": "Invented stranger thoughts on kites",
+    "createdAt": "2025-02-10T09:00:00.000Z"
+   },
+   "indexedAt": "2025-02-10T09:00:02.000Z"
+  }
+ },
+ "notifications": [
+  {
+   "uri": "at://did:plc:inventedfriend00000000002/app.bsky.feed.post/3leyl27f6222b",
+   "cid": "bafynote3leyl27f6222b",
+   "author": {
+    "did": "did:plc:inventedfriend00000000002",
+    "handle": "invented-friend.example.com",
+    "displayName": "Invented Friend"
+   },
+   "reason": "reply",
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "text": "Welcome, invented owner!",
+    "createdAt": "2025-01-05T12:00:00Z",
+    "reply": {
+     "root": {
+      "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3leyedmwm222b",
+      "cid": "x"
+     },
+     "parent": {
+      "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3leyedmwm222b",
+      "cid": "x"
+     }
+    }
+   },
+   "isRead": true,
+   "indexedAt": "2025-01-05T12:00:00.500Z",
+   "reasonSubject": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3leyedmwm222b"
+  },
+  {
+   "uri": "at://did:plc:inventedstranger000000003/app.bsky.feed.post/3lf5ly2co222b",
+   "cid": "bafynote3lf5ly2co222b",
+   "author": {
+    "did": "did:plc:inventedstranger000000003",
+    "handle": "invented-stranger.example.com",
+    "displayName": "Invented Stranger"
+   },
+   "reason": "mention",
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "text": "Hey @invented-owner.example.com look at this",
+    "createdAt": "2025-01-07T12:00:00Z"
+   },
+   "isRead": true,
+   "indexedAt": "2025-01-07T12:00:00.500Z"
+  },
+  {
+   "uri": "at://did:plc:inventedfriend00000000002/app.bsky.feed.like/3lfa4gxrg222b",
+   "cid": "bafynote3lfa4gxrg222b",
+   "author": {
+    "did": "did:plc:inventedfriend00000000002",
+    "handle": "invented-friend.example.com",
+    "displayName": "Invented Friend"
+   },
+   "reason": "like",
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "text": "",
+    "createdAt": "2025-01-08T12:00:00Z"
+   },
+   "isRead": true,
+   "indexedAt": "2025-01-08T12:00:00.500Z",
+   "reasonSubject": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3leyedmwm222b"
+  },
+  {
+   "uri": "at://did:plc:inventedfriend00000000002/app.bsky.feed.post/3lhya4i4x222b",
+   "cid": "bafynote3lhya4i4x222b",
+   "author": {
+    "did": "did:plc:inventedfriend00000000002",
+    "handle": "invented-friend.example.com",
+    "displayName": "Invented Friend"
+   },
+   "reason": "quote",
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "text": "Quoting the invented owner here",
+    "createdAt": "2025-02-12T13:00:00Z"
+   },
+   "isRead": true,
+   "indexedAt": "2025-02-12T13:00:00.500Z"
+  },
+  {
+   "uri": "at://did:plc:inventedstranger000000003/app.bsky.feed.post/3li5b2d2h222b",
+   "cid": "bafynote3li5b2d2h222b",
+   "author": {
+    "did": "did:plc:inventedstranger000000003",
+    "handle": "invented-stranger.example.com",
+    "displayName": "Invented Stranger"
+   },
+   "reason": "reply",
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "text": "Interesting invented point",
+    "createdAt": "2025-02-14T13:00:00Z",
+    "reply": {
+     "root": {
+      "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3leyedmwm222b",
+      "cid": "x"
+     },
+     "parent": {
+      "uri": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3leyedmwm222b",
+      "cid": "x"
+     }
+    }
+   },
+   "isRead": true,
+   "indexedAt": "2025-02-14T13:00:00.500Z",
+   "reasonSubject": "at://did:plc:inventedowner000000000001/app.bsky.feed.post/3leyedmwm222b"
+  }
+ ]
+}

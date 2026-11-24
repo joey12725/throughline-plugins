@@ -1,0 +1,15 @@
+{
+  "observed_at": "2020-02-01T10:00:00+00:00",
+  "api_pages": [
+    {"items": [{"id": "fake-sub-a", "snippet": {"publishedAt": "2019-03-01T12:00:00+02:00", "title": "Invented Orchard", "resourceId": {"channelId": "UC_FAKE_ORCHARD"}}}], "nextPageToken": "fake-page-two"},
+    {"items": [{"id": "fake-sub-b", "snippet": {"publishedAt": "2019-01-01T12:00:00Z", "title": "Invented Lantern", "resourceId": {"channelId": "UC_FAKE_LANTERN"}}}]}
+  ],
+  ":ythistory": [
+    {"id": "FAKE_VIDEO_A", "title": "Invented Orchard Tour", "channel_id": "UC_FAKE_ORCHARD", "channel": "Invented Orchard", "timestamp": 1234567890},
+    {"id": "FAKE_VIDEO_B", "title": "Invented Lantern", "channel": "Invented Lantern"}
+  ],
+  ":ytwatchlater": [
+    {"id": "FAKE_VIDEO_A", "title": "Invented Orchard Tour", "channel_id": "UC_FAKE_ORCHARD", "channel": "Invented Orchard"},
+    {"id": "FAKE_REMOVED", "title": "[Deleted video]"}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "_note": "Invented Messages data for tests. Times are seconds after 2026-03-01T09:00:00Z; the builder converts them to Apple-epoch nanoseconds.",
+  "handles": [
+    {"rowid": 1, "id": "+15555550101", "service": "iMessage"},
+    {"rowid": 2, "id": "+15555550102", "service": "iMessage"},
+    {"rowid": 3, "id": "invented.friend@example.com", "service": "iMessage"},
+    {"rowid": 4, "id": "+15555550104", "service": "SMS"}
+  ],
+  "chats": [
+    {"rowid": 1, "guid": "iMessage;-;+15555550101", "chat_identifier": "+15555550101", "service_name": "iMessage", "display_name": "", "style": 45, "handles": [1]},
+    {"rowid": 2, "guid": "iMessage;+;chat000000000000000001", "chat_identifier": "chat000000000000000001", "service_name": "iMessage", "display_name": "Invented Hiking Club", "style": 43, "handles": [2, 3]},
+    {"rowid": 3, "guid": "SMS;-;+15555550104", "chat_identifier": "+15555550104", "service_name": "SMS", "display_name": null, "style": 45, "handles": [4]}
+  ],
+  "attachments": [
+    {"rowid": 1, "guid": "AT-0001", "filename": "~/Library/Messages/Attachments/aa/00/AT-0001/invented-trail.jpg", "mime_type": "image/jpeg", "transfer_name": "invented-trail.jpg", "total_bytes": 204800, "uti": "public.jpeg", "is_sticker": 0},
+    {"rowid": 2, "guid": "AT-0002", "filename": "~/Library/Messages/Attachments/bb/01/AT-0002/invented-map.pdf", "mime_type": "application/pdf", "transfer_name": "invented-map.pdf", "total_bytes": 51200, "uti": "com.adobe.pdf", "is_sticker": 0}
+  ],
+  "messages": [
+    {"guid": "M-0001", "chat": 1, "handle": 1, "t": 0, "text": "Invented hello, are we still on for Saturday?"},
+    {"guid": "M-0002", "chat": 1, "handle": 1, "t": 60, "from_me": 1, "body_only": "Yes! Invented plan: meet at the trailhead at 9."},
+    {"guid": "M-0003", "chat": 1, "handle": 1, "t": 120, "text": "￼", "attachments": [1]},
+    {"guid": "M-0004", "chat": 1, "handle": 1, "t": 180, "tapback": 2000, "target": "p:0/M-0002"},
+    {"guid": "M-0005", "chat": 2, "handle": 2, "t": 300, "text": "Invented group kickoff message"},
+    {"guid": "M-0006", "chat": 2, "handle": 3, "t": 360, "body_only": "Invented reply in the group with a long body that needs the two byte typedstream length marker because it is deliberately longer than one hundred and twenty seven bytes in total length."},
+    {"guid": "M-0007", "chat": 2, "handle": 2, "t": 420, "text": "Invented inline reply to the kickoff", "reply_to": "M-0005"},
+    {"guid": "M-0008", "chat": 2, "handle": 0, "t": 480, "from_me": 1, "item_type": 2, "group_title": "Invented Hiking Club"},
+    {"guid": "M-0009", "chat": 2, "handle": 3, "t": 540, "text": "Invented typo fixed later", "edited": 600},
+    {"guid": "M-0010", "chat": 2, "handle": 2, "t": 660, "unsent": 700},
+    {"guid": "M-0011", "chat": 2, "handle": 3, "t": 720, "tapback": 2003, "target": "p:0/M-0005"},
+    {"guid": "M-0012", "chat": 2, "handle": 0, "t": 780, "from_me": 1, "tapback": 2006, "emoji": "🏔️", "target": "p:0/M-0005"},
+    {"guid": "M-0013", "chat": 2, "handle": 2, "t": 840, "tapback": 2001, "target": "p:0/M-0006"},
+    {"guid": "M-0014", "chat": 2, "handle": 2, "t": 900, "tapback": 3001, "target": "p:0/M-0006"},
+    {"guid": "M-0015", "chat": 2, "handle": 0, "t": 960, "from_me": 1, "text": "Invented map attached", "attachments": [2]},
+    {"guid": "M-0016", "chat": 3, "handle": 4, "t": 1200, "text": "Invented pharmacy reminder: your order is ready", "service": "SMS"},
+    {"guid": "M-0017", "chat": 3, "handle": 4, "t": 1260, "from_me": 1, "text": "Invented thanks", "service": "SMS"},
+    {"guid": "M-0018", "chat": 1, "handle": 1, "t": 1500, "text": "Invented see you then"},
+    {"guid": "M-0019", "chat": 1, "handle": 1, "t": 1560, "from_me": 1, "text": "Invented bringing snacks"},
+    {"guid": "M-0020", "chat": 3, "handle": 4, "t": 1620, "text": "Invented pickup confirmed", "service": "SMS"},
+    {"guid": "M-0021", "chat": 2, "handle": 3, "t": 1680, "text": "Invented final group note"},
+    {"guid": "M-0022", "chat": 2, "handle": 2, "t": 1740, "tapback": 2000, "target": "p:0/M-0021"}
+  ]
+}

@@ -1,0 +1,12 @@
+[project]
+name = "throughline-youtube-feed"
+version = "0.1.0"
+description = "YouTube subscription feed and router picks for Throughline"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk"]
+[project.scripts]
+throughline-youtube-feed = "throughline_youtube_feed:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

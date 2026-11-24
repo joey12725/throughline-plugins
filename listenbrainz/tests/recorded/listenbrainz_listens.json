@@ -1,0 +1,408 @@
+[
+ {
+  "listened_at": 1612170000,
+  "inserted_at": 1612170005,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000000",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Invented Band",
+   "track_name": "Imaginary Song",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 180000,
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000001",
+    "artist_mbids": [
+     "11111111-0000-4000-8000-000000000001"
+    ],
+    "music_service": "example.com",
+    "origin_url": "https://music.example.com/track/0"
+   }
+  }
+ },
+ {
+  "listened_at": 1612170600,
+  "inserted_at": 1612170605,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000001",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "The Fictional Quartet",
+   "track_name": "Placeholder Anthem",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 181000
+   },
+   "release_name": "Invented Album 2"
+  }
+ },
+ {
+  "listened_at": 1612171200,
+  "inserted_at": 1612171205,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000002",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Synthetic Singer",
+   "track_name": "Example Ballad",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 182000,
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000002",
+    "artist_mbids": [
+     "22222222-0000-4000-8000-000000000002"
+    ],
+    "release_mbid": "cccccccc-0000-4000-8000-000000000001"
+   },
+   "release_name": "Invented Album 1"
+  }
+ },
+ {
+  "listened_at": 1612171200,
+  "inserted_at": 1612171205,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000003",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Synthetic Singer feat. Invented Band",
+   "track_name": "Duet for Testing",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 183000,
+    "music_service": "example.com",
+    "origin_url": "https://music.example.com/track/3"
+   },
+   "release_name": "Invented Album 1",
+   "mbid_mapping": {
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000004",
+    "release_mbid": "cccccccc-0000-4000-8000-000000000001",
+    "artist_mbids": [
+     "22222222-0000-4000-8000-000000000002",
+     "11111111-0000-4000-8000-000000000001"
+    ],
+    "artists": [
+     {
+      "artist_credit_name": "Synthetic Singer",
+      "artist_mbid": "22222222-0000-4000-8000-000000000002",
+      "join_phrase": " feat. "
+     },
+     {
+      "artist_credit_name": "Invented Band",
+      "artist_mbid": "11111111-0000-4000-8000-000000000001",
+      "join_phrase": ""
+     }
+    ],
+    "recording_name": "Duet for Testing"
+   }
+  }
+ },
+ {
+  "listened_at": 1612171800,
+  "inserted_at": 1612171805,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000004",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Mock Orchestra",
+   "track_name": "Sample Symphony No. 0",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 184000,
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000003",
+    "artist_mbids": [
+     "33333333-0000-4000-8000-000000000003"
+    ],
+    "release_mbid": "cccccccc-0000-4000-8000-000000000002"
+   },
+   "release_name": "Fixture Classics"
+  }
+ },
+ {
+  "listened_at": 1612256400,
+  "inserted_at": 1612256405,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000005",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Invented Band",
+   "track_name": "Imaginary Song",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 185000,
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000001",
+    "artist_mbids": [
+     "11111111-0000-4000-8000-000000000001"
+    ]
+   }
+  }
+ },
+ {
+  "listened_at": 1612256700,
+  "inserted_at": 1612256705,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000006",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "The Fictional Quartet",
+   "track_name": "Placeholder Anthem",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 186000,
+    "music_service": "example.com",
+    "origin_url": "https://music.example.com/track/6"
+   },
+   "release_name": "Invented Album 2"
+  }
+ },
+ {
+  "listened_at": 1612257000,
+  "inserted_at": 1612257005,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000007",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Synthetic Singer",
+   "track_name": "Example Ballad",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 187000,
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000002",
+    "artist_mbids": [
+     "22222222-0000-4000-8000-000000000002"
+    ],
+    "release_mbid": "cccccccc-0000-4000-8000-000000000001"
+   },
+   "release_name": "Invented Album 1"
+  }
+ },
+ {
+  "listened_at": 1612257300,
+  "inserted_at": 1612257305,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000008",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Synthetic Singer feat. Invented Band",
+   "track_name": "Duet for Testing",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 188000
+   },
+   "release_name": "Invented Album 1",
+   "mbid_mapping": {
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000004",
+    "release_mbid": "cccccccc-0000-4000-8000-000000000001",
+    "artist_mbids": [
+     "22222222-0000-4000-8000-000000000002",
+     "11111111-0000-4000-8000-000000000001"
+    ],
+    "artists": [
+     {
+      "artist_credit_name": "Synthetic Singer",
+      "artist_mbid": "22222222-0000-4000-8000-000000000002",
+      "join_phrase": " feat. "
+     },
+     {
+      "artist_credit_name": "Invented Band",
+      "artist_mbid": "11111111-0000-4000-8000-000000000001",
+      "join_phrase": ""
+     }
+    ],
+    "recording_name": "Duet for Testing"
+   }
+  }
+ },
+ {
+  "listened_at": 1612257600,
+  "inserted_at": 1612257605,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000009",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Mock Orchestra",
+   "track_name": "Sample Symphony No. 0",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 189000,
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000003",
+    "artist_mbids": [
+     "33333333-0000-4000-8000-000000000003"
+    ],
+    "release_mbid": "cccccccc-0000-4000-8000-000000000002",
+    "music_service": "example.com",
+    "origin_url": "https://music.example.com/track/9"
+   },
+   "release_name": "Fixture Classics"
+  }
+ },
+ {
+  "listened_at": 1612342800,
+  "inserted_at": 1612342805,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000010",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Invented Band",
+   "track_name": "Imaginary Song",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 190000,
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000001",
+    "artist_mbids": [
+     "11111111-0000-4000-8000-000000000001"
+    ]
+   }
+  }
+ },
+ {
+  "listened_at": 1612343100,
+  "inserted_at": 1612343105,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000011",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "The Fictional Quartet",
+   "track_name": "Placeholder Anthem",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 191000
+   },
+   "release_name": "Invented Album 2"
+  }
+ },
+ {
+  "listened_at": 1612343400,
+  "inserted_at": 1612343405,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000012",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Synthetic Singer",
+   "track_name": "Example Ballad",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 192000,
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000002",
+    "artist_mbids": [
+     "22222222-0000-4000-8000-000000000002"
+    ],
+    "release_mbid": "cccccccc-0000-4000-8000-000000000001",
+    "music_service": "example.com",
+    "origin_url": "https://music.example.com/track/12"
+   },
+   "release_name": "Invented Album 1"
+  }
+ },
+ {
+  "listened_at": 1612343700,
+  "inserted_at": 1612343705,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000013",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Synthetic Singer feat. Invented Band",
+   "track_name": "Duet for Testing",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 193000
+   },
+   "release_name": "Invented Album 1",
+   "mbid_mapping": {
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000004",
+    "release_mbid": "cccccccc-0000-4000-8000-000000000001",
+    "artist_mbids": [
+     "22222222-0000-4000-8000-000000000002",
+     "11111111-0000-4000-8000-000000000001"
+    ],
+    "artists": [
+     {
+      "artist_credit_name": "Synthetic Singer",
+      "artist_mbid": "22222222-0000-4000-8000-000000000002",
+      "join_phrase": " feat. "
+     },
+     {
+      "artist_credit_name": "Invented Band",
+      "artist_mbid": "11111111-0000-4000-8000-000000000001",
+      "join_phrase": ""
+     }
+    ],
+    "recording_name": "Duet for Testing"
+   }
+  }
+ },
+ {
+  "listened_at": 1612429200,
+  "inserted_at": 1612429205,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000014",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Mock Orchestra",
+   "track_name": "Sample Symphony No. 0",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 194000,
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000003",
+    "artist_mbids": [
+     "33333333-0000-4000-8000-000000000003"
+    ],
+    "release_mbid": "cccccccc-0000-4000-8000-000000000002"
+   },
+   "release_name": "Fixture Classics"
+  }
+ },
+ {
+  "listened_at": 1612429500,
+  "inserted_at": 1612429505,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000015",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "Invented Band",
+   "track_name": "Imaginary Song",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 195000,
+    "recording_mbid": "aaaaaaaa-0000-4000-8000-000000000001",
+    "artist_mbids": [
+     "11111111-0000-4000-8000-000000000001"
+    ],
+    "music_service": "example.com",
+    "origin_url": "https://music.example.com/track/15"
+   }
+  }
+ },
+ {
+  "listened_at": 1612429800,
+  "inserted_at": 1612429805,
+  "recording_msid": "bbbbbbbb-0000-4000-8000-000000000016",
+  "user_name": "invented_listener",
+  "track_metadata": {
+   "artist_name": "The Fictional Quartet",
+   "track_name": "Placeholder Anthem",
+   "additional_info": {
+    "submission_client": "Invented Scrobbler",
+    "submission_client_version": "0.0.1",
+    "media_player": "Example Player",
+    "duration_ms": 196000
+   },
+   "release_name": "Invented Album 2"
+  }
+ }
+]

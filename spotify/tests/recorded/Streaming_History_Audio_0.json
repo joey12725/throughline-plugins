@@ -1,0 +1,24 @@
+[
+  {
+    "ts": "2019-02-03T10:03:00Z",
+    "ms_played": 180000,
+    "master_metadata_track_name": "Invented Orbit",
+    "master_metadata_album_artist_name": "Invented Artist",
+    "master_metadata_album_album_name": "Invented Album",
+    "spotify_track_uri": "spotify:track:inventedtrack",
+    "reason_start": "clickrow",
+    "reason_end": "trackdone",
+    "skipped": false,
+    "shuffle": true,
+    "offline": false,
+    "platform": "Invented OS"
+  },
+  {
+    "ts": "2019-02-03T11:01:00Z",
+    "ms_played": 60000,
+    "episode_name": "Invented Episode",
+    "episode_show_name": "Invented Show",
+    "spotify_episode_uri": "spotify:episode:inventedepisode",
+    "platform": "Invented OS"
+  }
+]

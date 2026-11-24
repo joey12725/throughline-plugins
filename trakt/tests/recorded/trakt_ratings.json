@@ -1,0 +1,102 @@
+[
+ {
+  "rated_at": "2021-02-01T12:00:00.000Z",
+  "rating": 8,
+  "type": "movie",
+  "movie": {
+   "title": "The Invented Expedition",
+   "year": 2019,
+   "runtime": 118,
+   "ids": {
+    "trakt": 900001,
+    "slug": "the-invented-expedition-2019",
+    "imdb": "tt9990001",
+    "tmdb": 9990001
+   }
+  }
+ },
+ {
+  "rated_at": "2021-02-03T21:30:00.000Z",
+  "rating": 5,
+  "type": "movie",
+  "movie": {
+   "title": "Placeholder Heist",
+   "year": 2021,
+   "runtime": 104,
+   "ids": {
+    "trakt": 900002,
+    "slug": "placeholder-heist-2021",
+    "imdb": null,
+    "tmdb": 9990002
+   }
+  }
+ },
+ {
+  "rated_at": "2021-02-07T13:00:00.000Z",
+  "rating": 9,
+  "type": "show",
+  "show": {
+   "title": "Invented Station",
+   "year": 2018,
+   "ids": {
+    "trakt": 800001,
+    "slug": "invented-station",
+    "tvdb": 7770001,
+    "imdb": "tt9980001",
+    "tmdb": 9980001
+   }
+  }
+ },
+ {
+  "rated_at": "2021-02-07T13:05:00.000Z",
+  "rating": 7,
+  "type": "season",
+  "season": {
+   "number": 1,
+   "ids": {
+    "trakt": 600001,
+    "tvdb": null,
+    "tmdb": 9960001
+   }
+  },
+  "show": {
+   "title": "Invented Station",
+   "year": 2018,
+   "ids": {
+    "trakt": 800001,
+    "slug": "invented-station",
+    "tvdb": 7770001,
+    "imdb": "tt9980001",
+    "tmdb": 9980001
+   }
+  }
+ },
+ {
+  "rated_at": "2021-02-11T23:59:00.000Z",
+  "rating": 10,
+  "type": "episode",
+  "episode": {
+   "season": 1,
+   "number": 4,
+   "title": "Synthetic Thursday",
+   "runtime": 42,
+   "ids": {
+    "trakt": 700009,
+    "tvdb": null,
+    "imdb": null,
+    "tmdb": 9970009
+   }
+  },
+  "show": {
+   "title": "The Synthetic Office",
+   "year": 2020,
+   "ids": {
+    "trakt": 800002,
+    "slug": "the-synthetic-office",
+    "tvdb": null,
+    "imdb": null,
+    "tmdb": 9980002
+   }
+  }
+ }
+]

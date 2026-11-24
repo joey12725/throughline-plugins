@@ -1,0 +1,380 @@
+[
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Invented+Band",
+   "name": "Invented Band",
+   "mbid": "11111111-1111-4111-8111-111111111111",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "aaaaaaaa-0000-4000-8000-000000000000",
+  "album": {
+   "mbid": "",
+   "#text": ""
+  },
+  "name": "Imaginary Song",
+  "url": "https://www.last.fm/music/Invented+Band/_/Imaginary+Song",
+  "loved": "0",
+  "date": {
+   "uts": "1612170000",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/The+Fictional+Quartet",
+   "name": "The Fictional Quartet",
+   "mbid": "",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "",
+  "album": {
+   "mbid": "",
+   "#text": "Invented Album 2"
+  },
+  "name": "Placeholder Anthem",
+  "url": "https://www.last.fm/music/The+Fictional+Quartet/_/Placeholder+Anthem",
+  "loved": "0",
+  "date": {
+   "uts": "1612170600",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Synthetic+Singer",
+   "name": "Synthetic Singer",
+   "mbid": "22222222-2222-4222-8222-222222222222",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "aaaaaaaa-0000-4000-8000-000000000002",
+  "album": {
+   "mbid": "",
+   "#text": "Invented Album 1"
+  },
+  "name": "Example Ballad",
+  "url": "https://www.last.fm/music/Synthetic+Singer/_/Example+Ballad",
+  "loved": "1",
+  "date": {
+   "uts": "1612171200",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Invented+Band",
+   "name": "Invented Band",
+   "mbid": "11111111-1111-4111-8111-111111111111",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "",
+  "album": {
+   "mbid": "",
+   "#text": "Invented Album 2"
+  },
+  "name": "Pretend Tune",
+  "url": "https://www.last.fm/music/Invented+Band/_/Pretend+Tune",
+  "loved": "0",
+  "date": {
+   "uts": "1612171800",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/The+Fictional+Quartet",
+   "name": "The Fictional Quartet",
+   "mbid": "",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "aaaaaaaa-0000-4000-8000-000000000004",
+  "album": {
+   "mbid": "",
+   "#text": ""
+  },
+  "name": "Made-up Melody",
+  "url": "https://www.last.fm/music/The+Fictional+Quartet/_/Made-up+Melody",
+  "loved": "0",
+  "date": {
+   "uts": "1612172400",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Synthetic+Singer",
+   "name": "Synthetic Singer",
+   "mbid": "22222222-2222-4222-8222-222222222222",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "",
+  "album": {
+   "mbid": "",
+   "#text": "Invented Album 2"
+  },
+  "name": "Test Pattern Blues",
+  "url": "https://www.last.fm/music/Synthetic+Singer/_/Test+Pattern+Blues",
+  "loved": "1",
+  "date": {
+   "uts": "1612173000",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Invented+Band",
+   "name": "Invented Band",
+   "mbid": "11111111-1111-4111-8111-111111111111",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "aaaaaaaa-0000-4000-8000-000000000006",
+  "album": {
+   "mbid": "",
+   "#text": "Invented Album 1"
+  },
+  "name": "Fixture Waltz",
+  "url": "https://www.last.fm/music/Invented+Band/_/Fixture+Waltz",
+  "loved": "0",
+  "date": {
+   "uts": "1612173600",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/The+Fictional+Quartet",
+   "name": "The Fictional Quartet",
+   "mbid": "",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "",
+  "album": {
+   "mbid": "",
+   "#text": "Invented Album 2"
+  },
+  "name": "Mock Overture",
+  "url": "https://www.last.fm/music/The+Fictional+Quartet/_/Mock+Overture",
+  "loved": "0",
+  "date": {
+   "uts": "1612260600",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Synthetic+Singer",
+   "name": "Synthetic Singer",
+   "mbid": "22222222-2222-4222-8222-222222222222",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "aaaaaaaa-0000-4000-8000-000000000008",
+  "album": {
+   "mbid": "",
+   "#text": ""
+  },
+  "name": "Sample Rhapsody",
+  "url": "https://www.last.fm/music/Synthetic+Singer/_/Sample+Rhapsody",
+  "loved": "0",
+  "date": {
+   "uts": "1612261200",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Invented+Band",
+   "name": "Invented Band",
+   "mbid": "11111111-1111-4111-8111-111111111111",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "",
+  "album": {
+   "mbid": "",
+   "#text": "Invented Album 2"
+  },
+  "name": "Dummy Lullaby",
+  "url": "https://www.last.fm/music/Invented+Band/_/Dummy+Lullaby",
+  "loved": "0",
+  "date": {
+   "uts": "1612261800",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/The+Fictional+Quartet",
+   "name": "The Fictional Quartet",
+   "mbid": "",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "aaaaaaaa-0000-4000-8000-000000000010",
+  "album": {
+   "mbid": "",
+   "#text": "Invented Album 1"
+  },
+  "name": "Stand-in Serenade",
+  "url": "https://www.last.fm/music/The+Fictional+Quartet/_/Stand-in+Serenade",
+  "loved": "0",
+  "date": {
+   "uts": "1612262400",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Synthetic+Singer",
+   "name": "Synthetic Singer",
+   "mbid": "22222222-2222-4222-8222-222222222222",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "",
+  "album": {
+   "mbid": "",
+   "#text": "Invented Album 2"
+  },
+  "name": "Fake Finale",
+  "url": "https://www.last.fm/music/Synthetic+Singer/_/Fake+Finale",
+  "loved": "0",
+  "date": {
+   "uts": "1612263000",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Invented+Band",
+   "name": "Invented Band",
+   "mbid": "11111111-1111-4111-8111-111111111111",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "aaaaaaaa-0000-4000-8000-000000000012",
+  "album": {
+   "mbid": "",
+   "#text": ""
+  },
+  "name": "Lorem Groove",
+  "url": "https://www.last.fm/music/Invented+Band/_/Lorem+Groove",
+  "loved": "0",
+  "date": {
+   "uts": "1612263600",
+   "#text": "invented"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/The+Fictional+Quartet",
+   "name": "The Fictional Quartet",
+   "mbid": "",
+   "image": []
+  },
+  "streamable": "0",
+  "image": [
+   {
+    "size": "small",
+    "#text": ""
+   }
+  ],
+  "mbid": "",
+  "album": {
+   "mbid": "",
+   "#text": "Invented Album 2"
+  },
+  "name": "Ipsum Shuffle",
+  "url": "https://www.last.fm/music/The+Fictional+Quartet/_/Ipsum+Shuffle",
+  "loved": "0",
+  "date": {
+   "uts": "1612264200",
+   "#text": "invented"
+  }
+ }
+]

@@ -1,0 +1,13 @@
+[project]
+name = "throughline-research"
+version = "0.1.0"
+description = "Throughline research streams: configured searches and their findings"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk"]
+[project.scripts]
+throughline-research = "throughline_research:main"
+throughline-research-fetch = "throughline_research.fetch:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

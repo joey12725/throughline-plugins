@@ -1,0 +1,15 @@
+[project]
+name = "throughline-trakt"
+version = "0.1.0"
+description = "Throughline source plugin: trakt"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk", "httpx"]
+[project.scripts]
+throughline-trakt = "throughline_trakt:main"
+throughline-trakt-login = "throughline_trakt.login:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[tool.hatch.build.targets.wheel]
+packages = ["src/throughline_trakt"]

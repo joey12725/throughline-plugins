@@ -1,0 +1,8 @@
+{"id": "4b000000-0000-4000-8000-0000000c0003", "timestamp": "2025-08-13T19:41:15.372Z", "instructions": null, "git": {"commit_hash": "0000000000000000000000000000000000000def", "branch": "main", "repository_url": "https://example.com/invented/fence.git"}}
+{"record_type": "state"}
+{"type": "message", "id": null, "role": "user", "content": [{"type": "input_text", "text": "Mend the invented fence."}]}
+{"type": "reasoning", "id": "rs_legacy", "summary": [], "encrypted_content": "AAAA"}
+{"type": "function_call", "id": "fc_legacy", "name": "shell", "arguments": "{\"command\": [\"bash\", \"-lc\", \"ls\"]}", "call_id": "call_l"}
+{"type": "function_call_output", "call_id": "call_l", "output": "{\"output\": \"invented\"}"}
+{"record_type": "state"}
+{"type": "message", "id": "msg_legacy", "role": "assistant", "content": [{"type": "output_text", "text": "The invented fence is mended."}]}

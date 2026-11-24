@@ -1,0 +1,338 @@
+{
+ "owner_id": "aaaaaaaa-1111-4111-8111-000000000001",
+ "other_id": "bbbbbbbb-2222-4222-8222-000000000002",
+ "items": [
+  {
+   "Id": "m0000000000000000000000000000001",
+   "Type": "Movie",
+   "Name": "The Invented Heist",
+   "_library": "lib-movies",
+   "DateCreated": "2021-01-05T10:00:00.0000000Z",
+   "ServerId": "invented",
+   "ProductionYear": 2019,
+   "RunTimeTicks": 72000000000,
+   "ProviderIds": {
+    "Imdb": "tt0000001",
+    "Tmdb": "9001"
+   }
+  },
+  {
+   "Id": "m0000000000000000000000000000002",
+   "Type": "Movie",
+   "Name": "Placeholder Planet",
+   "_library": "lib-movies",
+   "DateCreated": "2021-01-20T10:00:00.0000000Z",
+   "ServerId": "invented",
+   "ProductionYear": 2001,
+   "RunTimeTicks": 60000000000,
+   "ProviderIds": {
+    "Tmdb": "9002"
+   }
+  },
+  {
+   "Id": "m0000000000000000000000000000003",
+   "Type": "Movie",
+   "Name": "Unwatched Example",
+   "_library": "lib-movies",
+   "DateCreated": "2021-02-25T10:00:00.0000000Z",
+   "ServerId": "invented",
+   "ProductionYear": 2020,
+   "RunTimeTicks": 54000000000,
+   "ProviderIds": {}
+  },
+  {
+   "Id": "s0000000000000000000000000000001",
+   "Type": "Series",
+   "Name": "Fictional Detectives",
+   "_library": "lib-shows",
+   "DateCreated": "2021-01-02T09:00:00.0000000Z",
+   "ServerId": "invented",
+   "ProductionYear": 2015,
+   "ProviderIds": {
+    "Imdb": "tt0000100"
+   }
+  },
+  {
+   "Id": "e0000000000000000000000000000001",
+   "Type": "Episode",
+   "Name": "The Case of the Invented Clue 1",
+   "_library": "lib-shows",
+   "DateCreated": "2021-01-02T09:30:00.0000000Z",
+   "ServerId": "invented",
+   "SeriesName": "Fictional Detectives",
+   "SeriesId": "s0000000000000000000000000000001",
+   "ParentIndexNumber": 1,
+   "IndexNumber": 1,
+   "ProductionYear": 2015,
+   "RunTimeTicks": 27000000000,
+   "ProviderIds": {
+    "Imdb": "tt0000201"
+   }
+  },
+  {
+   "Id": "e0000000000000000000000000000002",
+   "Type": "Episode",
+   "Name": "The Case of the Invented Clue 2",
+   "_library": "lib-shows",
+   "DateCreated": "2021-01-03T09:30:00.0000000Z",
+   "ServerId": "invented",
+   "SeriesName": "Fictional Detectives",
+   "SeriesId": "s0000000000000000000000000000001",
+   "ParentIndexNumber": 1,
+   "IndexNumber": 2,
+   "ProductionYear": 2015,
+   "RunTimeTicks": 27000000000,
+   "ProviderIds": {
+    "Imdb": "tt0000202"
+   }
+  },
+  {
+   "Id": "e0000000000000000000000000000003",
+   "Type": "Episode",
+   "Name": "The Case of the Invented Clue 3",
+   "_library": "lib-shows",
+   "DateCreated": "2021-01-04T09:30:00.0000000Z",
+   "ServerId": "invented",
+   "SeriesName": "Fictional Detectives",
+   "SeriesId": "s0000000000000000000000000000001",
+   "ParentIndexNumber": 1,
+   "IndexNumber": 3,
+   "ProductionYear": 2015,
+   "RunTimeTicks": 27000000000,
+   "ProviderIds": {
+    "Imdb": "tt0000203"
+   }
+  },
+  {
+   "Id": "a0000000000000000000000000000001",
+   "Type": "MusicAlbum",
+   "Name": "Invented Album",
+   "_library": "lib-music",
+   "DateCreated": "2021-01-10T08:00:00.0000000Z",
+   "ServerId": "invented",
+   "AlbumArtist": "Invented Band",
+   "Artists": [
+    "Invented Band"
+   ],
+   "ProductionYear": 2018,
+   "ProviderIds": {
+    "MusicBrainzAlbum": "cccccccc-0000-4000-8000-000000000001"
+   }
+  },
+  {
+   "Id": "t0000000000000000000000000000001",
+   "Type": "Audio",
+   "Name": "Imaginary Track 1",
+   "_library": "lib-music",
+   "DateCreated": "2021-01-10T08:00:0{n}.0000000Z",
+   "ServerId": "invented",
+   "Album": "Invented Album",
+   "AlbumId": "a0000000000000000000000000000001",
+   "AlbumArtist": "Invented Band",
+   "Artists": [
+    "Invented Band"
+   ],
+   "ArtistItems": [
+    {
+     "Id": "r0000000000000000000000000000001",
+     "Name": "Invented Band"
+    }
+   ],
+   "RunTimeTicks": 2400000000,
+   "ProductionYear": 2018,
+   "ProviderIds": {
+    "MusicBrainzTrack": "dddddddd-0000-4000-8000-000000000001"
+   }
+  },
+  {
+   "Id": "t0000000000000000000000000000002",
+   "Type": "Audio",
+   "Name": "Imaginary Track 2",
+   "_library": "lib-music",
+   "DateCreated": "2021-01-10T08:00:0{n}.0000000Z",
+   "ServerId": "invented",
+   "Album": "Invented Album",
+   "AlbumId": "a0000000000000000000000000000001",
+   "AlbumArtist": "Invented Band",
+   "Artists": [
+    "Invented Band"
+   ],
+   "ArtistItems": [
+    {
+     "Id": "r0000000000000000000000000000001",
+     "Name": "Invented Band"
+    }
+   ],
+   "RunTimeTicks": 2400000000,
+   "ProductionYear": 2018,
+   "ProviderIds": {
+    "MusicBrainzTrack": "dddddddd-0000-4000-8000-000000000002"
+   }
+  },
+  {
+   "Id": "t0000000000000000000000000000003",
+   "Type": "Audio",
+   "Name": "Imaginary Track 3",
+   "_library": "lib-music",
+   "DateCreated": "2021-01-10T08:00:0{n}.0000000Z",
+   "ServerId": "invented",
+   "Album": "Invented Album",
+   "AlbumId": "a0000000000000000000000000000001",
+   "AlbumArtist": "Invented Band",
+   "Artists": [
+    "Invented Band"
+   ],
+   "ArtistItems": [
+    {
+     "Id": "r0000000000000000000000000000001",
+     "Name": "Invented Band"
+    }
+   ],
+   "RunTimeTicks": 2400000000,
+   "ProductionYear": 2018,
+   "ProviderIds": {
+    "MusicBrainzTrack": "dddddddd-0000-4000-8000-000000000003"
+   }
+  }
+ ],
+ "userdata": {
+  "m0000000000000000000000000000001": {
+   "PlayCount": 2,
+   "Played": true,
+   "LastPlayedDate": "2021-02-10T21:00:00.0000000Z",
+   "PlaybackPositionTicks": 0
+  },
+  "m0000000000000000000000000000002": {
+   "PlayCount": 1,
+   "Played": false,
+   "LastPlayedDate": "2021-02-12T20:00:00.0000000Z",
+   "PlaybackPositionTicks": 30000000000,
+   "PlayedPercentage": 50.0
+  },
+  "e0000000000000000000000000000001": {
+   "PlayCount": 1,
+   "Played": true,
+   "LastPlayedDate": "2021-02-01T19:00:00.0000000Z",
+   "PlaybackPositionTicks": 0
+  },
+  "e0000000000000000000000000000002": {
+   "PlayCount": 1,
+   "Played": true,
+   "LastPlayedDate": "2021-02-02T19:00:00.0000000Z",
+   "PlaybackPositionTicks": 0
+  },
+  "t0000000000000000000000000000001": {
+   "PlayCount": 5,
+   "Played": true,
+   "LastPlayedDate": "2021-02-03T08:00:00.0000000Z",
+   "PlaybackPositionTicks": 0
+  },
+  "t0000000000000000000000000000002": {
+   "PlayCount": 3,
+   "Played": true,
+   "LastPlayedDate": "2021-02-03T08:04:00.0000000Z",
+   "PlaybackPositionTicks": 0
+  }
+ },
+ "reporting": [
+  [
+   "2021-02-01 19:00:00.1000000",
+   "aaaaaaaa111141118111000000000001",
+   "e0000000000000000000000000000001",
+   "Episode",
+   "Fictional Detectives - s01e01 - The Case of the Invented Clue 1",
+   "DirectPlay",
+   "Jellyfin Web",
+   "Invented Browser",
+   "2700"
+  ],
+  [
+   "2021-02-02 19:00:00.2000000",
+   "aaaaaaaa111141118111000000000001",
+   "e0000000000000000000000000000002",
+   "Episode",
+   "Fictional Detectives - s01e02 - The Case of the Invented Clue 2",
+   "Transcode (v:h264 a:aac)",
+   "Jellyfin Android",
+   "Invented Phone",
+   "2650"
+  ],
+  [
+   "2021-02-02 20:00:00.0000000",
+   "bbbbbbbb222242228222000000000002",
+   "m0000000000000000000000000000002",
+   "Movie",
+   "Placeholder Planet",
+   "DirectPlay",
+   "Jellyfin Web",
+   "Someone Else's TV",
+   "1200"
+  ],
+  [
+   "2021-02-03 08:00:00.0000000",
+   "aaaaaaaa111141118111000000000001",
+   "t0000000000000000000000000000001",
+   "Audio",
+   "Invented Band - Imaginary Track 1",
+   "DirectPlay",
+   "Finamp",
+   "Invented Phone",
+   "240"
+  ],
+  [
+   "2021-02-03 08:04:00.0000000",
+   "aaaaaaaa111141118111000000000001",
+   "t0000000000000000000000000000002",
+   "Audio",
+   "Invented Band - Imaginary Track 2",
+   "DirectPlay",
+   "Finamp",
+   "Invented Phone",
+   "238"
+  ],
+  [
+   "2021-02-05 21:00:00.0000000",
+   "aaaaaaaa111141118111000000000001",
+   "m0000000000000000000000000000001",
+   "Movie",
+   "The Invented Heist",
+   "DirectPlay",
+   "Jellyfin Web",
+   "Invented TV",
+   "7100"
+  ],
+  [
+   "2021-02-06 22:00:00.0000000",
+   "aaaaaaaa111141118111000000000001",
+   "x0000000000000000000000000000099",
+   "Movie",
+   "A Since-Deleted Invention",
+   "DirectStream",
+   "Jellyfin Web",
+   "Invented TV",
+   "3000"
+  ],
+  [
+   "2021-02-10 21:00:00.0000000",
+   "aaaaaaaa111141118111000000000001",
+   "m0000000000000000000000000000001",
+   "Movie",
+   "The Invented Heist",
+   "DirectPlay",
+   "Jellyfin Web",
+   "Invented TV",
+   "7150"
+  ],
+  [
+   "2021-02-12 20:00:00.0000000",
+   "aaaaaaaa111141118111000000000001",
+   "m0000000000000000000000000000002",
+   "Movie",
+   "Placeholder Planet",
+   "DirectPlay",
+   "Jellyfin Web",
+   "Invented TV",
+   "3000"
+  ]
+ ]
+}

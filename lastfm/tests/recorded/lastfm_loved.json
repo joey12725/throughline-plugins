@@ -1,0 +1,78 @@
+[
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Synthetic+Singer",
+   "name": "Synthetic Singer",
+   "mbid": "22222222-2222-4222-8222-222222222222"
+  },
+  "date": {
+   "uts": "1612000000",
+   "#text": "invented"
+  },
+  "mbid": "aaaaaaaa-0000-4000-8000-000000000002",
+  "url": "https://www.last.fm/music/Synthetic+Singer/_/Example+Ballad",
+  "name": "Example Ballad",
+  "image": [],
+  "streamable": {
+   "fulltrack": "0",
+   "#text": "0"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Synthetic+Singer",
+   "name": "Synthetic Singer",
+   "mbid": "22222222-2222-4222-8222-222222222222"
+  },
+  "date": {
+   "uts": "1612259200",
+   "#text": "invented"
+  },
+  "mbid": "",
+  "url": "https://www.last.fm/music/Synthetic+Singer/_/Test+Pattern+Blues",
+  "name": "Test Pattern Blues",
+  "image": [],
+  "streamable": {
+   "fulltrack": "0",
+   "#text": "0"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Invented+Band",
+   "name": "Invented Band",
+   "mbid": "11111111-1111-4111-8111-111111111111"
+  },
+  "date": {
+   "uts": "1612518400",
+   "#text": "invented"
+  },
+  "mbid": "",
+  "url": "https://www.last.fm/music/Invented+Band/_/Dummy+Lullaby",
+  "name": "Dummy Lullaby",
+  "image": [],
+  "streamable": {
+   "fulltrack": "0",
+   "#text": "0"
+  }
+ },
+ {
+  "artist": {
+   "url": "https://www.last.fm/music/Invented+Band",
+   "name": "Invented Band",
+   "mbid": "11111111-1111-4111-8111-111111111111"
+  },
+  "date": {
+   "uts": "1612777600",
+   "#text": "invented"
+  },
+  "mbid": "aaaaaaaa-0000-4000-8000-000000000012",
+  "url": "https://www.last.fm/music/Invented+Band/_/Lorem+Groove",
+  "name": "Lorem Groove",
+  "image": [],
+  "streamable": {
+   "fulltrack": "0",
+   "#text": "0"
+  }
+ }
+]

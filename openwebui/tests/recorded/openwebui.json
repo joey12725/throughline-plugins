@@ -1,0 +1,460 @@
+{
+ "_note": "Invented Open WebUI responses for tests; no real data.",
+ "routes": {
+  "/api/v1/chats/?page=1": [
+   {
+    "created_at": 1715076000,
+    "id": "chat-f",
+    "title": "Invented vanished chat",
+    "updated_at": 1715076000
+   },
+   {
+    "created_at": 1714989600,
+    "id": "chat-g",
+    "title": "Invented system prompt chat",
+    "updated_at": 1714989690
+   }
+  ],
+  "/api/v1/chats/?page=2": [
+   {
+    "created_at": 1714903200,
+    "id": "chat-e",
+    "title": "Invented old format chat",
+    "updated_at": 1714903240
+   },
+   {
+    "created_at": 1714644000,
+    "id": "chat-b",
+    "title": "Invented branching chat",
+    "updated_at": 1714644900
+   }
+  ],
+  "/api/v1/chats/?page=3": [
+   {
+    "created_at": 1714557600,
+    "id": "chat-a",
+    "title": "Invented garden plan",
+    "updated_at": 1714557900
+   }
+  ],
+  "/api/v1/chats/?page=4": [],
+  "/api/v1/chats/archived?page=1": [
+   {
+    "created_at": 1714730400,
+    "id": "chat-c",
+    "title": "Invented archived chat",
+    "updated_at": 1714730450
+   }
+  ],
+  "/api/v1/chats/archived?page=2": [],
+  "/api/v1/chats/chat-a": {
+   "archived": false,
+   "chat": {
+    "history": {
+     "currentId": "a4",
+     "messages": {
+      "a1": {
+       "childrenIds": [
+        "a2"
+       ],
+       "content": "Invented question about tomatoes",
+       "id": "a1",
+       "models": [
+        "invented-model:7b"
+       ],
+       "parentId": null,
+       "role": "user",
+       "timestamp": 1714557600
+      },
+      "a2": {
+       "childrenIds": [
+        "a3"
+       ],
+       "content": "Invented answer about tomatoes",
+       "done": true,
+       "id": "a2",
+       "model": "invented-model:7b",
+       "modelName": "Invented Model 7B",
+       "parentId": "a1",
+       "role": "assistant",
+       "timestamp": 1714557610,
+       "usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 12
+       }
+      },
+      "a3": {
+       "childrenIds": [
+        "a4"
+       ],
+       "content": "Invented follow-up about basil",
+       "id": "a3",
+       "models": [
+        "invented-model:7b"
+       ],
+       "parentId": "a2",
+       "role": "user",
+       "timestamp": 1714557800
+      },
+      "a4": {
+       "childrenIds": [],
+       "content": "Invented answer about basil",
+       "done": true,
+       "id": "a4",
+       "model": "invented-model:7b",
+       "modelName": "Invented Model 7B",
+       "parentId": "a3",
+       "role": "assistant",
+       "timestamp": 1714557810
+      }
+     }
+    },
+    "id": "",
+    "messages": [],
+    "models": [
+     "invented-model:7b"
+    ],
+    "params": {},
+    "tags": [],
+    "timestamp": 1714557600000,
+    "title": "Invented garden plan"
+   },
+   "created_at": 1714557600,
+   "folder_id": null,
+   "id": "chat-a",
+   "meta": {},
+   "pinned": false,
+   "share_id": null,
+   "title": "Invented garden plan",
+   "updated_at": 1714557900,
+   "user_id": "u-invented"
+  },
+  "/api/v1/chats/chat-b": {
+   "archived": false,
+   "chat": {
+    "history": {
+     "currentId": "b6",
+     "messages": {
+      "b1": {
+       "childrenIds": [
+        "b2",
+        "b3"
+       ],
+       "content": "Invented first prompt",
+       "id": "b1",
+       "models": [
+        "invented-model:7b"
+       ],
+       "parentId": null,
+       "role": "user",
+       "timestamp": 1714644000
+      },
+      "b2": {
+       "childrenIds": [],
+       "content": "Invented first answer",
+       "done": true,
+       "id": "b2",
+       "model": "invented-model:7b",
+       "modelName": "Invented Model 7B",
+       "parentId": "b1",
+       "role": "assistant",
+       "timestamp": 1714644005
+      },
+      "b3": {
+       "childrenIds": [
+        "b4"
+       ],
+       "content": "Invented regenerated answer",
+       "done": true,
+       "id": "b3",
+       "model": "invented-model:7b",
+       "modelName": "Invented Model 7B",
+       "parentId": "b1",
+       "role": "assistant",
+       "timestamp": 1714644060
+      },
+      "b4": {
+       "childrenIds": [],
+       "content": "Invented reply to the regenerated answer",
+       "id": "b4",
+       "models": [
+        "invented-model:7b"
+       ],
+       "parentId": "b3",
+       "role": "user",
+       "timestamp": 1714644120
+      },
+      "b5": {
+       "childrenIds": [
+        "b6"
+       ],
+       "content": "Invented edited first prompt",
+       "id": "b5",
+       "models": [
+        "invented-model:7b"
+       ],
+       "parentId": null,
+       "role": "user",
+       "timestamp": 1714644600
+      },
+      "b6": {
+       "annotation": {
+        "rating": 1
+       },
+       "childrenIds": [],
+       "content": "Invented answer to the edit",
+       "done": true,
+       "id": "b6",
+       "model": "invented-model:7b",
+       "modelName": "Invented Model 7B",
+       "parentId": "b5",
+       "role": "assistant",
+       "timestamp": 1714644610
+      }
+     }
+    },
+    "id": "",
+    "messages": [],
+    "models": [
+     "invented-model:7b"
+    ],
+    "params": {},
+    "tags": [],
+    "timestamp": 1714644000000,
+    "title": "Invented branching chat"
+   },
+   "created_at": 1714644000,
+   "folder_id": null,
+   "id": "chat-b",
+   "meta": {},
+   "pinned": false,
+   "share_id": null,
+   "title": "Invented branching chat",
+   "updated_at": 1714644900,
+   "user_id": "u-invented"
+  },
+  "/api/v1/chats/chat-c": {
+   "archived": true,
+   "chat": {
+    "history": {
+     "currentId": "c2",
+     "messages": {
+      "c1": {
+       "childrenIds": [
+        "c2"
+       ],
+       "content": "Invented archived question",
+       "id": "c1",
+       "models": [
+        "invented-model:7b"
+       ],
+       "parentId": null,
+       "role": "user",
+       "timestamp": 1714730400
+      },
+      "c2": {
+       "childrenIds": [],
+       "content": "Invented archived answer",
+       "done": true,
+       "id": "c2",
+       "model": "invented-model:7b",
+       "modelName": "Invented Model 7B",
+       "parentId": "c1",
+       "role": "assistant",
+       "timestamp": 1714730420
+      }
+     }
+    },
+    "id": "",
+    "messages": [],
+    "models": [
+     "invented-model:7b"
+    ],
+    "params": {},
+    "tags": [],
+    "timestamp": 1714730400000,
+    "title": "Invented archived chat"
+   },
+   "created_at": 1714730400,
+   "folder_id": null,
+   "id": "chat-c",
+   "meta": {},
+   "pinned": false,
+   "share_id": null,
+   "title": "Invented archived chat",
+   "updated_at": 1714730450,
+   "user_id": "u-invented"
+  },
+  "/api/v1/chats/chat-d": {
+   "archived": false,
+   "chat": {
+    "history": {
+     "currentId": "d2",
+     "messages": {
+      "d1": {
+       "childrenIds": [
+        "d2"
+       ],
+       "content": "Invented look at this picture",
+       "files": [
+        {
+         "type": "image",
+         "url": "data:invented"
+        }
+       ],
+       "id": "d1",
+       "models": [
+        "invented-model:7b"
+       ],
+       "parentId": null,
+       "role": "user",
+       "timestamp": 1714816800
+      },
+      "d2": {
+       "childrenIds": [],
+       "content": "",
+       "done": true,
+       "error": {
+        "content": "Invented upstream error"
+       },
+       "id": "d2",
+       "model": "invented-model:7b",
+       "modelName": "Invented Model 7B",
+       "parentId": "d1",
+       "role": "assistant",
+       "timestamp": 1714816803
+      }
+     }
+    },
+    "id": "",
+    "messages": [],
+    "models": [
+     "invented-model:7b"
+    ],
+    "params": {},
+    "tags": [],
+    "timestamp": 1714816800000,
+    "title": "Invented pinned chat"
+   },
+   "created_at": 1714816800,
+   "folder_id": null,
+   "id": "chat-d",
+   "meta": {},
+   "pinned": true,
+   "share_id": null,
+   "title": "Invented pinned chat",
+   "updated_at": 1714816870,
+   "user_id": "u-invented"
+  },
+  "/api/v1/chats/chat-e": {
+   "chat": {
+    "messages": [
+     {
+      "content": "Invented old question",
+      "id": "e1",
+      "role": "user",
+      "timestamp": 1714903200
+     },
+     {
+      "content": "Invented old answer",
+      "id": "e2",
+      "model": "invented-old-model",
+      "role": "assistant",
+      "timestamp": 1714903230
+     }
+    ],
+    "title": "Invented old format chat"
+   },
+   "created_at": 1714903200,
+   "id": "chat-e",
+   "title": "Invented old format chat",
+   "updated_at": 1714903240
+  },
+  "/api/v1/chats/chat-g": {
+   "archived": false,
+   "chat": {
+    "history": {
+     "currentId": "g2",
+     "messages": {
+      "g0": {
+       "childrenIds": [
+        "g1"
+       ],
+       "content": "You are an invented helpful gardener.",
+       "id": "g0",
+       "models": [
+        "invented-model:7b"
+       ],
+       "parentId": null,
+       "role": "system",
+       "timestamp": 1714989600
+      },
+      "g1": {
+       "childrenIds": [
+        "g2"
+       ],
+       "content": [
+        {
+         "text": "Invented multi-part",
+         "type": "text"
+        },
+        {
+         "text": "question",
+         "type": "text"
+        }
+       ],
+       "id": "g1",
+       "models": [
+        "invented-model:7b"
+       ],
+       "parentId": "g0",
+       "role": "user",
+       "timestamp": 1714989601000
+      },
+      "g2": {
+       "childrenIds": [],
+       "content": "Invented multi-part answer",
+       "done": true,
+       "id": "g2",
+       "info": {
+        "eval_count": 55,
+        "prompt_eval_count": 30
+       },
+       "model": "invented-model:7b",
+       "modelName": "Invented Model 7B",
+       "parentId": "g1",
+       "role": "assistant",
+       "timestamp": 1714989609
+      }
+     }
+    },
+    "id": "",
+    "messages": [],
+    "models": [
+     "invented-model:7b"
+    ],
+    "params": {},
+    "tags": [],
+    "timestamp": 1714989600000,
+    "title": "Invented system prompt chat"
+   },
+   "created_at": 1714989600,
+   "folder_id": null,
+   "id": "chat-g",
+   "meta": {},
+   "pinned": false,
+   "share_id": null,
+   "title": "Invented system prompt chat",
+   "updated_at": 1714989690,
+   "user_id": "u-invented"
+  },
+  "/api/v1/chats/pinned": [
+   {
+    "created_at": 1714816800,
+    "id": "chat-d",
+    "title": "Invented pinned chat",
+    "updated_at": 1714816870
+   }
+  ]
+ }
+}

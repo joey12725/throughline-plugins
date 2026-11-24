@@ -1,0 +1,272 @@
+{
+  "id": "events",
+  "title": "Local events",
+  "description": "Example converted from a 35-group, two-variant event search pack plus current checks. Every personal value is a placeholder: set RESEARCH_VAR_CITY, RESEARCH_VAR_SECONDARY_CITY and RESEARCH_VAR_REGION, and replace the <interest NN> labels, anchors and news topics.",
+  "timezone": "UTC",
+  "cadence": "daily",
+  "window_days": 10,
+  "output": "labeled_markdown",
+  "item_type": "event",
+  "system": "You research public, dated events and current facts with web search. Follow these rules:\n1. An occurrence must fall inside the requested window. Never use a page's publish or update date as the event date.\n2. Prefer official, organizer or ticketing sources; use credible secondary sources only when nothing better exists.\n3. Exclude undated listings and venue home pages without a dated occurrence.\n4. List the primary city first; include the secondary city only when the event is clearly worth the drive.\n5. Include only public, non-explicit listings.\n6. Report facts only; do not invent prices, times or URLs.\n\nFor event searches answer in Markdown with one '### ' heading per occurrence and these labeled lines, one per line:\nEvent: ...\nOccurrence start: ...\nOccurrence end: ...\nWhat the event is: ...\nVenue: ...\nVenue details: ...\nCity: ...\nHosting organization: ...\nDoor/set time: ...\nCanonical URL: ...\nEvidence URL: ...\nTicket/RSVP/signup URL: ...\nPrice: ...\nAudience/participation details: ...\nSource tier: ...\nPrimary confirmed: ...\nDate certainty: ...\nNotes: ...\nOccurrence start and end are ISO 8601 with a UTC offset. Source tier is primary, ticketing or credible-secondary. Primary confirmed is yes or no. Date certainty is explicit or inferred.\nWhen nothing qualifies, answer exactly: No verifiable events found for this window.",
+  "variables": {
+    "city": null,
+    "secondary_city": null,
+    "region": null,
+    "planning_context": ""
+  },
+  "providers": [
+    {
+      "type": "import",
+      "path": "${RESEARCH_IMPORT_DIR}"
+    },
+    {
+      "type": "openai",
+      "endpoint": "chat",
+      "web_search": "plugin"
+    }
+  ],
+  "limits": {
+    "max_calls_per_run": 73,
+    "max_calls_per_day": 73,
+    "max_output_tokens": 4000,
+    "timeout_s": 150,
+    "min_interval_s": 1
+  },
+  "matrix": {
+    "groups": [
+      {
+        "id": "interest-01",
+        "label": "<interest 01>",
+        "anchors": "<known venues, organizers and calendars for interest 01>"
+      },
+      {
+        "id": "interest-02",
+        "label": "<interest 02>",
+        "anchors": "<known venues, organizers and calendars for interest 02>"
+      },
+      {
+        "id": "interest-03",
+        "label": "<interest 03>",
+        "anchors": "<known venues, organizers and calendars for interest 03>"
+      },
+      {
+        "id": "interest-04",
+        "label": "<interest 04>",
+        "anchors": "<known venues, organizers and calendars for interest 04>"
+      },
+      {
+        "id": "interest-05",
+        "label": "<interest 05>",
+        "anchors": "<known venues, organizers and calendars for interest 05>"
+      },
+      {
+        "id": "interest-06",
+        "label": "<interest 06>",
+        "anchors": "<known venues, organizers and calendars for interest 06>"
+      },
+      {
+        "id": "interest-07",
+        "label": "<interest 07>",
+        "anchors": "<known venues, organizers and calendars for interest 07>"
+      },
+      {
+        "id": "interest-08",
+        "label": "<interest 08>",
+        "anchors": "<known venues, organizers and calendars for interest 08>"
+      },
+      {
+        "id": "interest-09",
+        "label": "<interest 09>",
+        "anchors": "<known venues, organizers and calendars for interest 09>"
+      },
+      {
+        "id": "interest-10",
+        "label": "<interest 10>",
+        "anchors": "<known venues, organizers and calendars for interest 10>"
+      },
+      {
+        "id": "interest-11",
+        "label": "<interest 11>",
+        "anchors": "<known venues, organizers and calendars for interest 11>"
+      },
+      {
+        "id": "interest-12",
+        "label": "<interest 12>",
+        "anchors": "<known venues, organizers and calendars for interest 12>"
+      },
+      {
+        "id": "interest-13",
+        "label": "<interest 13>",
+        "anchors": "<known venues, organizers and calendars for interest 13>"
+      },
+      {
+        "id": "interest-14",
+        "label": "<interest 14>",
+        "anchors": "<known venues, organizers and calendars for interest 14>"
+      },
+      {
+        "id": "interest-15",
+        "label": "<interest 15>",
+        "anchors": "<known venues, organizers and calendars for interest 15>"
+      },
+      {
+        "id": "interest-16",
+        "label": "<interest 16>",
+        "anchors": "<known venues, organizers and calendars for interest 16>"
+      },
+      {
+        "id": "interest-17",
+        "label": "<interest 17>",
+        "anchors": "<known venues, organizers and calendars for interest 17>"
+      },
+      {
+        "id": "interest-18",
+        "label": "<interest 18>",
+        "anchors": "<known venues, organizers and calendars for interest 18>"
+      },
+      {
+        "id": "interest-19",
+        "label": "<interest 19>",
+        "anchors": "<known venues, organizers and calendars for interest 19>"
+      },
+      {
+        "id": "interest-20",
+        "label": "<interest 20>",
+        "anchors": "<known venues, organizers and calendars for interest 20>"
+      },
+      {
+        "id": "interest-21",
+        "label": "<interest 21>",
+        "anchors": "<known venues, organizers and calendars for interest 21>"
+      },
+      {
+        "id": "interest-22",
+        "label": "<interest 22>",
+        "anchors": "<known venues, organizers and calendars for interest 22>"
+      },
+      {
+        "id": "interest-23",
+        "label": "<interest 23>",
+        "anchors": "<known venues, organizers and calendars for interest 23>"
+      },
+      {
+        "id": "interest-24",
+        "label": "<interest 24>",
+        "anchors": "<known venues, organizers and calendars for interest 24>"
+      },
+      {
+        "id": "interest-25",
+        "label": "<interest 25>",
+        "anchors": "<known venues, organizers and calendars for interest 25>"
+      },
+      {
+        "id": "interest-26",
+        "label": "<interest 26>",
+        "anchors": "<known venues, organizers and calendars for interest 26>"
+      },
+      {
+        "id": "interest-27",
+        "label": "<interest 27>",
+        "anchors": "<known venues, organizers and calendars for interest 27>"
+      },
+      {
+        "id": "interest-28",
+        "label": "<interest 28>",
+        "anchors": "<known venues, organizers and calendars for interest 28>"
+      },
+      {
+        "id": "interest-29",
+        "label": "<interest 29>",
+        "anchors": "<known venues, organizers and calendars for interest 29>"
+      },
+      {
+        "id": "interest-30",
+        "label": "<interest 30>",
+        "anchors": "<known venues, organizers and calendars for interest 30>"
+      },
+      {
+        "id": "interest-31",
+        "label": "<interest 31>",
+        "anchors": "<known venues, organizers and calendars for interest 31>"
+      },
+      {
+        "id": "interest-32",
+        "label": "<interest 32>",
+        "anchors": "<known venues, organizers and calendars for interest 32>"
+      },
+      {
+        "id": "interest-33",
+        "label": "<interest 33>",
+        "anchors": "<known venues, organizers and calendars for interest 33>"
+      },
+      {
+        "id": "interest-34",
+        "label": "<interest 34>",
+        "anchors": "<known venues, organizers and calendars for interest 34>"
+      },
+      {
+        "id": "interest-35",
+        "label": "<interest 35>",
+        "anchors": "<known venues, organizers and calendars for interest 35>"
+      }
+    ],
+    "variants": [
+      {
+        "id": "a",
+        "name": "A",
+        "label": "anchored",
+        "prompt": "Find public events for {group_label} in {city} ({region}) from {window_start} to {window_end}, times in {timezone}. Check these first: {anchors}. Also consider {secondary_city} when an event is clearly worth the drive. Known plans for context (may be empty): {planning_context}"
+      },
+      {
+        "id": "b",
+        "name": "B",
+        "label": "open",
+        "prompt": "Search broadly for public events related to {group_label} in {city} ({region}) from {window_start} to {window_end}, times in {timezone}, beyond the usual venues: community calendars, ticketing sites, meetups and local news. Include {secondary_city} only when clearly worth the drive."
+      }
+    ]
+  },
+  "searches": [
+    {
+      "id": "news-check-01",
+      "label": "<current check 01>",
+      "kind": "current-check",
+      "output": "markdown",
+      "item_type": null,
+      "window_days": 0,
+      "lookback_days": 7,
+      "recency": "last 7 days",
+      "variables": {
+        "topic": "<news topic 01>"
+      },
+      "prompt": "Report the latest verified news for {topic} from {window_start} to {window_end}. Give the result, the date it happened, and cite the sources. If nothing new happened in that period, say so plainly."
+    },
+    {
+      "id": "news-check-02",
+      "label": "<current check 02>",
+      "kind": "current-check",
+      "output": "markdown",
+      "item_type": null,
+      "window_days": 0,
+      "lookback_days": 7,
+      "recency": "last 7 days",
+      "variables": {
+        "topic": "<news topic 02>"
+      },
+      "prompt": "Report the latest verified news for {topic} from {window_start} to {window_end}. Give the result, the date it happened, and cite the sources. If nothing new happened in that period, say so plainly."
+    },
+    {
+      "id": "news-check-03",
+      "label": "<current check 03>",
+      "kind": "current-check",
+      "output": "markdown",
+      "item_type": null,
+      "window_days": 0,
+      "lookback_days": 1,
+      "recency": "last 24 hours",
+      "variables": {
+        "topic": "<news topic 03>"
+      },
+      "prompt": "Report the latest verified news for {topic} from {window_start} to {window_end}. Give the result, the date it happened, and cite the sources. If nothing new happened in that period, say so plainly."
+    }
+  ]
+}

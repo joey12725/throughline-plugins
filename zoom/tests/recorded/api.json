@@ -1,0 +1,408 @@
+[
+ {
+  "method": "POST",
+  "path": "/oauth/token",
+  "json": {
+   "access_token": "invented-access-token",
+   "token_type": "bearer",
+   "expires_in": 3599,
+   "scope": "cloud_recording:read:list_user_recordings:admin",
+   "api_url": "https://api.zoom.us"
+  }
+ },
+ {
+  "path": "/v2/users/me",
+  "json": {
+   "id": "invented-host-id",
+   "first_name": "Invented",
+   "last_name": "Owner",
+   "display_name": "Invented Owner",
+   "email": "owner@example.com",
+   "account_id": "ACCOUNT_CANARY"
+  }
+ },
+ {
+  "path": "/v2/users/me/recordings",
+  "params": {
+   "from": "2020-01-01",
+   "to": "2020-01-30"
+  },
+  "json": {
+   "from": "2020-01-01",
+   "to": "2020-01-30",
+   "page_size": 300,
+   "total_records": 1,
+   "next_page_token": "",
+   "meetings": [
+    {
+     "uuid": "inventedAAA1+Q==",
+     "id": 85512340001,
+     "account_id": "ACCOUNT_CANARY",
+     "host_id": "invented-host-id",
+     "topic": "Invented orchard planning",
+     "type": 2,
+     "start_time": "2020-01-14T15:00:00Z",
+     "timezone": "America/New_York",
+     "duration": 30,
+     "total_size": 9999,
+     "recording_count": 2,
+     "share_url": "https://example.com/rec/share/invented",
+     "password": "invented-passcode",
+     "recording_files": [
+      {
+       "id": "inv-a-mp4",
+       "meeting_id": "inventedAAA1+Q==",
+       "recording_start": "2020-01-14T15:00:30Z",
+       "recording_end": "2020-01-14T15:30:00Z",
+       "file_type": "MP4",
+       "file_extension": "MP4",
+       "file_size": 1234,
+       "status": "completed",
+       "recording_type": "shared_screen_with_speaker_view",
+       "play_url": "https://example.com/rec/play/inv-a-mp4",
+       "download_url": "https://zoom.us/rec/download/inv-a-mp4"
+      },
+      {
+       "id": "inv-a-vtt",
+       "meeting_id": "inventedAAA1+Q==",
+       "recording_start": "2020-01-14T15:00:30Z",
+       "recording_end": "2020-01-14T15:30:00Z",
+       "file_type": "TRANSCRIPT",
+       "file_extension": "VTT",
+       "file_size": 1234,
+       "status": "completed",
+       "recording_type": "audio_transcript",
+       "play_url": "https://example.com/rec/play/inv-a-vtt",
+       "download_url": "https://zoom.us/rec/download/inv-a-vtt"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "path": "/v2/users/me/recordings",
+  "params": {
+   "from": "2020-01-31",
+   "to": "2020-02-29",
+   "next_page_token": "invented-page-2"
+  },
+  "json": {
+   "from": "2020-01-31",
+   "to": "2020-02-29",
+   "page_size": 1,
+   "total_records": 2,
+   "next_page_token": "",
+   "meetings": [
+    {
+     "uuid": "inventedCCC3w==",
+     "id": 85512340003,
+     "account_id": "ACCOUNT_CANARY",
+     "host_id": "invented-host-id",
+     "topic": "Invented screen share",
+     "type": 2,
+     "start_time": "2020-02-20T10:00:00Z",
+     "timezone": "UTC",
+     "duration": 15,
+     "total_size": 9999,
+     "recording_count": 1,
+     "share_url": "https://example.com/rec/share/invented",
+     "password": "invented-passcode",
+     "recording_files": [
+      {
+       "id": "inv-c-mp4",
+       "meeting_id": "inventedCCC3w==",
+       "recording_start": "2020-02-20T10:00:10Z",
+       "recording_end": "2020-02-20T10:15:00Z",
+       "file_type": "MP4",
+       "file_extension": "MP4",
+       "file_size": 1234,
+       "status": "completed",
+       "recording_type": "shared_screen_with_speaker_view",
+       "play_url": "https://example.com/rec/play/inv-c-mp4",
+       "download_url": "https://zoom.us/rec/download/inv-c-mp4"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "path": "/v2/users/me/recordings",
+  "params": {
+   "from": "2020-01-31",
+   "to": "2020-02-29"
+  },
+  "json": {
+   "from": "2020-01-31",
+   "to": "2020-02-29",
+   "page_size": 1,
+   "total_records": 2,
+   "next_page_token": "invented-page-2",
+   "meetings": [
+    {
+     "uuid": "/inventedB//2w==",
+     "id": 85512340002,
+     "account_id": "ACCOUNT_CANARY",
+     "host_id": "invented-host-id",
+     "topic": "Invented weekly sync",
+     "type": 2,
+     "start_time": "2020-02-05T17:00:00Z",
+     "timezone": "Europe/Berlin",
+     "duration": 20,
+     "total_size": 9999,
+     "recording_count": 1,
+     "share_url": "https://example.com/rec/share/invented",
+     "password": "invented-passcode",
+     "recording_files": [
+      {
+       "id": "inv-b-vtt",
+       "meeting_id": "/inventedB//2w==",
+       "recording_start": "2020-02-05T17:01:00Z",
+       "recording_end": "2020-02-05T17:20:00Z",
+       "file_type": "TRANSCRIPT",
+       "file_extension": "VTT",
+       "file_size": 1234,
+       "status": "completed",
+       "recording_type": "audio_transcript",
+       "play_url": "https://example.com/rec/play/inv-b-vtt",
+       "download_url": "https://zoom.us/rec/download/inv-b-vtt"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "path": "/v2/users/me/recordings",
+  "params": {
+   "to": "2020-03-20"
+  },
+  "json": {
+   "page_size": 300,
+   "total_records": 2,
+   "next_page_token": "",
+   "meetings": [
+    {
+     "uuid": "inventedEEE5w==",
+     "id": 85512340005,
+     "account_id": "ACCOUNT_CANARY",
+     "host_id": "invented-host-id",
+     "topic": "Invented late standup",
+     "type": 2,
+     "start_time": "2020-03-19T13:00:00Z",
+     "timezone": "America/New_York",
+     "duration": 10,
+     "total_size": 9999,
+     "recording_count": 1,
+     "share_url": "https://example.com/rec/share/invented",
+     "password": "invented-passcode",
+     "recording_files": [
+      {
+       "id": "inv-e-vtt",
+       "meeting_id": "inventedEEE5w==",
+       "recording_start": "2020-03-19T13:00:05Z",
+       "recording_end": "2020-03-19T13:10:00Z",
+       "file_type": "TRANSCRIPT",
+       "file_extension": "VTT",
+       "file_size": 1234,
+       "status": "processing",
+       "recording_type": "audio_transcript",
+       "play_url": "https://example.com/rec/play/inv-e-vtt",
+       "download_url": "https://zoom.us/rec/download/inv-e-vtt"
+      }
+     ]
+    },
+    {
+     "uuid": "inventedDDD4w==",
+     "id": 85512340001,
+     "account_id": "ACCOUNT_CANARY",
+     "host_id": "invented-host-id",
+     "topic": "Invented orchard planning",
+     "type": 2,
+     "start_time": "2020-03-18T15:00:00Z",
+     "timezone": "America/New_York",
+     "duration": 25,
+     "total_size": 9999,
+     "recording_count": 2,
+     "share_url": "https://example.com/rec/share/invented",
+     "password": "invented-passcode",
+     "recording_files": [
+      {
+       "id": "inv-d-vtt1",
+       "meeting_id": "inventedDDD4w==",
+       "recording_start": "2020-03-18T15:00:05Z",
+       "recording_end": "2020-03-18T15:10:00Z",
+       "file_type": "TRANSCRIPT",
+       "file_extension": "VTT",
+       "file_size": 1234,
+       "status": "completed",
+       "recording_type": "audio_transcript",
+       "play_url": "https://example.com/rec/play/inv-d-vtt1",
+       "download_url": "https://zoom.us/rec/download/inv-d-vtt1"
+      },
+      {
+       "id": "inv-d-vtt2",
+       "meeting_id": "inventedDDD4w==",
+       "recording_start": "2020-03-18T15:12:00Z",
+       "recording_end": "2020-03-18T15:25:00Z",
+       "file_type": "TRANSCRIPT",
+       "file_extension": "VTT",
+       "file_size": 1234,
+       "status": "completed",
+       "recording_type": "audio_transcript",
+       "play_url": "https://example.com/rec/play/inv-d-vtt2",
+       "download_url": "https://zoom.us/rec/download/inv-d-vtt2"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "path": "/rec/download/inv-a-vtt",
+  "status": 302,
+  "headers": {
+   "Location": "https://cdn.example.com/invented/inv-a.vtt"
+  },
+  "text": ""
+ },
+ {
+  "path": "/invented/inv-a.vtt",
+  "text": "WEBVTT\n\n1\n00:00:01.000 --> 00:00:04.500\nInvented Owner: Welcome, this is the invented orchard call.\n\n2\n00:00:04.600 --> 00:00:07.000\nInvented Owner: We will plan the apple rows.\n\n3\n00:00:07.200 --> 00:00:10.000\nBea Example: Sounds good, I brought the invented map.\n\n4\n00:00:10.100 --> 00:00:13.000\nCal Example: I can water on Tuesdays.\n\n5\n00:00:13.500 --> 00:00:16.000\nBea Example: Then I take Thursdays.\n\n6\n00:00:16.500 --> 00:00:19.000\nInvented Owner: Great, see you next week.\n",
+  "headers": {
+   "Content-Type": "text/vtt; charset=utf-8"
+  }
+ },
+ {
+  "path": "/rec/download/inv-b-vtt",
+  "text": "WEBVTT\n\n1\n00:00:00.500 --> 00:00:03.000\nInvented Owner: Quick sync on the invented report.\n\n2\n00:00:03.500 --> 00:00:06.000\nDana Example: Draft is done.\n\n3\n00:00:06.100 --> 00:00:08.000\nand the figures too.\n\n4\n00:00:08.500 --> 00:00:10.000\nInvented Owner: Thanks Dana.\n"
+ },
+ {
+  "path": "/rec/download/inv-d-vtt1",
+  "text": "WEBVTT\n\n1\n00:00:02.000 --> 00:00:05.000\nInvented Owner: Second orchard call, part one.\n\n2\n00:00:05.500 --> 00:00:08.000\nBea Example: The rows are planted.\n"
+ },
+ {
+  "path": "/rec/download/inv-d-vtt2",
+  "text": "WEBVTT\n\n1\n00:00:01.000 --> 00:00:03.000\nCal Example: Part two, after the break.\n\n2\n00:00:03.500 --> 00:00:06.000\nInvented Owner: Let us wrap up.\n"
+ },
+ {
+  "path": "/v2/report/meetings/inventedAAA1%2BQ%3D%3D/participants",
+  "json": {
+   "page_size": 300,
+   "total_records": 3,
+   "next_page_token": "",
+   "participants": [
+    {
+     "id": "invented-host-id",
+     "user_id": "1600",
+     "name": "Invented Owner",
+     "user_email": "",
+     "join_time": "2020-01-14T15:00:00Z",
+     "leave_time": "2020-01-14T15:00:00Z",
+     "duration": 1200
+    },
+    {
+     "id": "",
+     "user_id": "1600",
+     "name": "Bea Example",
+     "user_email": "bea@example.com",
+     "join_time": "2020-01-14T15:00:00Z",
+     "leave_time": "2020-01-14T15:00:00Z",
+     "duration": 1200
+    },
+    {
+     "id": "",
+     "user_id": "1600",
+     "name": "Cal Example",
+     "user_email": "cal@example.com",
+     "join_time": "2020-01-14T15:00:00Z",
+     "leave_time": "2020-01-14T15:00:00Z",
+     "duration": 1200
+    },
+    {
+     "id": "",
+     "user_id": "1600",
+     "name": "Bea Example",
+     "user_email": "bea@example.com",
+     "join_time": "2020-01-14T15:00:00Z",
+     "leave_time": "2020-01-14T15:00:00Z",
+     "duration": 1200
+    }
+   ]
+  }
+ },
+ {
+  "path": "/v2/report/meetings/%252FinventedB%252F%252F2w%253D%253D/participants",
+  "status": 404,
+  "json": {
+   "code": 3001,
+   "message": "Meeting does not exist."
+  }
+ },
+ {
+  "path": "/v2/report/meetings/inventedCCC3w%3D%3D/participants",
+  "json": {
+   "page_size": 300,
+   "next_page_token": "",
+   "participants": [
+    {
+     "id": "invented-host-id",
+     "user_id": "1600",
+     "name": "Invented Owner",
+     "user_email": "owner@example.com",
+     "join_time": "2020-01-14T15:00:00Z",
+     "leave_time": "2020-01-14T15:00:00Z",
+     "duration": 1200
+    }
+   ]
+  }
+ },
+ {
+  "path": "/v2/report/meetings/inventedDDD4w%3D%3D/participants",
+  "params": {
+   "next_page_token": "invented-part-2"
+  },
+  "json": {
+   "page_size": 1,
+   "next_page_token": "",
+   "participants": [
+    {
+     "id": "",
+     "user_id": "1600",
+     "name": "Cal Example",
+     "user_email": "cal@example.com",
+     "join_time": "2020-01-14T15:00:00Z",
+     "leave_time": "2020-01-14T15:00:00Z",
+     "duration": 1200
+    }
+   ]
+  }
+ },
+ {
+  "path": "/v2/report/meetings/inventedDDD4w%3D%3D/participants",
+  "json": {
+   "page_size": 1,
+   "next_page_token": "invented-part-2",
+   "participants": [
+    {
+     "id": "",
+     "user_id": "1600",
+     "name": "Bea Example",
+     "user_email": "bea@example.com",
+     "join_time": "2020-01-14T15:00:00Z",
+     "leave_time": "2020-01-14T15:00:00Z",
+     "duration": 1200
+    }
+   ]
+  }
+ },
+ {
+  "path": "/v2/report/meetings/inventedEEE5w%3D%3D/participants",
+  "json": {
+   "page_size": 300,
+   "next_page_token": "",
+   "participants": []
+  }
+ }
+]

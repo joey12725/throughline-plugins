@@ -1,0 +1,224 @@
+{
+ "capabilities": [
+  "IMAP4REV1",
+  "SPECIAL-USE",
+  "CONDSTORE"
+ ],
+ "password": "invented-canary-imap-password",
+ "folders": [
+  {
+   "name": "INBOX",
+   "flags": [
+    "\\HasNoChildren"
+   ],
+   "uidvalidity": 1700000001,
+   "messages": [
+    {
+     "uid": 3,
+     "flags": [],
+     "modseq": 13,
+     "internaldate": "06-Jan-2025 09:15:00 +0000",
+     "raw_lines": [
+      "From: Invented Friend <friend@example.com>",
+      "To: Invented Owner <invented.owner@example.com>",
+      "Subject: Invented picnic plans",
+      "Date: Mon, 06 Jan 2025 10:14:58 +0100",
+      "Message-ID: <picnic-1@example.com>",
+      "Content-Type: text/plain; charset=utf-8",
+      "",
+      "Shall we meet at the invented park on Saturday?",
+      "",
+      "-- Invented Friend"
+     ]
+    },
+    {
+     "uid": 4,
+     "flags": [
+      "\\Seen",
+      "\\Flagged"
+     ],
+     "modseq": 14,
+     "internaldate": "06-Jan-2025 12:00:00 +0000",
+     "raw_lines": [
+      "From: Invented Friend <friend@example.com>",
+      "To: invented.owner@example.com",
+      "Subject: Re: Invented picnic plans",
+      "Date: Mon, 06 Jan 2025 12:59:59 +0100",
+      "Message-ID: <picnic-3@example.com>",
+      "In-Reply-To: <picnic-2@example.com>",
+      "References: <picnic-1@example.com> <picnic-2@example.com>",
+      "MIME-Version: 1.0",
+      "Content-Type: text/html; charset=utf-8",
+      "",
+      "<html><body><p>Great, see you <b>Saturday</b>!</p><ul><li>bread</li><li>invented cheese</li></ul></body></html>"
+     ]
+    },
+    {
+     "uid": 5,
+     "flags": [
+      "\\Seen"
+     ],
+     "modseq": 15,
+     "internaldate": "07-Jan-2025 08:30:00 +0000",
+     "raw_lines": [
+      "From: =?utf-8?q?Invented_B=C3=A4ckerei?= <shop@example.com>",
+      "To: invented.owner@example.com",
+      "Subject: =?utf-8?q?Ihre_Bestellung_=E2=80=93_Invented?=",
+      "Date: Tue, 07 Jan 2025 09:30:00 +0100",
+      "Message-ID: <order-77@shop.example.com>",
+      "List-Id: Invented offers <offers.shop.example.com>",
+      "MIME-Version: 1.0",
+      "Content-Type: multipart/mixed; boundary=\"XYZ\"",
+      "",
+      "--XYZ",
+      "Content-Type: text/plain; charset=utf-8",
+      "",
+      "Your invented order is ready.",
+      "",
+      "--XYZ",
+      "Content-Type: application/pdf",
+      "Content-Disposition: attachment; filename=\"invented-receipt.pdf\"",
+      "Content-Transfer-Encoding: base64",
+      "",
+      "SW52ZW50ZWQgcmVjZWlwdA==",
+      "--XYZ--"
+     ]
+    },
+    {
+     "uid": 6,
+     "flags": [
+      "\\Seen"
+     ],
+     "modseq": 16,
+     "internaldate": "08-Jan-2025 18:00:00 +0000",
+     "raw_lines": [
+      "From: Invented Neighbour <neighbour@example.org>",
+      "To: invented.owner@example.com",
+      "Subject: No id here",
+      "Date: Wed, 08 Jan 2025 19:00:00 +0100",
+      "",
+      "This invented message has no Message-ID header."
+     ]
+    },
+    {
+     "uid": 7,
+     "flags": [
+      "\\Seen"
+     ],
+     "modseq": 17,
+     "internaldate": "09-Jan-2025 07:00:00 +0000",
+     "raw_lines": [
+      "From: Invented Owner <invented.owner@example.com>",
+      "To: invented.owner@example.com",
+      "Subject: Note to self",
+      "Date: Thu, 09 Jan 2025 08:00:00 +0100",
+      "Message-ID: <self-1@example.com>",
+      "",
+      "Remember the invented library books."
+     ]
+    },
+    {
+     "uid": 8,
+     "flags": [
+      "\\Seen"
+     ],
+     "modseq": 18,
+     "internaldate": "10-Jan-2025 07:00:00 +0000",
+     "raw_lines": [
+      "From: Invented Friend <friend@example.com>",
+      "To: invented.owner@example.com",
+      "Cc: Invented Other <other@example.net>",
+      "Subject: Re: Invented picnic plans",
+      "Date: Fri, 10 Jan 2025 08:00:00 +0100",
+      "Message-ID: <picnic-4@example.com>",
+      "In-Reply-To: <picnic-3@example.com>",
+      "",
+      "Only In-Reply-To on this one."
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Sent",
+   "flags": [
+    "\\HasNoChildren",
+    "\\Sent"
+   ],
+   "uidvalidity": 1700000002,
+   "messages": [
+    {
+     "uid": 11,
+     "flags": [
+      "\\Seen"
+     ],
+     "modseq": 21,
+     "internaldate": "06-Jan-2025 11:00:00 +0000",
+     "raw_lines": [
+      "From: Invented Owner <invented.owner@example.com>",
+      "To: Invented Friend <friend@example.com>",
+      "Subject: Re: Invented picnic plans",
+      "Date: Mon, 06 Jan 2025 12:00:00 +0100",
+      "Message-ID: <picnic-2@example.com>",
+      "In-Reply-To: <picnic-1@example.com>",
+      "References: <picnic-1@example.com>",
+      "",
+      "Yes! I will bring invented bread."
+     ]
+    },
+    {
+     "uid": 12,
+     "flags": [
+      "\\Seen"
+     ],
+     "modseq": 22,
+     "internaldate": "09-Jan-2025 07:00:05 +0000",
+     "raw_lines": [
+      "From: Invented Owner <invented.owner@example.com>",
+      "To: invented.owner@example.com",
+      "Subject: Note to self",
+      "Date: Thu, 09 Jan 2025 08:00:00 +0100",
+      "Message-ID: <self-1@example.com>",
+      "",
+      "Remember the invented library books."
+     ]
+    },
+    {
+     "uid": 13,
+     "flags": [
+      "\\Seen"
+     ],
+     "modseq": 23,
+     "internaldate": "11-Jan-2025 15:00:00 +0000",
+     "raw_lines": [
+      "From: Invented Owner <invented.owner@example.com>",
+      "To: shop@example.com",
+      "Bcc: other@example.net",
+      "Subject: Invented question",
+      "Date: Sat, 11 Jan 2025 16:00:00 +0100",
+      "Message-ID: <q-1@example.com>",
+      "",
+      "Do you have invented rye?"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Invented Archive",
+   "flags": [
+    "\\HasNoChildren"
+   ],
+   "uidvalidity": 1700000003,
+   "literal_name": true,
+   "messages": []
+  },
+  {
+   "name": "Junk",
+   "flags": [
+    "\\HasNoChildren",
+    "\\Junk"
+   ],
+   "uidvalidity": 1700000004,
+   "messages": []
+  }
+ ]
+}

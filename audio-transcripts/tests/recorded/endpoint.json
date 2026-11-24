@@ -1,0 +1,100 @@
+{
+ "responses": {
+  "2025-03-04 10-15-00 Invented memo.wav": {
+   "task": "transcribe",
+   "language": "english",
+   "duration": 2.0,
+   "text": "Remember to water the invented ferns. Then call the pretend plumber.",
+   "segments": [
+    {
+     "id": 0,
+     "start": 0.0,
+     "end": 1.1,
+     "text": " Remember to water the invented ferns.",
+     "avg_logprob": -0.2
+    },
+    {
+     "id": 1,
+     "start": 1.1,
+     "end": 2.0,
+     "text": " Then call the pretend plumber.",
+     "avg_logprob": -0.2
+    }
+   ]
+  },
+  "REC_20250305_093000.wav": {
+   "task": "transcribe",
+   "language": "english",
+   "duration": 3.0,
+   "text": "Welcome to the invented standup. Status is green. Next item is the fake budget.",
+   "segments": [
+    {
+     "id": 0,
+     "start": 0.0,
+     "end": 1.0,
+     "text": " Welcome to the invented standup.",
+     "avg_logprob": -0.2
+    },
+    {
+     "id": 1,
+     "start": 1.0,
+     "end": 2.0,
+     "text": " Status is green.",
+     "avg_logprob": -0.2
+    },
+    {
+     "id": 2,
+     "start": 2.0,
+     "end": 3.0,
+     "text": " Next item is the fake budget.",
+     "avg_logprob": -0.2
+    }
+   ]
+  },
+  "Invented meeting 2025-03-06.wav": {
+   "task": "transcribe",
+   "language": "english",
+   "duration": 1.5,
+   "text": "A day-only invented meeting.",
+   "segments": [
+    {
+     "id": 0,
+     "start": 0.0,
+     "end": 1.5,
+     "text": " A day-only invented meeting.",
+     "avg_logprob": -0.2
+    }
+   ]
+  },
+  "untitled.wav": {
+   "task": "transcribe",
+   "language": "english",
+   "duration": 1.0,
+   "text": "",
+   "segments": []
+  },
+  "Invented lecture 20250307T1400.wav": {
+   "task": "transcribe",
+   "language": "english",
+   "duration": 2.0,
+   "text": "Invented lecture opening remarks about orchards.",
+   "segments": [
+    {
+     "id": 0,
+     "start": 0.0,
+     "end": 0.9,
+     "text": " Invented lecture opening remarks",
+     "avg_logprob": -0.2
+    },
+    {
+     "id": 1,
+     "start": 0.9,
+     "end": 2.0,
+     "text": " about orchards.",
+     "avg_logprob": -0.2
+    }
+   ],
+   "speaker_note": "invented"
+  }
+ }
+}

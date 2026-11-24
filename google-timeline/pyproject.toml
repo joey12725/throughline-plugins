@@ -1,0 +1,13 @@
+[project]
+name = "throughline-google-timeline"
+version = "0.1.0"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk"]
+[project.scripts]
+throughline-google-timeline = "throughline_google_timeline:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[tool.hatch.build.targets.wheel]
+packages = ["src/throughline_google_timeline"]

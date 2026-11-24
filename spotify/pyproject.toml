@@ -1,0 +1,12 @@
+[project]
+name = "throughline-spotify"
+version = "0.1.0"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk"]
+[project.scripts]
+throughline-spotify = "throughline_spotify:main"
+throughline-spotify-auth = "throughline_spotify.auth:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

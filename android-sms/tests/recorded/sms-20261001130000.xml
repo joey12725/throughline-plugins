@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!--File created by Invented test data-->
+<smses count="8" backup_set="invented-set" backup_date="1790859600000" type="full">
+  <sms protocol="0" address="+15555550101" date="1790856000000" type="1" subject="null" body="Invented: are you coming to the picnic?" toa="null" sc_toa="null" service_center="null" read="1" status="-1" locked="0" date_sent="1790855995000" sub_id="1" readable_date="Oct 1, 2026 12:00:00 PM" contact_name="Invented Alex" />
+  <sms protocol="0" address="+15555550101" date="1790856120000" type="2" subject="null" body="Invented: yes, bringing lemonade" toa="null" sc_toa="null" service_center="null" read="1" status="-1" locked="0" date_sent="0" sub_id="1" readable_date="Oct 1, 2026 12:02:00 PM" contact_name="Invented Alex" />
+  <sms protocol="0" address="+15555550101" date="1790856240000" type="1" subject="null" body="Invented smile &#55357;&#56832; see you" toa="null" sc_toa="null" service_center="null" read="0" status="-1" locked="0" date_sent="1790856235000" sub_id="1" readable_date="Oct 1, 2026 12:04:00 PM" contact_name="Invented Alex" />
+  <sms protocol="0" address="55512" date="1790856360000" type="1" subject="null" body="Invented pharmacy: prescription ready" toa="null" sc_toa="null" service_center="null" read="1" status="-1" locked="0" date_sent="1790856355000" sub_id="1" readable_date="Oct 1, 2026 12:06:00 PM" contact_name="(Unknown)" />
+  <mms date="1790856480000" rr="null" sub="null" ct_t="application/vnd.wap.multipart.related" read_status="null" seen="1" msg_box="1" address="+15555550101~+15555550102" sub_cs="null" resp_st="null" retr_st="null" d_tm="null" text_only="1" exp="null" locked="0" m_id="invented-mid-8" st="null" retr_txt_cs="null" retr_txt="null" creator="com.invented.messaging" date_sent="0" read="1" m_size="0" rpt_a="null" ct_cls="null" pri="null" sub_id="1" tr_id="invented-tr-8" resp_txt="null" ct_l="null" m_cls="personal" d_rpt="null" v="18" m_type="132" readable_date="Oct 1, 2026" contact_name="Invented Alex, Invented Sam">
+    <parts>
+      <part seq="-1" ct="application/smil" name="null" chset="null" cd="null" fn="null" cid="&lt;smil&gt;" cl="smil.xml" ctt_s="null" ctt_t="null" text="&lt;smil&gt;&lt;/smil&gt;" sub_id="1" />
+      <part seq="0" ct="text/plain" name="null" chset="106" cd="null" fn="null" cid="&lt;text0&gt;" cl="text0.txt" ctt_s="null" ctt_t="null" text="Invented group plan for Sunday" sub_id="1" />
+    </parts>
+    <addrs>
+      <addr address="+15555550101" type="151" charset="106" />
+      <addr address="+15555550102" type="137" charset="106" />
+      <addr address="+15555550100" type="151" charset="106" />
+    </addrs>
+  </mms>
+  <mms date="1790856600000" rr="null" sub="null" ct_t="application/vnd.wap.multipart.related" read_status="null" seen="1" msg_box="2" address="+15555550101~+15555550102" sub_cs="null" resp_st="null" retr_st="null" d_tm="null" text_only="1" exp="null" locked="0" m_id="invented-mid-10" st="null" retr_txt_cs="null" retr_txt="null" creator="com.invented.messaging" date_sent="0" read="1" m_size="0" rpt_a="null" ct_cls="null" pri="null" sub_id="1" tr_id="invented-tr-10" resp_txt="null" ct_l="null" m_cls="personal" d_rpt="null" v="18" m_type="128" readable_date="Oct 1, 2026" contact_name="Invented Alex, Invented Sam">
+    <parts>
+      <part seq="-1" ct="application/smil" name="null" chset="null" cd="null" fn="null" cid="&lt;smil&gt;" cl="smil.xml" ctt_s="null" ctt_t="null" text="&lt;smil&gt;&lt;/smil&gt;" sub_id="1" />
+      <part seq="0" ct="text/plain" name="null" chset="106" cd="null" fn="null" cid="&lt;text0&gt;" cl="text0.txt" ctt_s="null" ctt_t="null" text="Invented I'll drive" sub_id="1" />
+    </parts>
+    <addrs>
+      <addr address="+15555550101" type="151" charset="106" />
+      <addr address="+15555550102" type="151" charset="106" />
+      <addr address="+15555550100" type="151" charset="106" />
+    </addrs>
+  </mms>
+  <sms protocol="0" address="(555) 555-0102" date="1790856720000" type="1" subject="null" body="Invented hi from Sam, national format" toa="null" sc_toa="null" service_center="null" read="1" status="-1" locked="0" date_sent="1790856715000" sub_id="1" readable_date="Oct 1, 2026 12:12:00 PM" contact_name="Invented Sam" />
+  <sms protocol="0" address="+15555550101" date="1790856840000" type="3" subject="null" body="Invented draft never sent" toa="null" sc_toa="null" service_center="null" read="1" status="-1" locked="0" date_sent="0" sub_id="1" readable_date="Oct 1, 2026 12:14:00 PM" contact_name="Invented Alex" />
+</smses>

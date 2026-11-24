@@ -1,0 +1,76 @@
+{
+  "_note": "Invented Telegram account, people and messages for offline tests.",
+  "me": 1000001,
+  "users": [
+    {"id": 1000001, "first_name": "Invented", "last_name": "Owner", "username": "invented_owner", "phone": "15555550100"},
+    {"id": 1000002, "first_name": "Invented", "last_name": "Alex", "username": "invented_alex"},
+    {"id": 1000003, "first_name": "Invented", "last_name": "Sam"},
+    {"id": 1000004, "first_name": "InventedBot", "username": "invented_weather_bot", "bot": true}
+  ],
+  "dialogs": [
+    {
+      "id": 1000002, "name": "Invented Alex",
+      "entity": {"type": "User", "id": 1000002},
+      "messages": [
+        {"id": 11, "date": "2026-09-01T10:00:00+00:00", "sender_id": 1000002, "text": "Invented hi, did you see the forecast?"},
+        {"id": 12, "date": "2026-09-01T10:01:00+00:00", "sender_id": 1000001, "out": true, "text": "Invented yes, rain all weekend", "reply_to": {"msg_id": 11}},
+        {"id": 13, "date": "2026-09-01T10:02:00+00:00", "sender_id": 1000002, "text": "", "media": {"type": "MessageMediaPhoto", "size": 120000, "width": 800, "height": 600}},
+        {"id": 14, "date": "2026-09-01T10:03:00+00:00", "sender_id": 1000002, "text": "Invented look at this", "fwd_from": {"from": "channel:7000001", "date": "2026-08-31T08:00:00+00:00", "channel_post": 55}},
+        {"id": 15, "date": "2026-09-01T10:04:00+00:00", "sender_id": 1000001, "out": true, "text": "Invented fixed typo", "edit_date": "2026-09-01T10:05:00+00:00", "reactions": {"recent": [{"peer": "user:1000002", "emoji": "👍", "date": "2026-09-01T10:06:00+00:00"}]}},
+        {"id": 16, "date": "2026-09-01T10:07:00+00:00", "sender_id": 1000002, "text": "", "media": {"type": "MessageMediaDocument", "mime_type": "audio/ogg", "size": 9000, "duration": 12}},
+        {"id": 17, "date": "2026-09-01T10:08:00+00:00", "sender_id": 1000002, "text": "Invented itinerary attached", "media": {"type": "MessageMediaDocument", "name": "invented-itinerary.pdf", "mime_type": "application/pdf", "size": 40000}}
+      ]
+    },
+    {
+      "id": -4000001, "name": "Invented Book Club",
+      "entity": {"type": "Chat", "id": 4000001, "title": "Invented Book Club", "participants_count": 3},
+      "messages": [
+        {"id": 21, "date": "2026-09-02T18:00:00+00:00", "sender_id": 1000001, "out": true, "action": "MessageActionChatCreate", "action_args": {"title": "Invented Book Club"}},
+        {"id": 22, "date": "2026-09-02T18:01:00+00:00", "sender_id": 1000003, "text": "Invented next book suggestion?", "reactions": {"results": [{"emoji": "🔥", "count": 2}]}},
+        {"id": 23, "date": "2026-09-02T18:02:00+00:00", "sender_id": 1000002, "text": "Invented the one about lighthouses", "reply_to": {"msg_id": 22}},
+        {"id": 24, "date": "2026-09-02T18:03:00+00:00", "sender_id": 1000003, "text": "Invented album 1", "grouped_id": 99001, "media": {"type": "MessageMediaPhoto", "size": 1000}},
+        {"id": 25, "date": "2026-09-02T18:03:01+00:00", "sender_id": 1000003, "text": "", "grouped_id": 99001, "media": {"type": "MessageMediaPhoto", "size": 1001}},
+        {"id": 26, "date": "2026-09-02T18:04:00+00:00", "sender_id": 1000003, "text": "Invented meet here", "media": {"type": "MessageMediaGeo", "lat": 40.0, "long": -70.0}}
+      ]
+    },
+    {
+      "id": -1007000001, "name": "Invented News",
+      "entity": {"type": "Channel", "id": 7000001, "title": "Invented News", "broadcast": true, "participants_count": 90000, "username": "invented_news"},
+      "messages": [
+        {"id": 55, "date": "2026-08-31T08:00:00+00:00", "post": true, "text": "Invented broadcast post"}
+      ]
+    },
+    {
+      "id": -1008000001, "name": "Invented Huge Group",
+      "entity": {"type": "Channel", "id": 8000001, "title": "Invented Huge Group", "megagroup": true},
+      "participants": 5000,
+      "messages": [
+        {"id": 1, "date": "2026-08-30T08:00:00+00:00", "sender_id": 1000003, "text": "Invented huge group message"}
+      ]
+    },
+    {
+      "id": -1009000001, "name": "Invented Climbing",
+      "entity": {"type": "Channel", "id": 9000001, "title": "Invented Climbing", "megagroup": true},
+      "participants": 12,
+      "messages": [
+        {"id": 101, "date": "2026-09-03T07:00:00+00:00", "sender_id": 1000002, "text": "Invented crag at 8?"},
+        {"id": 102, "date": "2026-09-03T07:01:00+00:00", "sender_id": 1000001, "out": true, "text": "Invented in", "reply_to": {"msg_id": 101}},
+        {"id": 103, "date": "2026-09-03T07:02:00+00:00", "sender_id": 1000003, "text": "Invented reply to another chat", "reply_to": {"msg_id": 5, "peer": "channel:7000001"}}
+      ]
+    },
+    {
+      "id": 1000004, "name": "InventedBot",
+      "entity": {"type": "User", "id": 1000004},
+      "messages": [
+        {"id": 31, "date": "2026-09-04T06:00:00+00:00", "sender_id": 1000004, "text": "Invented forecast: sunny"}
+      ]
+    },
+    {
+      "id": 1000001, "name": "Saved Messages",
+      "entity": {"type": "User", "id": 1000001},
+      "messages": [
+        {"id": 41, "date": "2026-09-05T09:00:00+00:00", "sender_id": 1000001, "out": true, "text": "Invented note to self: buy rope"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[project]
+name = "throughline-consumption"
+version = "0.1.0"
+description = "Throughline media consumption: Spotify, Plex, Audiobookshelf and YouTube"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+dependencies = ["throughline-sdk"]
+[project.scripts]
+throughline-consumption = "throughline_consumption:main"
+throughline-consumption-fetch = "throughline_consumption.fetch:main"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
